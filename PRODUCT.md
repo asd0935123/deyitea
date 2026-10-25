@@ -32,7 +32,7 @@ delegated: 純靜態 HTML / CSS / 原生 JS，無建置步驟。理由：不做�
 ## Capabilities and Constraints
 
 - 商品展示（品項、價格、規格）；無購物車、無金流。
-- 聯絡管道：LINE、電話（049-2752193）、詢價表單。
+- 聯絡管道：LINE、電話（049-2752193）、網站訂購／詢價表單（已串接 Google 表單 `1FAIpQLSdz_uBY2gX00KyCRygSRAhi27kaD3kgXnGyckxNyDYfAlHjfw` 與 Google 試算表後台，送出後即時寫入試算表統計）。
 - 門市導航：Google Maps 官方店家景點連結與地圖預覽。
 - 是否需要英文版：未提出，目前僅繁體中文。
 - 待店家提供：LINE 官方專屬好友加入連結、茶園與產品高清實拍照片替換。

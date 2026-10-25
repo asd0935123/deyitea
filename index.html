@@ -949,6 +949,34 @@
       background: #8e4418;
     }
 
+    .btn-submit-form:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .form-status-msg {
+      display: none;
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 4px;
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
+    .form-status-msg.is-success {
+      display: block;
+      background: rgba(46, 125, 50, 0.25);
+      border: 1px solid rgba(129, 199, 132, 0.45);
+      color: #c8e6c9;
+    }
+
+    .form-status-msg.is-error {
+      display: block;
+      background: rgba(198, 40, 40, 0.25);
+      border: 1px solid rgba(239, 154, 154, 0.45);
+      color: #ffcdd2;
+    }
+
     /* Footer */
     footer {
       background: #0d171d;
@@ -1738,7 +1766,7 @@
             </ul>
             <p class="product-flavor">春季嫩採，茶湯金黃透亮，帶有細緻優雅的蘭花冷香，入口滑順甘甜，生津快速。</p>
             <div class="product-action">
-              <a href="#contact" class="btn-product-inquire">LINE 詢價春茶現貨</a>
+              <a href="#contact" class="btn-product-inquire" data-tea="杉林溪高山烏龍 · 當季春茶 (四兩 150g)">LINE 詢價春茶現貨</a>
             </div>
           </div>
         </article>
@@ -1757,7 +1785,7 @@
             </ul>
             <p class="product-flavor">冬季茶樹休眠前採摘，葉肉厚實，冷山韻味鮮明，茶氣凝鍊持久，耐泡度極高。</p>
             <div class="product-action">
-              <a href="#contact" class="btn-product-inquire">LINE 詢價冬茶現貨</a>
+              <a href="#contact" class="btn-product-inquire" data-tea="杉林溪高山烏龍 · 嚴選冬茶 (四兩 150g)">LINE 詢價冬茶現貨</a>
             </div>
           </div>
         </article>
@@ -1776,7 +1804,7 @@
             </ul>
             <p class="product-flavor">自家製茶師慢火精焙，轉化出熟果香與溫潤甘甜，不苦不澀，溫和不刺激腸胃。</p>
             <div class="product-action">
-              <a href="#contact" class="btn-product-inquire">LINE 詢價熟香烏龍</a>
+              <a href="#contact" class="btn-product-inquire" data-tea="杉林溪熟香熟火烏龍 (四兩 150g)">LINE 詢價熟香烏龍</a>
             </div>
           </div>
         </article>
@@ -1873,31 +1901,32 @@
         </div>
 
         <div class="inquiry-form-card">
-          <h3 style="font-family:var(--f-serif);color:#fff;font-size:18px;margin-bottom:16px;">快速預約試茶／茶品詢價</h3>
-          <form onsubmit="event.preventDefault(); alert('感謝您的詢價！我們將於營業時間盡速透過電話或 LINE 與您聯繫確認。');">
+          <h3 style="font-family:var(--f-serif);color:#fff;font-size:18px;margin-bottom:16px;">快速預約試茶／茶品訂購詢價</h3>
+          <form id="deyi-inquiry-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdz_uBY2gX00KyCRygSRAhi27kaD3kgXnGyckxNyDYfAlHjfw/formResponse" method="POST">
             <div class="form-group">
               <label for="uname">您的稱呼 *</label>
-              <input type="text" id="uname" required placeholder="例如：林先生 / 陳小姐">
+              <input type="text" id="uname" name="entry.1445876736" required placeholder="例如：林先生 / 陳小姐">
             </div>
             <div class="form-group">
               <label for="ucontact">聯絡電話或 LINE ID *</label>
-              <input type="text" id="ucontact" required placeholder="09xx-xxx-xxx 或 LINE ID">
+              <input type="text" id="ucontact" name="entry.797744910" required placeholder="09xx-xxx-xxx 或 LINE ID">
             </div>
             <div class="form-group">
               <label for="utea">感興趣的品項</label>
-              <select id="utea">
-                <option value="spring">杉林溪高山烏龍 · 當季春茶 (四兩 150g)</option>
-                <option value="winter">杉林溪高山烏龍 · 嚴選冬茶 (四兩 150g)</option>
-                <option value="roasted">杉林溪熟香熟火烏龍 (四兩 150g)</option>
-                <option value="gift">客製化商務/年節茶葉禮盒</option>
-                <option value="visit">預約前往實體門市試茶</option>
+              <select id="utea" name="entry.1473249251">
+                <option value="杉林溪高山烏龍 · 當季春茶 (四兩 150g)">杉林溪高山烏龍 · 當季春茶 (四兩 150g)</option>
+                <option value="杉林溪高山烏龍 · 嚴選冬茶 (四兩 150g)">杉林溪高山烏龍 · 嚴選冬茶 (四兩 150g)</option>
+                <option value="杉林溪熟香熟火烏龍 (四兩 150g)">杉林溪熟香熟火烏龍 (四兩 150g)</option>
+                <option value="客製化商務/年節茶葉禮盒">客製化商務/年節茶葉禮盒</option>
+                <option value="預約前往實體門市試茶">預約前往實體門市試茶</option>
               </select>
             </div>
             <div class="form-group">
               <label for="umsg">備註或提問需求</label>
-              <textarea id="umsg" rows="3" placeholder="例如：自飲兩罐、想了解寄送方式等"></textarea>
+              <textarea id="umsg" name="entry.1008197756" rows="3" placeholder="例如：自飲兩罐、想了解寄送方式等"></textarea>
             </div>
-            <button type="submit" class="btn-submit-form">送出詢價訊息</button>
+            <button type="submit" id="btn-submit-inquiry" class="btn-submit-form">送出訂購／詢價單</button>
+            <div id="form-status-msg" class="form-status-msg" role="status" aria-live="polite"></div>
           </form>
         </div>
       </div>
@@ -2010,6 +2039,62 @@
         document.addEventListener('keydown', (e) => {
           if (e.key === 'Escape' && mobileNavDrawer.classList.contains('is-open')) {
             toggleMobileMenu(false);
+          }
+        });
+      }
+
+      // 4. Product Card Quick Select -> Auto-select dropdown in Inquiry Form
+      const teaSelect = document.getElementById('utea');
+      const productButtons = document.querySelectorAll('.btn-product-inquire[data-tea]');
+      productButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const targetTea = btn.getAttribute('data-tea');
+          if (teaSelect && targetTea) {
+            teaSelect.value = targetTea;
+          }
+        });
+      });
+
+      // 5. Google Form Submission -> Auto-write to Google Spreadsheet
+      const inquiryForm = document.getElementById('deyi-inquiry-form');
+      const submitBtn = document.getElementById('btn-submit-inquiry');
+      const statusMsg = document.getElementById('form-status-msg');
+
+      if (inquiryForm && submitBtn && statusMsg) {
+        inquiryForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          const originalBtnText = submitBtn.textContent;
+          submitBtn.disabled = true;
+          submitBtn.textContent = '訂購單傳送中...';
+          statusMsg.className = 'form-status-msg';
+          statusMsg.textContent = '';
+
+          const formData = new FormData(inquiryForm);
+          const urlEncodedData = new URLSearchParams();
+          for (const [key, value] of formData.entries()) {
+            urlEncodedData.append(key, value);
+          }
+
+          try {
+            await fetch(inquiryForm.action, {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+              },
+              body: urlEncodedData.toString()
+            });
+
+            inquiryForm.reset();
+            statusMsg.textContent = '✓ 感謝您的訂購／詢價！資料已自動送達德億茶莊後台試算表，我們將於營業時間盡速透過電話或 LINE 與您聯繫確認。';
+            statusMsg.className = 'form-status-msg is-success';
+          } catch (err) {
+            statusMsg.textContent = '傳送時發生網路異常，請稍後再試，或直接撥打門市電話 049-2752193 聯繫我們。';
+            statusMsg.className = 'form-status-msg is-error';
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
           }
         });
       }
