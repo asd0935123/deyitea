@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 2,
+  "stage": "hero",
+  "id": "hero",
+  "title": "First viewport",
+  "comp": {
+    "path": ".impeccable/mocks/comp-2.png",
+    "width": 1376,
+    "height": 768
+  },
+  "components": [
+    {
+      "id": "first-viewport",
+      "name": "First viewport",
+      "medium": "HTML / CSS",
+      "note": "Assembled first viewport for 德億茶莊 DEYI TEA HOUSE",
+      "box": { "x": 0, "y": 0, "w": 1, "h": 1 },
+      "preview": { "kind": "page", "path": "index.html" },
+      "dependencies": [
+        "assets/fonts/noto-serif-tc.ttf",
+        "assets/plates/logo.png",
+        "assets/plates/pack.png",
+        "assets/plates/ridge.png",
+        "assets/plates/stamp.png"
+      ]
+    }
+  ]
+}

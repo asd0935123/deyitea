@@ -1,0 +1,38 @@
+{
+  "title": "選擇首頁構圖",
+  "question": "三種「包裝規格標」構圖，選一個作為實作藍本（可附註想合併或修改的地方）。",
+  "options": [
+    {
+      "id": "comp-1",
+      "label": "一包，就是一座山",
+      "thesis": "一個巨大茶包佔滿首屏，規格標就是商品資訊，蓋章就是 LINE 按鈕。",
+      "palette": ["#2B4654", "#C8834B", "#B7BDBF", "#1A1A18"],
+      "materials": ["鋁箔真空包", "規格貼標"],
+      "viewport": "左側標語、右側大茶包與規格標，下方一排小茶包貨架。",
+      "risk": "產地與製程故事要放在首屏之下。",
+      "comp": ".impeccable/mocks/comp-1.png"
+    },
+    {
+      "id": "comp-2",
+      "label": "喝之前，先讀懂這包茶",
+      "thesis": "整頁就是一包長茶包，往下捲就是往下讀規格標：品名、產地、製程。",
+      "palette": ["#2B4654", "#C8834B", "#B7BDBF", "#1A1A18"],
+      "materials": ["鋁箔真空包", "長條規格表"],
+      "viewport": "中間一包長茶包貫穿頁面，左側標語與 LINE 按鈕，右側圓形印章。",
+      "risk": "長條茶包在手機上需重新排成單欄。",
+      "comp": ".impeccable/mocks/comp-2.png"
+    },
+    {
+      "id": "comp-3",
+      "label": "銅色大貼紙",
+      "thesis": "銅色滿版，一張超大規格貼紙帶出品名、產地、製程，角落撕開露出鋁箔。",
+      "palette": ["#C8834B", "#2B4654", "#B7BDBF", "#F2EDE4"],
+      "materials": ["貼紙", "鋁箔", "橡皮章"],
+      "viewport": "左側大貼紙規格表，右側斜放茶包與圓章按鈕，下方為產地故事。",
+      "risk": "銅色大面積較強烈，需控制對比。",
+      "comp": ".impeccable/mocks/comp-3.png"
+    }
+  ],
+  "buildPath": { "value": "comp", "toggle": false },
+  "steer": true
+}

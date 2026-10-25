@@ -1,0 +1,577 @@
+{
+  "tool": "comp-diff",
+  "version": 1,
+  "createdAt": "2026-10-22T14:08:24.739Z",
+  "label": "desktop",
+  "comp": ".impeccable/mocks/comp-2.png",
+  "build": ".impeccable/review/desktop.png",
+  "spec": ".impeccable/build/spec.json",
+  "compSize": "1376x768",
+  "buildSize": "1440x3200",
+  "align": "top",
+  "overall": 0.9532,
+  "verdict": "match",
+  "scores": {
+    "overall": 0.9532,
+    "structure": 0.9778,
+    "color": 0.9393,
+    "colorIntersection": 0.9269,
+    "paletteMatch": 0.9461,
+    "detail": 0.9345,
+    "detailRaw": 0.9345,
+    "detailAdded": 0,
+    "bands": 0.95
+  },
+  "palette": {
+    "comp": [
+      {
+        "hex": "#284756",
+        "coverage": 0.7037
+      },
+      {
+        "hex": "#d9d9d9",
+        "coverage": 0.2104
+      },
+      {
+        "hex": "#9d9e9e",
+        "coverage": 0.0619
+      },
+      {
+        "hex": "#bb794b",
+        "coverage": 0.0111
+      },
+      {
+        "hex": "#70787a",
+        "coverage": 0.007
+      },
+      {
+        "hex": "#444443",
+        "coverage": 0.0058
+      }
+    ],
+    "build": [
+      {
+        "hex": "#284655",
+        "coverage": 0.7076
+      },
+      {
+        "hex": "#e0e0e0",
+        "coverage": 0.1727
+      },
+      {
+        "hex": "#a7a8a8",
+        "coverage": 0.0971
+      },
+      {
+        "hex": "#bd794a",
+        "coverage": 0.013
+      },
+      {
+        "hex": "#0d0d0d",
+        "coverage": 0.0054
+      },
+      {
+        "hex": "#434949",
+        "coverage": 0.0043
+      }
+    ]
+  },
+  "regions": [
+    {
+      "id": "logo",
+      "x": 0.032,
+      "y": 0.0391,
+      "w": 0.1221,
+      "h": 0.1823,
+      "kind": "plate",
+      "score": {
+        "overall": 0.9471,
+        "structure": 0.9686,
+        "color": 0.9019,
+        "colorIntersection": 0.9039,
+        "paletteMatch": 0.9009,
+        "detail": 0.9491,
+        "detailRaw": 0.9491,
+        "detailAdded": 0,
+        "bands": 1
+      },
+      "verdict": "match",
+      "inkBox": {
+        "comp": {
+          "x": 3,
+          "y": 4,
+          "w": 161,
+          "h": 133
+        },
+        "build": {
+          "x": 4,
+          "y": 5,
+          "w": 160,
+          "h": 132
+        }
+      }
+    },
+    {
+      "id": "nav-links",
+      "x": 0.6904,
+      "y": 0.0469,
+      "w": 0.1904,
+      "h": 0.0339,
+      "kind": "text",
+      "score": {
+        "overall": 0.5835,
+        "structure": 0.5485,
+        "color": 0.7262,
+        "colorIntersection": 0.5385,
+        "paletteMatch": 0.8273,
+        "detail": 0.5368,
+        "detailRaw": 0.5629,
+        "detailAdded": 0.0521,
+        "bands": 0.4714
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 3,
+          "y": 3,
+          "w": 254,
+          "h": 18
+        },
+        "build": {
+          "x": 1,
+          "y": 7,
+          "w": 261,
+          "h": 15
+        }
+      }
+    },
+    {
+      "id": "nav-cta",
+      "x": 0.8953,
+      "y": 0.0365,
+      "w": 0.0799,
+      "h": 0.0521,
+      "kind": "control",
+      "score": {
+        "overall": 0.7867,
+        "structure": 0.85,
+        "color": 0.7423,
+        "colorIntersection": 0.5236,
+        "paletteMatch": 0.86,
+        "detail": 0.7219,
+        "detailRaw": 0.7219,
+        "detailAdded": 0,
+        "bands": 0.8
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 110,
+          "h": 40
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 110,
+          "h": 40
+        }
+      }
+    },
+    {
+      "id": "pack",
+      "x": 0.3445,
+      "y": 0.0911,
+      "w": 0.311,
+      "h": 0.9089,
+      "kind": "plate",
+      "score": {
+        "overall": 0.9874,
+        "structure": 0.9917,
+        "color": 0.9896,
+        "colorIntersection": 0.9778,
+        "paletteMatch": 0.9959,
+        "detail": 0.9832,
+        "detailRaw": 0.9832,
+        "detailAdded": 0,
+        "bands": 1
+      },
+      "verdict": "match",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 428,
+          "h": 698
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 428,
+          "h": 698
+        }
+      }
+    },
+    {
+      "id": "label-name",
+      "x": 0.3924,
+      "y": 0.3294,
+      "w": 0.2493,
+      "h": 0.1107,
+      "kind": "text",
+      "score": {
+        "overall": 0.9708,
+        "structure": 0.9814,
+        "color": 0.9558,
+        "colorIntersection": 0.9304,
+        "paletteMatch": 0.9695,
+        "detail": 0.9615,
+        "detailRaw": 0.9615,
+        "detailAdded": 0,
+        "bands": 0.9692
+      },
+      "verdict": "match",
+      "inkBox": {
+        "comp": {
+          "x": 8,
+          "y": 0,
+          "w": 335,
+          "h": 85
+        },
+        "build": {
+          "x": 8,
+          "y": 0,
+          "w": 335,
+          "h": 85
+        }
+      }
+    },
+    {
+      "id": "label-origin",
+      "x": 0.3924,
+      "y": 0.4401,
+      "w": 0.1526,
+      "h": 0.1302,
+      "kind": "text",
+      "score": {
+        "overall": 0.9303,
+        "structure": 0.9339,
+        "color": 0.9625,
+        "colorIntersection": 0.9389,
+        "paletteMatch": 0.9752,
+        "detail": 0.8962,
+        "detailRaw": 0.9483,
+        "detailAdded": 0.1042,
+        "bands": 0.8833
+      },
+      "verdict": "match",
+      "inkBox": {
+        "comp": {
+          "x": 8,
+          "y": 0,
+          "w": 202,
+          "h": 100
+        },
+        "build": {
+          "x": 8,
+          "y": 0,
+          "w": 202,
+          "h": 100
+        }
+      }
+    },
+    {
+      "id": "ridge",
+      "x": 0.5378,
+      "y": 0.4362,
+      "w": 0.1126,
+      "h": 0.1302,
+      "kind": "plate",
+      "score": {
+        "overall": 0.9329,
+        "structure": 0.9576,
+        "color": 0.9629,
+        "colorIntersection": 0.9477,
+        "paletteMatch": 0.9711,
+        "detail": 0.9018,
+        "detailRaw": 0.9122,
+        "detailAdded": 0.0208,
+        "bands": 1
+      },
+      "verdict": "match",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 155,
+          "h": 100
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 155,
+          "h": 100
+        }
+      }
+    },
+    {
+      "id": "label-process",
+      "x": 0.3924,
+      "y": 0.5794,
+      "w": 0.4469,
+      "h": 0.0846,
+      "kind": "text",
+      "score": {
+        "overall": 0.8105,
+        "structure": 0.7731,
+        "color": 0.8903,
+        "colorIntersection": 0.776,
+        "paletteMatch": 0.9519,
+        "detail": 0.7429,
+        "detailRaw": 0.7741,
+        "detailAdded": 0.0625,
+        "bands": 0.9
+      },
+      "verdict": "match",
+      "inkBox": {
+        "comp": {
+          "x": 8,
+          "y": 0,
+          "w": 607,
+          "h": 57
+        },
+        "build": {
+          "x": 8,
+          "y": 0,
+          "w": 607,
+          "h": 65
+        }
+      }
+    },
+    {
+      "id": "headline",
+      "x": 0.0494,
+      "y": 0.5182,
+      "w": 0.2398,
+      "h": 0.1406,
+      "kind": "text",
+      "score": {
+        "overall": 0.6827,
+        "structure": 0.5531,
+        "color": 0.8197,
+        "colorIntersection": 0.654,
+        "paletteMatch": 0.9089,
+        "detail": 0.8324,
+        "detailRaw": 0.8428,
+        "detailAdded": 0.0208,
+        "bands": 0.7636
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 1,
+          "y": 4,
+          "w": 318,
+          "h": 104
+        },
+        "build": {
+          "x": 1,
+          "y": 8,
+          "w": 310,
+          "h": 97
+        }
+      }
+    },
+    {
+      "id": "lede",
+      "x": 0.0509,
+      "y": 0.6875,
+      "w": 0.218,
+      "h": 0.0807,
+      "kind": "text",
+      "score": {
+        "overall": 0.6098,
+        "structure": 0.5474,
+        "color": 0.5869,
+        "colorIntersection": 0.3249,
+        "paletteMatch": 0.728,
+        "detail": 0.6758,
+        "detailRaw": 0.6967,
+        "detailAdded": 0.0417,
+        "bands": 0.88
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 3,
+          "w": 287,
+          "h": 54
+        },
+        "build": {
+          "x": 1,
+          "y": 6,
+          "w": 258,
+          "h": 49
+        }
+      }
+    },
+    {
+      "id": "cta",
+      "x": 0.0509,
+      "y": 0.8164,
+      "w": 0.1424,
+      "h": 0.0599,
+      "kind": "control",
+      "score": {
+        "overall": 0.7371,
+        "structure": 0.7324,
+        "color": 0.8225,
+        "colorIntersection": 0.7214,
+        "paletteMatch": 0.8769,
+        "detail": 0.5982,
+        "detailRaw": 0.6503,
+        "detailAdded": 0.1042,
+        "bands": 0.9143
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 196,
+          "h": 46
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 196,
+          "h": 46
+        }
+      }
+    },
+    {
+      "id": "phone",
+      "x": 0.0509,
+      "y": 0.8906,
+      "w": 0.1424,
+      "h": 0.0313,
+      "kind": "text",
+      "score": {
+        "overall": 0.6097,
+        "structure": 0.5801,
+        "color": 0.5669,
+        "colorIntersection": 0.3206,
+        "paletteMatch": 0.6996,
+        "detail": 0.7455,
+        "detailRaw": 0.7455,
+        "detailAdded": 0,
+        "bands": 0.6607
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 1,
+          "y": 3,
+          "w": 193,
+          "h": 19
+        },
+        "build": {
+          "x": 1,
+          "y": 4,
+          "w": 193,
+          "h": 17
+        }
+      }
+    },
+    {
+      "id": "vertical-caption",
+      "x": 0.9317,
+      "y": 0.4622,
+      "w": 0.0363,
+      "h": 0.3542,
+      "kind": "text",
+      "score": {
+        "overall": 0.5896,
+        "structure": 0.5297,
+        "color": 0.7178,
+        "colorIntersection": 0.5385,
+        "paletteMatch": 0.8143,
+        "detail": 0.6451,
+        "detailRaw": 0.6503,
+        "detailAdded": 0.0104,
+        "bands": 0.4857
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 2,
+          "y": 2,
+          "w": 39,
+          "h": 268
+        },
+        "build": {
+          "x": 3,
+          "y": 1,
+          "w": 38,
+          "h": 268
+        }
+      }
+    },
+    {
+      "id": "stamp",
+      "x": 0.9186,
+      "y": 0.8359,
+      "w": 0.0596,
+      "h": 0.1068,
+      "kind": "plate",
+      "score": {
+        "overall": 0.5948,
+        "structure": 0.4797,
+        "color": 0.6329,
+        "colorIntersection": 0.4027,
+        "paletteMatch": 0.7568,
+        "detail": 0.5967,
+        "detailRaw": 0.6227,
+        "detailAdded": 0.0521,
+        "bands": 1
+      },
+      "verdict": "contradicted",
+      "inkBox": {
+        "comp": {
+          "x": 3,
+          "y": 1,
+          "w": 74,
+          "h": 75
+        },
+        "build": {
+          "x": 7,
+          "y": 7,
+          "w": 68,
+          "h": 68
+        }
+      }
+    }
+  ],
+  "files": {
+    "sideBySide": "F:/project/deyi/.impeccable/review/diff/desktop/side-by-side.png",
+    "heatmap": "F:/project/deyi/.impeccable/review/diff/desktop/heatmap.png",
+    "regionFiles": [
+      "F:/project/deyi/.impeccable/review/diff/desktop/regions/logo.png",
+      "F:/project/deyi/.impeccable/review/diff/desktop/regions/nav-links.png",
+      "F:/project/deyi/.impeccable/review/diff/desktop/regions/nav-cta.png",
+      "F:/project/deyi/.impeccable/review/diff/desktop/regions/pack.png",
+      "F:/project/deyi/.impeccable/review/diff/desktop/regions/label-name.png",
+      "F:/project/deyi/.impeccable/review/diff/desktop/regions/label-origin.png",
+      "F:/project/deyi/.impeccable/review/diff/desktop/regions/ridge.png",
+      "F:/project/deyi/.impeccable/review/diff/desktop/regions/label-process.png",
+      "F:/project/deyi/.impeccable/review/diff/desktop/regions/headline.png",
+      "F:/project/deyi/.impeccable/review/diff/desktop/regions/lede.png",
+      "F:/project/deyi/.impeccable/review/diff/desktop/regions/cta.png",
+      "F:/project/deyi/.impeccable/review/diff/desktop/regions/phone.png",
+      "F:/project/deyi/.impeccable/review/diff/desktop/regions/vertical-caption.png",
+      "F:/project/deyi/.impeccable/review/diff/desktop/regions/stamp.png"
+    ]
+  }
+}
