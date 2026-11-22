@@ -3,17 +3,28 @@ name: 德億茶莊 DEYI TEA HOUSE
 description: 台灣南投杉林溪高山烏龍茶品牌官網與包裝規格標視覺系統
 colors:
   primary: "#c8834b"
-  primary-dark: "#9c5020"
-  teal-dark: "#1b333e"
-  teal: "#284756"
+  primary-bright: "#d99559"
+  primary-bright-hover: "#e5a870"
+  primary-on-dark: "#e5a36a"
+  primary-dark: "#8f4318"
+  primary-dark-hover: "#743410"
+  teal-dark: "#142630"
   teal-deep: "#1d3541"
+  teal: "#284756"
+  teal-night: "#0e1c24"
   neutral-bg: "#f7f6f2"
+  neutral-warm: "#efece3"
+  neutral-spec: "#f4f1ea"
+  neutral-spec-th: "#e4dfd4"
   neutral-card: "#ffffff"
   text-cream: "#fbf6ed"
-  text-ink: "#111111"
-  text-muted: "#a0b4ac"
-  border-subtle: "rgba(255, 255, 255, 0.12)"
-  border-card: "rgba(20, 38, 48, 0.15)"
+  text-cream-soft: "#edeacc"
+  text-mist: "#d2e1e6"
+  text-mist-soft: "#b6ccd4"
+  text-ink: "#142630"
+  text-muted: "#455963"
+  border-subtle: "rgba(237, 234, 204, 0.18)"
+  border-card: "rgba(20, 38, 48, 0.22)"
 typography:
   display:
     fontFamily: "'Noto Serif TC', Georgia, serif"
@@ -57,18 +68,21 @@ spacing:
   xl: "48px"
   section: "90px"
 components:
-  button-primary:
-    backgroundColor: "{colors.primary}"
-    textColor: "#f6e3c2"
+  button-primary-on-dark:
+    backgroundColor: "{colors.primary-bright}"
+    textColor: "{colors.teal-dark}"
     rounded: "{rounded.sm}"
-    padding: "12px 24px"
-  button-primary-hover:
+    padding: "13px 26px"
+  button-primary-on-light:
     backgroundColor: "{colors.primary-dark}"
+    textColor: "{colors.text-cream}"
+    rounded: "{rounded.sm}"
+    padding: "13px 16px"
   spec-badge:
-    backgroundColor: "#ededed"
+    backgroundColor: "{colors.neutral-spec}"
     textColor: "{colors.text-ink}"
     rounded: "{rounded.none}"
-    border: "1px solid #111111"
+    border: "1.5px solid #142630"
 ---
 
 # 德億茶莊 DEYI TEA HOUSE · 視覺設計系統 (DESIGN.md)
@@ -79,46 +93,43 @@ components:
 
 ## Colors
 - **主色（Primary / Copper & Cinnabar）**：
-  - 古銅赤金 `#c8834b`：源自銅雕篆印與熟焙茶湯，用於核心 Call-To-Action、重點數值標籤與篆章印泥。
-  - 深褐古銅 `#9c5020`：按鈕 Hover 與聚焦狀態，確保在白底或深底均具備 WCAG AA 級對比。
-- **背景底色（Terroir Teal & Mountain Mist）**：
-  - 杉林溪深潭藍 `#284756`：代表杉林溪清晨山嵐與針葉林下的高冷空氣，全站核心基底。
-  - 幽谷玄青 `#1d3541`、`#1b333e`：用於區塊深淺層次遞進，形成沈穩的高山空間感。
-- **標籤與卡片色（Packaging Off-White & Cream）**：
-  - 規格標籤白 `#ededed` / `#ffffff`：模擬四兩真空包實體貼紙的消光塗佈紙質。
-  - 雲霧米白 `#fbf6ed` / `#f6e3c2`：用於深底字體排印，溫潤而不刺眼。
-  - 冷杉青灰 `#a0b4ac` / `#a9b8b0`：次要說明文字與右側直排副標。
+  - 亮銅金 `#d99559`（Hover `#e5a870`）：用於深青灰底面之主按鈕，搭配深墨字 `#142630` 確保高對比度。
+  - 深褐古銅 `#8f4318`（Hover `#743410`）：用於宣紙亮底按鈕與送出訂購鈕，搭配雲霧米白字 `#fbf6ed` 達到 WCAG AA 級對比。
+  - 暖銅強調字 `#e5a36a`：深青底上的標題、海拔數字與連結高亮色；品牌主印泥為 `#c8834b`。
+- **明暗交替底色（Terroir Teal & Warm Rice Paper）**：
+  - 杉林溪深潭藍 `#284756`、幽谷玄青 `#1d3541`、深墨青 `#142630` 與極夜青 `#0e1c24`：用於首屏、風土展板、沖泡工作台與聯絡門市區。
+  - 暖宣紙白 `#f7f6f2` 與規格貼紙白 `#f4f1ea` / `#ffffff`：用於當季主力茶品箋與五道製茶工序帳冊，與深青區段交替形成清晰閱讀節奏。
+  - 雲霧米白 `#fbf6ed` / `#edeacc` 與青調霧灰 `#d2e1e6` / `#b6ccd4`：深底正文與次要說明；亮底次要說明為 `#455963`（深底禁用中性灰字）。
 
 ## Typography
-- **襯線題字（Serif TC）**：使用本地嵌入之 `Noto Serif TC`，用於品牌標題、規格標題（品名、產地、製程）與直排詩意註釋，展現百年傳統茶工藝的典雅墨韻。
-- **無襯線正文與數值（Sans-serif）**：使用乾淨的高可讀性系統無襯線體，用於茶品沖泡參數、海拔公尺數、門市營業資訊與諮詢表單。
+- **襯線題字（Serif TC）**：使用本地嵌入之 `Noto Serif TC`，用於品牌標題、規格標題（品名、產地、焙度、製程）、海拔刻度與直排對句。
+- **無襯線正文與數值（Sans-serif）**：使用高可讀性系統無襯線體，並於海拔、溫度、時間與電話使用 `tabular-nums` 等寬數字對齊。
 - **古典直排文字（Vertical-RL）**：首屏右側保留 `writing-mode: vertical-rl` 雙欄對仗註釋，還原台灣傳統茶行茶則排版韻味。
 
 ## Layout
-- **桌面首屏（Desktop Viewport）**：依據精確百分比切片，由左至右分別為「品牌銅印標識＋導覽」、「核心文案與預約 CTA」、「中央高山真空包實物＋規格貼紙橫排穿插疊加」、「右側直排短詠詩＋防偽朱印」。
-- **下延故事區塊（Subsequent Story Sections）**：
-  - 杉林溪風土（Terroir & Altitude）
-  - 五道製茶工序（5-Step Craft Process）
-  - 當季主力茶品（Seasonal Products: 春茶、冬茶、熟香烏龍）
-  - 沖泡指南（Water Temp, Ratio, Steep Time, Rerinsing）
-  - 門市資訊與即時諮詢（Live Store Status, Address, Phone, LINE, Booking Form）
-- **行動端適應（Mobile Adaptation @ 390px - 768px）**：長條茶包與多欄規格卡片自動退化為垂直自然單欄堆疊，保持字級舒展與大觸控區間。
+- **桌面首屏（Desktop Viewport）**：穩固三欄網格「左側主標與茶款規格切換器（春茶／冬茶／熟香）」、「中央啞光銀箔四兩真空包與零錯位統一規格貼紙（含茶湯色票與等高線山稜）」、「右側直書對句＋防偽朱印」。
+- **下延明暗交替區塊**：
+  - 當季主力茶品（宣紙亮底 `#f7f6f2`，配置東方細線銅版植物／焙籠插畫、茶湯色票與五格風味刻度條）
+  - 杉林溪風土（幽谷深青 `#1d3541`，配置杉林溪全景山稜版畫、垂直海拔標高尺與風土參數帳冊）
+  - 五道製茶工序（宣紙亮底 `#f7f6f2`，互動式五道工序切換台與總覽條列）
+  - 沖泡指南與計時（深青 `#284756`，茶壺／馬克杯切換與 50 秒起跳實戰出湯計時器）
+  - 門市資訊與即時諮詢（深墨青 `#142630`，營業狀態列、一鍵複製 LINE ID、Google 地圖與即時寫入試算表的訂購表單）
+- **行動端適應（Mobile Adaptation @ 390px - 992px）**：手機版首屏優先呈現主標、茶款切換器與主 CTA，再向下展開四兩真空包與規格貼紙，消除擁擠與溢出。
 
 ## Elevation & Depth
-- **摒棄虛浮陰影**：不使用 AI 模板常見的大面積模糊陰影（`0 10px 30px rgba(...)`），以實體邊界（1px 幾何細線）與色塊層次建立空間感。
-- **實體紙張與金屬消光疊加**：真空茶包以啞光銀箔高解析度圖層浮於深山背景上，白紙規格標籤直接橫切於茶包表面，透過 Z 軸層疊產生真實的物體空間感。
+- **摒棄虛浮陰影**：全站以 `1px`–`1.5px` 建築細線、明暗色塊轉場與銅版畫圖層建立層次，不套用浮誇霓虹或模板漸層。
+- **插畫圖層整合（Botanical & Topographic Plates）**：
+  - 三款主力茶插畫（`tea-spring.jpg`、`tea-winter.jpg`、`tea-roasted.jpg`）採暖宣紙底銅版畫風，透過 `mix-blend-mode: multiply` 無縫融入 `#f7f6f2` 紙面。
+  - 杉林溪風土山稜版畫（`terroir-shanlinxi.jpg`）採純平 `#1d3541` 底細線雕刻風與區塊完全融合。
 
 ## Shapes
-- **建築幾何邊界**：卡片與規格標籤採用極簡直角（`border-radius: 0` 或 `border-radius: 4px`），呈現規格標籤的嚴謹與機械美感。
-- **圓形印鑑**：德億茶莊防偽印鑑採用純圓（`border-radius: 50%`），與方正矩形標籤形成方圓相濟的東方哲學對比。
+- **建築幾何邊界**：卡片與規格標籤採用直角或 `4px` 極微圓角，維持規格表與茶箋帳冊的嚴謹工藝感。
+- **圓形印鑑與色票**：防偽篆印與茶湯色票採正圓形，作為方正表格中的視覺焦點。
 
 ## Components
-- **首屏規格標籤列（`.spec-table-row`）**：
-  - 包含左側灰底直標表頭（`.spec-th`）與右側白底數據欄（`.spec-td`），黑線外框（`1px solid #111111`）。
-- **即時營業燈號（`.store-status`）**：
-  - 透過 JavaScript 即時偵測台北時間（UTC+8，週一至週六 09:00-18:00），以呼吸燈（微光環縮放）展示門市營業動態。
-- **預約與詢價按鈕（`.btn-product-inquire` / `.btn-hero-cta`）**：
-  - 統一採用暖銅金底配米白字，點擊後平滑滾動至諮詢表單或直連 LINE 客服。
+- **互動規格貼紙（`.pack-spec-sheet`）**：以單一統一網格承載品名、茶湯色票、產地山稜線、焙度與製程五步，消除元件錯位風險，點擊茶款按鈕即同步切換內容並連動訂購單。
+- **安靜的即時營業狀態（`.store-status`）**：透過 JavaScript 即時偵測台北時間（UTC+8，週一至週六 09:00-18:00），以靜態清晰指示點搭配文字標示營業狀態，不使用裝飾性閃爍動畫。
+- **預約與詢價按鈕（`.btn-product-inquire` / `.btn-hero-cta`）**：深底用亮銅配深墨字、亮底用深古銅配米白字，點擊自動帶入對應茶款並平滑捲動至諮詢表單。
 
 ## Do's and Don'ts
 - **DO**：

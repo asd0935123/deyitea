@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>德億茶莊 DEYI TEA HOUSE | 杉林溪高山烏龍茶</title>
   <meta name="description" content="德億茶莊主力杉林溪高山烏龍茶。南投海拔 1,600 公尺雲霧茶園，透明清楚的產地與五道製程規格標，喝之前先讀懂這包茶。">
-  <!-- Local Font Stack -->
   <style>
     @font-face {
       font-family: 'Noto Serif TC';
@@ -13,40 +12,43 @@
       font-weight: 400 900;
       font-display: swap;
     }
-  </style>
-  <style>
+
     :root {
+      /* Surface & Teal Scale */
       --c-teal: #284756;
-      --c-teal-deep: #1c323d;
+      --c-teal-deep: #1d3541;
       --c-teal-dark: #142630;
+      --c-teal-night: #0e1c24;
+
+      /* Warm Rice-Paper Light Surface */
+      --c-paper: #f7f6f2;
+      --c-paper-warm: #efece3;
+      --c-paper-spec: #f4f1ea;
+      --c-paper-th: #e4dfd4;
+      --c-paper-ink: #142630;
+      --c-paper-muted: #455963;
+
+      /* Ink & Mist on Dark */
+      --c-cream: #fbf6ed;
+      --c-cream-soft: #edeacc;
+      --c-mist: #d2e1e6;
+      --c-mist-soft: #b6ccd4;
+
+      /* Copper Accent (Strict contrast separation by surface) */
       --c-copper: #c8834b;
-      --c-copper-dark: #b3703a;
-      --c-copper-light: #e59f67;
-      --c-cream: #edeacc;
-      --c-cream-soft: #f4f2de;
-      --c-silver: #d9d9d9;
-      --c-silver-dark: #9d9e9e;
-      --c-white: #ffffff;
-      --c-ink: #111111;
+      --c-copper-bright: #d99559;
+      --c-copper-bright-hover: #e5a870;
+      --c-copper-on-dark: #e5a36a;
+      --c-copper-deep: #8f4318;
+      --c-copper-deep-hover: #743410;
 
-      --f-serif: "Noto Serif TC", "Songti TC", "Source Han Serif TC", "PMingLiU", serif;
-      --f-sans: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      /* Borders & Rules */
+      --c-rule-dark: rgba(237, 234, 204, 0.18);
+      --c-rule-light: rgba(20, 38, 48, 0.22);
 
-      /* Measured ratios from spec */
-      --r-logo-x: 3.200%; --r-logo-y: 3.910%; --r-logo-w: 12.210%; --r-logo-h: 18.230%;
-      --r-nav-links-x: 69.040%; --r-nav-links-y: 4.690%; --r-nav-links-w: 19.040%; --r-nav-links-h: 3.390%;
-      --r-nav-cta-x: 89.530%; --r-nav-cta-y: 3.650%; --r-nav-cta-w: 7.990%; --r-nav-cta-h: 5.210%;
-      --r-pack-x: 34.450%; --r-pack-y: 9.110%; --r-pack-w: 31.100%; --r-pack-h: 90.890%;
-      --r-label-name-x: 39.240%; --r-label-name-y: 32.940%; --r-label-name-w: 24.930%; --r-label-name-h: 11.070%;
-      --r-label-origin-x: 39.240%; --r-label-origin-y: 44.010%; --r-label-origin-w: 15.260%; --r-label-origin-h: 13.020%;
-      --r-ridge-x: 53.780%; --r-ridge-y: 43.620%; --r-ridge-w: 11.260%; --r-ridge-h: 13.020%;
-      --r-label-process-x: 39.240%; --r-label-process-y: 57.940%; --r-label-process-w: 44.690%; --r-label-process-h: 8.460%;
-      --r-headline-x: 4.940%; --r-headline-y: 51.820%; --r-headline-w: 23.980%; --r-headline-h: 14.060%;
-      --r-lede-x: 5.090%; --r-lede-y: 68.750%; --r-lede-w: 21.800%; --r-lede-h: 8.070%;
-      --r-cta-x: 5.090%; --r-cta-y: 81.640%; --r-cta-w: 14.240%; --r-cta-h: 5.990%;
-      --r-phone-x: 5.090%; --r-phone-y: 89.060%; --r-phone-w: 14.240%; --r-phone-h: 3.130%;
-      --r-vertical-caption-x: 93.170%; --r-vertical-caption-y: 46.220%; --r-vertical-caption-w: 3.630%; --r-vertical-caption-h: 35.420%;
-      --r-stamp-x: 91.860%; --r-stamp-y: 83.590%; --r-stamp-w: 5.960%; --r-stamp-h: 10.680%;
+      /* Fonts matching DESIGN.md */
+      --f-serif: 'Noto Serif TC', Georgia, serif;
+      --f-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     *, *::before, *::after {
@@ -58,851 +60,1581 @@
     html {
       scroll-behavior: smooth;
       background-color: var(--c-teal);
-      color: #f1f3f4;
+      color: var(--c-cream);
       font-family: var(--f-sans);
       -webkit-font-smoothing: antialiased;
     }
 
     body {
       background-color: var(--c-teal);
+      color: var(--c-cream);
       overflow-x: hidden;
       min-width: 320px;
+      line-height: 1.75;
     }
 
-    /* =========================================
-       HERO STAGE (1376x768 reference proportion)
-       ========================================= */
-    .hero-viewport {
-      position: relative;
-      width: 100%;
-      background: var(--c-teal);
-      background-image: 
-        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255,255,255,0.03), transparent 70%),
-        radial-gradient(circle at 10% 90%, rgba(0,0,0,0.18), transparent 40%);
-      overflow: hidden;
+    ::selection {
+      background: var(--c-copper-bright);
+      color: var(--c-teal-dark);
     }
 
-    .hero-stage {
-      position: relative;
-      width: 100%;
-      margin: 0 auto;
-      aspect-ratio: 1376 / 768;
+    a, button, input, select, textarea {
+      font-family: inherit;
     }
 
-    /* Exact Region Placements */
-    .r-logo {
-      position: absolute;
-      left: var(--r-logo-x);
-      top: var(--r-logo-y);
-      width: var(--r-logo-w);
-      height: var(--r-logo-h);
-      z-index: 10;
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--c-copper-bright);
+      outline-offset: 3px;
     }
 
-    .r-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--c-teal-dark);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #3d6070;
+      border-radius: 5px;
+      border: 2px solid var(--c-teal-dark);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--c-copper);
     }
 
-    .r-nav-links {
-      position: absolute;
-      left: var(--r-nav-links-x);
-      top: var(--r-nav-links-y);
-      width: var(--r-nav-links-w);
-      height: var(--r-nav-links-h);
-      z-index: 20;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      white-space: nowrap;
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
     }
 
-    .r-nav-links a {
-      color: #d5e0d4;
-      text-decoration: none;
-      font-size: clamp(11.5px, 1.09vw, 15px);
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      transition: color 0.2s ease;
-    }
-
-    .r-nav-links span {
-      color: #8c9fa8;
-      font-size: clamp(10.5px, 1.01vw, 14px);
-    }
-
-    .r-nav-links a:hover {
-      color: var(--c-copper);
-    }
-
-    .r-nav-cta {
-      position: absolute;
-      left: var(--r-nav-cta-x);
-      top: var(--r-nav-cta-y);
-      width: var(--r-nav-cta-w);
-      height: var(--r-nav-cta-h);
-      z-index: 20;
-    }
-
-    .r-nav-cta .btn-nav-line {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      background: #c2794a;
-      border: 1px solid #986c4b;
-      color: #f6e3c2;
-      font-family: var(--f-sans);
-      font-size: clamp(12px, 1.22vw, 16.8px);
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 4px;
-      letter-spacing: 0.06em;
-      white-space: nowrap;
-      transition: background 0.2s ease, transform 0.15s ease;
-    }
-
-    .r-nav-cta .btn-nav-line:hover {
-      background: #a86236;
-      transform: translateY(-1px);
-    }
-
-    /* Central Tea Pack */
-    .r-pack {
-      position: absolute;
-      left: var(--r-pack-x);
-      top: var(--r-pack-y);
-      width: var(--r-pack-w);
-      height: var(--r-pack-h);
-      z-index: 5;
-      pointer-events: none;
-    }
-
-    .r-pack img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-    }
-
-    /* White Spec Labels overlapping pack */
-    .spec-table-row {
-      background: #ededed;
-      border: 1px solid #111111;
-      color: #090909;
-      display: flex;
-      align-items: stretch;
-      z-index: 8;
-    }
-
-    .spec-th {
-      background: #dedede;
-      border-right: 1px solid #111111;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-family: var(--f-serif);
-      color: #090909;
-      padding: 0 clamp(6px, 0.85vw, 12px);
-      white-space: nowrap;
-    }
-
-    .spec-td {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 4px clamp(8px, 1.15vw, 16px);
-      flex: 1;
-      min-width: 0;
-    }
-
-    .r-label-name {
-      position: absolute;
-      left: var(--r-label-name-x);
-      top: var(--r-label-name-y);
-      width: var(--r-label-name-w);
-      height: var(--r-label-name-h);
-    }
-
-    .r-label-name .spec-th {
-      width: clamp(44px, 4.3vw, 60px);
-      font-size: clamp(15px, 1.6vw, 22px);
-      letter-spacing: 0.15em;
-    }
-
-    .r-label-name .tea-title {
-      font-family: var(--f-serif);
-      font-size: clamp(22px, 2.7vw, 38px);
-      font-weight: 900;
-      letter-spacing: 0.05em;
-      color: #090909;
-      line-height: 1;
-      white-space: nowrap;
-    }
-
-    .r-label-origin {
-      position: absolute;
-      left: var(--r-label-origin-x);
-      top: var(--r-label-origin-y);
-      width: var(--r-label-origin-w);
-      height: var(--r-label-origin-h);
-    }
-
-    .r-label-origin .spec-th {
-      width: clamp(40px, 4.2vw, 58px);
-      font-size: clamp(13px, 1.3vw, 18px);
-      letter-spacing: 0.15em;
-    }
-
-    .r-label-origin .origin-text {
-      font-size: clamp(12px, 1.25vw, 17.5px);
-      font-weight: 700;
-      color: #090909;
-      line-height: 1.25;
-      white-space: nowrap;
-    }
-
-    .r-label-origin .origin-alt {
-      font-size: clamp(10.5px, 1.05vw, 14.5px);
-      color: #111111;
-      font-weight: 600;
-      margin-top: clamp(2px, 0.4vw, 6px);
-      line-height: 1.2;
-      white-space: nowrap;
-    }
-
-    .r-ridge {
-      position: absolute;
-      left: var(--r-ridge-x);
-      top: var(--r-ridge-y);
-      width: var(--r-ridge-w);
-      height: var(--r-ridge-h);
-      z-index: 9;
-      background: #ededed;
-      border: 1px solid #111111;
-      border-left: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .r-ridge img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .r-label-process {
-      position: absolute;
-      left: var(--r-label-process-x);
-      top: var(--r-label-process-y);
-      width: var(--r-label-process-w);
-      height: var(--r-label-process-h);
-      background: #ededed;
-      border: 1px solid #111111;
-      display: flex;
-      align-items: center;
-      padding: 4px 6px;
-    }
-
-    .r-label-process .spec-th {
-      width: clamp(38px, 3.9vw, 54px);
-      font-size: clamp(12px, 1.16vw, 16px);
-      letter-spacing: 0.15em;
-      border: none;
-      background: transparent;
-      padding: 0;
-    }
-
-    .process-steps-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      flex: 1;
-      gap: 3px;
-      align-items: stretch;
-      height: 75%;
-    }
-
-    .step-cell {
-      border: 1px solid #666666;
-      background: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: clamp(10px, 0.98vw, 13.5px);
-      font-weight: 700;
-      color: #101010;
-      white-space: nowrap;
-      padding: 0 2px;
-    }
-
-    .step-cell .step-num {
-      border-right: 1px solid #888888;
-      padding-right: clamp(2px, 0.3vw, 4px);
-      margin-right: clamp(2px, 0.3vw, 4px);
-      color: #111111;
-      font-size: clamp(9px, 0.9vw, 12.5px);
-    }
-
-    .step-cell .step-arrow {
-      color: #444444;
-      margin-left: clamp(1px, 0.22vw, 3px);
-      font-size: clamp(8.5px, 0.8vw, 11px);
-    }
-
-    /* Left Copy & CTA */
-    .r-headline {
-      position: absolute;
-      left: var(--r-headline-x);
-      top: var(--r-headline-y);
-      width: var(--r-headline-w);
-      height: var(--r-headline-h);
-      z-index: 10;
-    }
-
-    .r-headline h1 {
-      font-family: var(--f-serif);
-      font-size: clamp(26px, 3.2vw, 46px);
-      font-weight: 900;
-      color: var(--c-cream);
-      line-height: 1.18;
-      letter-spacing: 0.015em;
-      white-space: nowrap;
-    }
-
-    .r-lede {
-      position: absolute;
-      left: var(--r-lede-x);
-      top: var(--r-lede-y);
-      width: var(--r-lede-w);
-      height: var(--r-lede-h);
-      z-index: 10;
-    }
-
-    .r-lede p {
-      font-size: clamp(13.5px, 1.4vw, 20px);
-      color: #e5f1f3;
-      line-height: 1.5;
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      white-space: nowrap;
-    }
-
-    .r-cta {
-      position: absolute;
-      left: var(--r-cta-x);
-      top: var(--r-cta-y);
-      width: var(--r-cta-w);
-      height: var(--r-cta-h);
-      z-index: 10;
-    }
-
-    .btn-hero-cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      background: #b87848;
-      color: #f6e3c2;
-      font-family: var(--f-sans);
-      font-size: clamp(14px, 1.45vw, 20px);
-      font-weight: 600;
-      letter-spacing: 0.015em;
-      text-decoration: none;
-      border-radius: 8px;
-      box-shadow: none;
-      white-space: nowrap;
-      transition: background 0.2s ease, transform 0.15s ease;
-    }
-
-    .btn-hero-cta:hover {
-      background: #a3673b;
-      transform: translateY(-1px);
-    }
-
-    .r-phone {
-      position: absolute;
-      left: var(--r-phone-x);
-      top: var(--r-phone-y);
-      width: var(--r-phone-w);
-      height: var(--r-phone-h);
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      white-space: nowrap;
-    }
-
-    .r-phone a {
-      color: #e4f0f3;
-      font-family: var(--f-sans);
-      font-size: clamp(12.5px, 1.25vw, 17.5px);
-      font-weight: 600;
-      line-height: 1;
-      text-decoration: none;
-      letter-spacing: clamp(0.5px, 0.14vw, 2.0px);
-      white-space: nowrap;
-      transition: color 0.2s;
-    }
-
-    .r-phone a:hover {
-      color: var(--c-cream);
-    }
-
-    /* Right Vertical Text & Stamp */
-    .r-vertical-caption {
-      position: absolute;
-      left: var(--r-vertical-caption-x);
-      top: var(--r-vertical-caption-y);
-      width: var(--r-vertical-caption-w);
-      height: var(--r-vertical-caption-h);
-      z-index: 10;
-      display: flex;
-      flex-direction: row;
-      padding-left: 1px;
-      gap: clamp(4px, 0.58vw, 8px);
-      align-items: flex-start;
-    }
-
-    .v-col {
-      writing-mode: vertical-rl;
-      font-family: var(--f-serif);
-      font-size: clamp(11px, 1.12vw, 15.5px);
-      line-height: 1;
-      letter-spacing: 1.7px;
-      white-space: nowrap;
-    }
-
-    .v-col:first-child {
-      font-weight: 700;
-      color: #a9b8b0;
-    }
-
-    .v-col:last-child {
-      font-weight: 700;
-      color: #d4e6dc;
-    }
-
-    .r-stamp {
-      position: absolute;
-      left: var(--r-stamp-x);
-      top: var(--r-stamp-y);
-      width: var(--r-stamp-w);
-      height: var(--r-stamp-h);
-      z-index: 10;
-      padding: 6px;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .r-stamp img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    /* =========================================
-       SUBSEQUENT SECTIONS (Content & Story)
-       ========================================= */
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 28px;
     }
 
-    /* Section: Origin 風土 */
-    .section-origin {
-      background: var(--c-teal-deep);
-      padding: 90px 0 100px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      position: relative;
+    section[id] {
+      scroll-margin-top: 68px;
     }
 
+    /* Shared Section Headings */
     .section-header {
-      margin-bottom: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 32px;
+      padding-bottom: 24px;
+      margin-bottom: 44px;
+    }
+
+    .section-header--on-light {
+      border-bottom: 1px solid var(--c-rule-light);
+    }
+
+    .section-header--on-dark {
+      border-bottom: 1px solid var(--c-rule-dark);
     }
 
     .section-title {
       font-family: var(--f-serif);
-      font-size: 32px;
+      font-size: clamp(26px, 2.5vw, 34px);
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      line-height: 1.3;
+      text-wrap: balance;
+    }
+
+    .section-title--on-light {
+      color: var(--c-paper-ink);
+    }
+
+    .section-title--on-dark {
+      color: var(--c-cream);
+    }
+
+    .section-lead {
+      max-width: 44ch;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .section-lead--on-light {
+      color: var(--c-paper-muted);
+    }
+
+    .section-lead--on-dark {
+      color: var(--c-mist);
+    }
+
+    /* =========================================
+       DESKTOP HEADER & NAVIGATION
+       ========================================= */
+    .site-topbar {
+      border-bottom: 1px solid var(--c-rule-dark);
+      background: rgba(29, 53, 65, 0.55);
+    }
+
+    .site-topbar-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--c-cream);
+    }
+
+    .brand-logo-img {
+      height: 54px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .brand-meta {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-name-zh {
+      font-family: var(--f-serif);
+      font-size: 17px;
       font-weight: 900;
       color: var(--c-cream);
-      letter-spacing: 0.05em;
-      line-height: 1.3;
+      letter-spacing: 0.08em;
     }
 
-    .origin-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 48px;
+    .brand-origin-tag {
+      font-size: 12px;
+      color: var(--c-mist);
+      letter-spacing: 0.04em;
+    }
+
+    .desktop-nav {
+      display: flex;
       align-items: center;
+      gap: 28px;
     }
 
-    .origin-text-block p {
+    .desktop-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .desktop-nav-links a {
+      color: var(--c-cream-soft);
+      text-decoration: none;
       font-size: 15px;
-      line-height: 1.9;
-      color: #d1dde2;
-      margin-bottom: 20px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 6px 2px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
     }
 
-    .altitude-badge-card {
-      background: rgba(20, 38, 48, 0.7);
-      border: 1px solid rgba(200, 131, 75, 0.3);
-      padding: 32px;
-      border-radius: 6px;
+    .desktop-nav-links a:hover {
+      color: var(--c-copper-on-dark);
+      border-bottom-color: var(--c-copper-bright);
     }
 
-    .alt-meter {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
-
-    .alt-meter .num {
-      font-family: var(--f-serif);
-      font-size: 48px;
-      font-weight: 900;
-      color: var(--c-copper);
-      line-height: 1;
-    }
-
-    .alt-meter .unit {
-      font-size: 16px;
-      color: #a0b2bc;
-      letter-spacing: 0.05em;
-    }
-
-    .alt-specs {
-      list-style: none;
-    }
-
-    .alt-specs li {
-      padding: 10px 0;
-      border-bottom: 1px dashed rgba(255,255,255,0.1);
+    .btn-nav-line {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 18px;
+      background: var(--c-copper-bright);
+      color: var(--c-teal-dark);
       font-size: 14px;
-      color: #cad8de;
-      display: flex;
-      justify-content: space-between;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      border-radius: 4px;
+      border: 1px solid var(--c-copper-bright);
+      white-space: nowrap;
+      transition: background 0.2s ease, transform 0.15s ease;
     }
 
-    .alt-specs li:last-child {
+    .btn-nav-line:hover {
+      background: var(--c-copper-bright-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Mobile Header (Hidden on desktop > 992px) */
+    .mobile-header {
+      display: none;
+    }
+
+    /* =========================================
+       HERO STAGE: INTERACTIVE SPEC BENCH
+       ========================================= */
+    .hero-viewport {
+      background: var(--c-teal);
+      background-image:
+        radial-gradient(ellipse 68% 60% at 56% 52%, rgba(251, 246, 237, 0.08), transparent 72%),
+        radial-gradient(circle at 12% 88%, rgba(14, 28, 36, 0.38), transparent 48%);
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--c-rule-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 36px 28px 20px;
+      display: grid;
+      grid-template-columns: minmax(290px, 0.92fr) minmax(420px, 1.38fr) auto;
+      gap: 28px;
+      align-items: center;
+      min-height: 600px;
+    }
+
+    /* Hero Left Column: Copy, Interactive Selector & Primary Action */
+    .hero-copy-col {
+      padding: 16px 0 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .hero-title {
+      font-family: var(--f-serif);
+      font-size: clamp(32px, 3.3vw, 48px);
+      font-weight: 900;
+      color: var(--c-cream);
+      line-height: 1.22;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-lede {
+      font-size: clamp(15px, 1.3vw, 18px);
+      color: var(--c-mist);
+      line-height: 1.7;
+      max-width: 32ch;
+    }
+
+    /* Interactive Hero Tea Switcher */
+    .hero-switcher-wrap {
+      width: 100%;
+      max-width: 400px;
+      border-top: 1px solid var(--c-rule-dark);
+      padding-top: 16px;
+    }
+
+    .hero-switcher-caption {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--c-mist-soft);
+      margin-bottom: 10px;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-tea-switcher {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .hero-tea-tab {
+      appearance: none;
+      background: rgba(20, 38, 48, 0.65);
+      border: 1px solid var(--c-rule-dark);
+      color: var(--c-cream-soft);
+      padding: 10px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .hero-tea-tab:hover {
+      border-color: var(--c-copper-bright);
+      color: var(--c-cream);
+    }
+
+    .hero-tea-tab.is-active {
+      background: var(--c-paper-spec);
+      border-color: var(--c-paper-spec);
+      color: var(--c-teal-dark);
+    }
+
+    .tab-swatch {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid rgba(20, 38, 48, 0.35);
+      flex-shrink: 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px 22px;
+      margin-top: 4px;
+    }
+
+    .btn-hero-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 26px;
+      background: var(--c-copper-bright);
+      color: var(--c-teal-dark);
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      border-radius: 4px;
+      border: 1px solid var(--c-copper-bright);
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .btn-hero-cta:hover {
+      background: var(--c-copper-bright-hover);
+      transform: translateY(-1px);
+    }
+
+    .hero-phone-link {
+      color: var(--c-cream);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid var(--c-rule-dark);
+      padding-bottom: 3px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .hero-phone-link:hover {
+      color: var(--c-copper-on-dark);
+      border-color: var(--c-copper-on-dark);
+    }
+
+    /* Hero Center Column: Vacuum Pack + Zero-Misalignment Spec Sheet */
+    .hero-pack-col {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      min-height: 580px;
+    }
+
+    .pack-stage {
+      position: relative;
+      width: 100%;
+      max-width: 560px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-top: 8px;
+    }
+
+    .pack-visual-box {
+      position: relative;
+      width: min(370px, 76%);
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .pack-plate-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 18px 34px rgba(10, 20, 26, 0.45));
+      user-select: none;
+    }
+
+    /* Unified Package Spec Sheet Overlapping the Pack */
+    .pack-spec-sheet {
+      position: absolute;
+      left: 50%;
+      top: 47%;
+      transform: translate(-44%, -50%);
+      width: min(500px, 96%);
+      background: var(--c-paper-spec);
+      color: var(--c-paper-ink);
+      border: 1.5px solid var(--c-paper-ink);
+      padding: 12px;
+      z-index: 6;
+      transition: opacity 0.18s ease;
+    }
+
+    .pack-spec-inner {
+      background: #ffffff;
+      border: 1px solid var(--c-paper-ink);
+      padding: 6px 10px;
+    }
+
+    .spec-sheet-row {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      border-bottom: 1px solid var(--c-rule-light);
+    }
+
+    .spec-sheet-row:last-child {
       border-bottom: none;
     }
 
-    .alt-specs span.label {
-      color: #8c9fa8;
+    .spec-sheet-th {
+      background: var(--c-paper-th);
+      border-right: 1px solid var(--c-paper-ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--f-serif);
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--c-paper-ink);
+      letter-spacing: 0.14em;
+      padding: 12px 10px;
     }
 
-    /* Section: Process 製程 */
-    .section-process {
-      background: var(--c-teal-dark);
-      padding: 100px 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
+    .spec-sheet-td {
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
     }
 
-    .process-timeline {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 20px;
-      margin-top: 50px;
+    .spec-name-td {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 16px;
     }
 
-    .process-card {
-      background: rgba(40, 71, 86, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 24px 18px;
+    .spec-tea-name {
+      font-family: var(--f-serif);
+      font-size: clamp(20px, 2vw, 26px);
+      font-weight: 900;
+      color: var(--c-paper-ink);
+      line-height: 1.2;
+      letter-spacing: 0.03em;
+    }
+
+    .spec-liquor-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 10px;
+      background: var(--c-paper-spec);
+      border: 1px solid rgba(20, 38, 48, 0.35);
       border-radius: 4px;
-      transition: transform 0.2s, background 0.2s, border-color 0.2s;
-    }
-
-    .process-card:hover {
-      transform: translateY(-2px);
-      background: rgba(40, 71, 86, 0.7);
-      border-color: rgba(200, 131, 75, 0.45);
-    }
-
-    .process-card .card-step {
       font-size: 12px;
       font-weight: 700;
-      color: #e59b62;
-      letter-spacing: 0.1em;
-      margin-bottom: 8px;
+      color: var(--c-paper-ink);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
-    .process-card .card-name {
-      font-family: var(--f-serif);
-      font-size: 20px;
-      font-weight: 900;
-      color: #fff;
-      margin-bottom: 12px;
+    .spec-liquor-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      border: 1px solid rgba(20, 38, 48, 0.35);
     }
 
-    .process-card .card-desc {
+    /* Origin row with aligned mountain ridge art */
+    .spec-origin-split {
+      display: grid;
+      grid-template-columns: 1fr 124px;
+      align-items: stretch;
+    }
+
+    .spec-origin-info {
+      padding: 12px 16px;
+      border-right: 1px solid var(--c-paper-ink);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3px;
+    }
+
+    .spec-origin-place {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--c-paper-ink);
+      line-height: 1.3;
+    }
+
+    .spec-origin-alt {
       font-size: 13px;
-      line-height: 1.7;
-      color: #b0c0c7;
+      font-weight: 600;
+      color: var(--c-paper-muted);
+      line-height: 1.3;
     }
 
-    /* Section: Products 茶品展示 */
+    .spec-ridge-cell {
+      background: var(--c-paper-spec);
+      padding: 6px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .spec-ridge-cell img {
+      width: 100%;
+      max-height: 64px;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+      display: block;
+    }
+
+    /* Roast & Aroma Row */
+    .spec-roast-line {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--c-paper-ink);
+      line-height: 1.45;
+    }
+
+    .spec-roast-note {
+      color: var(--c-copper-deep);
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    /* Process 5-step row inside Spec Sheet */
+    .spec-process-grid {
+      padding: 10px 12px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 5px;
+      align-items: center;
+    }
+
+    .spec-step-box {
+      border: 1px solid #6b7275;
+      background: #ffffff;
+      color: var(--c-paper-ink);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 4px;
+      text-align: center;
+      white-space: nowrap;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .spec-step-box.is-highlighted {
+      background: #fbeee2;
+      border-color: var(--c-copper-deep);
+      color: var(--c-copper-deep);
+    }
+
+    /* Hero Right Column: Vertical Poetry + Seal Stamp */
+    .hero-vertical-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 28px;
+      padding: 40px 4px 42px;
+      align-self: stretch;
+    }
+
+    .vertical-couplet {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 12px;
+    }
+
+    .v-line {
+      writing-mode: vertical-rl;
+      font-family: var(--f-serif);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      line-height: 1.4;
+      color: var(--c-cream-soft);
+      white-space: nowrap;
+    }
+
+    .v-line--sub {
+      color: var(--c-mist);
+      font-weight: 500;
+    }
+
+    .hero-stamp-img {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* =========================================
+       SECTION 2: SEASONAL TEAS (LIGHT PAPER #f7f6f2)
+       ========================================= */
     .section-products {
-      background: var(--c-teal);
-      padding: 100px 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      background: var(--c-paper);
+      color: var(--c-paper-ink);
+      padding: 96px 0;
+      border-bottom: 1px solid var(--c-rule-light);
     }
 
     .products-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 48px;
+      gap: 28px;
     }
 
-    .product-card {
-      background: #f7f6f2;
-      color: var(--c-ink);
-      border-radius: 6px;
-      overflow: hidden;
+    .tea-specimen-card {
+      background: #ffffff;
+      border: 1px solid var(--c-paper-ink);
       display: flex;
       flex-direction: column;
-      border: 1px solid rgba(20, 38, 48, 0.2);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .product-card-top {
-      background: var(--c-teal-deep);
-      color: #fff;
-      padding: 20px 24px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    .tea-specimen-card:hover {
+      border-color: var(--c-copper-deep);
+      box-shadow: 0 12px 28px rgba(20, 38, 48, 0.08);
     }
 
-    .product-tag {
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      color: var(--c-copper-light);
-      font-weight: 600;
-      margin-bottom: 4px;
+    .tea-plate-figure {
+      position: relative;
+      background: #f5f4ef;
+      border-bottom: 1px solid var(--c-rule-light);
+      padding: 12px 12px 10px;
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
 
-    .product-title {
+    .tea-plate-figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+      -webkit-mask-image: radial-gradient(ellipse 88% 88% at 50% 50%, #000 72%, transparent 100%);
+      mask-image: radial-gradient(ellipse 88% 88% at 50% 50%, #000 72%, transparent 100%);
+      display: block;
+    }
+
+    .tea-liquor-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(20, 38, 48, 0.28);
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--c-paper-ink);
+    }
+
+    .tea-card-body {
+      padding: 24px 24px 26px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tea-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--c-rule-light);
+    }
+
+    .tea-card-title {
       font-family: var(--f-serif);
       font-size: 22px;
       font-weight: 900;
-      color: #fff;
+      color: var(--c-paper-ink);
+      line-height: 1.3;
     }
 
-    .product-body {
-      padding: 24px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .spec-list {
-      list-style: none;
+    .tea-card-weight {
       font-size: 13px;
-      color: #333;
-      margin-bottom: 20px;
-      border-bottom: 1px solid #e0e0e0;
-      padding-bottom: 16px;
+      font-weight: 700;
+      color: var(--c-copper-deep);
+      white-space: nowrap;
     }
 
-    .spec-list li {
-      margin-bottom: 8px;
+    /* Architectural Spec Rows inside Product Card */
+    .tea-spec-rows {
+      list-style: none;
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    .tea-spec-rows li {
       display: flex;
       justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding: 7px 0;
+      border-bottom: 1px dashed rgba(20, 38, 48, 0.14);
     }
 
-    .spec-list span.k {
-      color: #666;
+    .tea-spec-rows .k {
+      color: var(--c-paper-muted);
+      flex-shrink: 0;
     }
 
-    .product-flavor {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #444;
-      margin-bottom: 24px;
-      flex: 1;
+    .tea-spec-rows strong {
+      color: var(--c-paper-ink);
+      font-weight: 700;
+      text-align: right;
     }
 
-    .product-action {
+    /* Sensory Profile Scale Bars (Pure CSS 1px Architectural Ticks) */
+    .sensory-meters {
+      display: grid;
+      gap: 9px;
+      padding: 14px 0;
+      margin-bottom: 16px;
+      border-top: 1px solid rgba(20, 38, 48, 0.14);
+      border-bottom: 1px solid rgba(20, 38, 48, 0.14);
+    }
+
+    .meter-row {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--c-paper-muted);
+      font-weight: 600;
+    }
+
+    .meter-blocks {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 4px;
+    }
+
+    .meter-blocks span {
+      height: 7px;
+      border: 1px solid rgba(20, 38, 48, 0.25);
+      background: transparent;
+    }
+
+    .meter-blocks span.is-filled {
+      background: var(--c-copper-deep);
+      border-color: var(--c-copper-deep);
+    }
+
+    .tea-flavor-desc {
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: var(--c-paper-ink);
+      margin-bottom: 12px;
+    }
+
+    .tea-fit-note {
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: var(--c-paper-muted);
+      background: var(--c-paper);
+      padding: 10px 12px;
+      margin-bottom: 20px;
       margin-top: auto;
     }
 
+    .tea-fit-note strong {
+      color: var(--c-copper-deep);
+    }
+
     .btn-product-inquire {
-      display: block;
-      text-align: center;
-      background: var(--c-teal);
-      color: #fff;
-      padding: 12px;
-      border-radius: 4px;
-      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 13px 16px;
+      background: var(--c-copper-deep);
+      color: var(--c-cream);
+      font-size: 15px;
       font-weight: 700;
+      letter-spacing: 0.04em;
       text-decoration: none;
-      transition: background 0.2s;
+      border-radius: 4px;
+      transition: background 0.2s ease, transform 0.15s ease;
     }
 
     .btn-product-inquire:hover {
-      background: #9c5020;
+      background: var(--c-copper-deep-hover);
+      transform: translateY(-1px);
     }
 
-    /* Section: Brewing 泡茶指南 */
-    .section-brewing {
-      background: var(--c-teal-deep);
-      padding: 90px 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .brewing-grid {
+    /* Quick Buyer Guide Bar */
+    .tea-compare-strip {
+      margin-top: 32px;
+      background: var(--c-paper-warm);
+      border: 1px solid var(--c-paper-ink);
+      padding: 18px 24px;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin-top: 48px;
+      grid-template-columns: auto repeat(3, 1fr);
+      gap: 18px 24px;
+      align-items: center;
     }
 
-    .brewing-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 28px 20px;
+    .compare-label {
+      font-family: var(--f-serif);
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--c-paper-ink);
+      padding-right: 18px;
+      border-right: 1px solid var(--c-rule-light);
+      white-space: nowrap;
+    }
+
+    .compare-item {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--c-paper-muted);
+    }
+
+    .compare-item strong {
+      color: var(--c-copper-deep);
+      display: inline-block;
+      margin-right: 4px;
+    }
+
+    /* =========================================
+       SECTION 3: TERROIR 風土 (DARK #1d3541)
+       ========================================= */
+    .section-origin {
+      background: var(--c-teal-deep);
+      color: var(--c-cream);
+      padding: 96px 0;
+      border-bottom: 1px solid var(--c-rule-dark);
+    }
+
+    /* Panoramic Woodblock Mountain Exhibition */
+    .terroir-panorama-frame {
+      position: relative;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 24px;
+      align-items: stretch;
+      margin-bottom: 48px;
+      border: 1px solid var(--c-rule-dark);
+      background: #1d3541;
+    }
+
+    .altitude-ruler {
+      padding: 28px 24px;
+      border-right: 1px solid var(--c-rule-dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: rgba(20, 38, 48, 0.45);
+    }
+
+    .ruler-top-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .ruler-num {
+      font-family: var(--f-serif);
+      font-size: 46px;
+      font-weight: 900;
+      color: var(--c-copper-on-dark);
+      line-height: 1;
+    }
+
+    .ruler-unit {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--c-cream-soft);
+    }
+
+    .ruler-scale-ticks {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 24px;
+      border-left: 2px solid var(--c-copper-bright);
+      padding-left: 12px;
+      font-size: 13px;
+      color: var(--c-mist);
+    }
+
+    .ruler-scale-ticks strong {
+      color: var(--c-cream);
+      display: block;
+    }
+
+    .terroir-art-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      overflow: hidden;
+      background: #1f3946;
+    }
+
+    .terroir-art-wrap img {
+      width: 100%;
+      max-height: 360px;
+      object-fit: contain;
+      display: block;
+      mix-blend-mode: lighten;
+      -webkit-mask-image: radial-gradient(ellipse 86% 80% at 50% 50%, #000 62%, transparent 98%);
+      mask-image: radial-gradient(ellipse 86% 80% at 50% 50%, #000 62%, transparent 98%);
+    }
+
+    .origin-details-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .origin-text-block p {
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--c-mist);
+      max-width: 64ch;
+      margin-bottom: 20px;
+    }
+
+    .origin-text-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .origin-ledger {
+      border: 1px solid var(--c-rule-dark);
+      background: rgba(20, 38, 48, 0.52);
+      padding: 16px;
+    }
+
+    .origin-ledger-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 4px;
+    }
+
+    .origin-ledger-row {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      border-bottom: 1px solid var(--c-rule-dark);
+    }
+
+    .origin-ledger-row:last-child {
+      border-bottom: none;
+    }
+
+    .ledger-key {
+      padding: 14px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--c-copper-on-dark);
+      background: rgba(14, 28, 36, 0.45);
+    }
+
+    .ledger-val {
+      padding: 14px 18px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--c-cream);
+    }
+
+    /* =========================================
+       SECTION 4: 5-STEP PROCESS (LIGHT PAPER #f7f6f2)
+       ========================================= */
+    .section-process {
+      background: var(--c-paper);
+      color: var(--c-paper-ink);
+      padding: 96px 0;
+      border-bottom: 1px solid var(--c-rule-light);
+    }
+
+    .process-interactive-board {
+      border: 1.5px solid var(--c-paper-ink);
+      background: #ffffff;
+    }
+
+    .process-tabs-bar {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-bottom: 1.5px solid var(--c-paper-ink);
+      background: var(--c-paper-warm);
+    }
+
+    .process-step-tab {
+      appearance: none;
+      border: none;
+      border-right: 1px solid var(--c-rule-light);
+      background: transparent;
+      padding: 18px 16px;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .process-step-tab:last-child {
+      border-right: none;
+    }
+
+    .process-step-tab:hover {
+      background: #ffffff;
+    }
+
+    .process-step-tab.is-active {
+      background: var(--c-teal-dark);
+      color: var(--c-cream);
+    }
+
+    .p-tab-num {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--c-copper-deep);
+      letter-spacing: 0.08em;
+    }
+
+    .process-step-tab.is-active .p-tab-num {
+      color: var(--c-copper-on-dark);
+    }
+
+    .p-tab-name {
+      font-family: var(--f-serif);
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--c-paper-ink);
+    }
+
+    .process-step-tab.is-active .p-tab-name {
+      color: var(--c-cream);
+    }
+
+    .process-stage-panel {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      padding: 36px;
+      align-items: center;
+    }
+
+    .process-stage-title {
+      font-family: var(--f-serif);
+      font-size: clamp(24px, 2.2vw, 30px);
+      font-weight: 900;
+      color: var(--c-paper-ink);
+      margin-bottom: 14px;
+    }
+
+    .process-stage-desc {
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--c-paper-ink);
+      max-width: 58ch;
+      margin-bottom: 18px;
+    }
+
+    .process-impact-box {
+      background: var(--c-paper);
+      border: 1px solid var(--c-rule-light);
+      padding: 16px 20px;
+    }
+
+    .process-impact-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--c-copper-deep);
+      margin-bottom: 4px;
+    }
+
+    .process-impact-text {
+      font-size: 15px;
+      color: var(--c-paper-ink);
+      line-height: 1.65;
+    }
+
+    .process-metrics-card {
+      background: var(--c-paper-spec);
+      border: 1px solid var(--c-paper-ink);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .p-metric-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed rgba(20, 38, 48, 0.2);
+      font-size: 14px;
+    }
+
+    .p-metric-row:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .p-metric-row span {
+      color: var(--c-paper-muted);
+    }
+
+    .p-metric-row strong {
+      font-family: var(--f-serif);
+      font-size: 16px;
+      color: var(--c-paper-ink);
+    }
+
+    .process-all-summary {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid var(--c-rule-light);
+      background: var(--c-paper);
+    }
+
+    .process-mini-item {
+      padding: 16px;
+      border-right: 1px solid var(--c-rule-light);
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--c-paper-muted);
+    }
+
+    .process-mini-item:last-child {
+      border-right: none;
+    }
+
+    .process-mini-item strong {
+      display: block;
+      color: var(--c-paper-ink);
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    /* =========================================
+       SECTION 5: BREWING & TIMER (DARK #284756)
+       ========================================= */
+    .section-brewing {
+      background: var(--c-teal);
+      color: var(--c-cream);
+      padding: 96px 0;
+      border-bottom: 1px solid var(--c-rule-dark);
+    }
+
+    .brewing-workbench {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      align-items: stretch;
+    }
+
+    .brewing-guide-box {
+      background: rgba(20, 38, 48, 0.52);
+      border: 1px solid var(--c-rule-dark);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .vessel-switcher {
+      display: inline-flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .vessel-btn {
+      appearance: none;
+      background: rgba(14, 28, 36, 0.7);
+      border: 1px solid var(--c-rule-dark);
+      color: var(--c-cream-soft);
+      padding: 9px 16px;
       border-radius: 4px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .vessel-btn.is-active {
+      background: var(--c-copper-bright);
+      border-color: var(--c-copper-bright);
+      color: var(--c-teal-dark);
+    }
+
+    .brewing-params-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .brew-param-cell {
+      border: 1px solid var(--c-rule-dark);
+      background: rgba(29, 53, 65, 0.55);
+      padding: 18px 20px;
+    }
+
+    .brew-param-num {
+      font-family: var(--f-serif);
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--c-copper-on-dark);
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    .brew-param-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--c-cream);
+      margin-bottom: 4px;
+    }
+
+    .brew-param-desc {
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: var(--c-mist);
+    }
+
+    /* Interactive Steep Timer Card */
+    .brew-timer-card {
+      background: var(--c-paper-spec);
+      color: var(--c-paper-ink);
+      border: 1.5px solid var(--c-paper-ink);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .timer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      border-bottom: 1px solid var(--c-rule-light);
+      padding-bottom: 14px;
+    }
+
+    .timer-heading {
+      font-family: var(--f-serif);
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--c-paper-ink);
+    }
+
+    .timer-rule-hint {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--c-copper-deep);
+    }
+
+    .steep-chips {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .steep-chip {
+      appearance: none;
+      background: #ffffff;
+      border: 1px solid rgba(20, 38, 48, 0.35);
+      color: var(--c-paper-ink);
+      padding: 9px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .steep-chip:hover {
+      border-color: var(--c-copper-deep);
+    }
+
+    .steep-chip.is-active {
+      background: var(--c-teal-dark);
+      border-color: var(--c-teal-dark);
+      color: var(--c-cream);
+    }
+
+    .timer-clock-face {
+      background: #ffffff;
+      border: 1px solid var(--c-paper-ink);
+      padding: 22px 16px;
       text-align: center;
     }
 
-    .brewing-icon {
+    .timer-clock-digits {
       font-family: var(--f-serif);
-      font-size: 28px;
-      color: #e59b62;
-      margin-bottom: 12px;
-      font-weight: 700;
+      font-size: clamp(44px, 4vw, 56px);
+      font-weight: 900;
+      color: var(--c-paper-ink);
+      line-height: 1;
+      letter-spacing: 0.04em;
     }
 
-    .brewing-title {
-      font-size: 16px;
-      font-weight: 700;
+    .timer-status-line {
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--c-paper-muted);
+      min-height: 22px;
+    }
+
+    .timer-status-line.is-done {
+      color: var(--c-copper-deep);
+      font-weight: 800;
+    }
+
+    .timer-controls {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+    }
+
+    .btn-timer-start {
+      appearance: none;
+      background: var(--c-copper-deep);
       color: var(--c-cream);
-      margin-bottom: 8px;
+      border: 1px solid var(--c-copper-deep);
+      border-radius: 4px;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease;
     }
 
-    .brewing-desc {
-      font-size: 13px;
-      color: #b0bec5;
-      line-height: 1.6;
+    .btn-timer-start:hover {
+      background: var(--c-copper-deep-hover);
     }
 
-    /* Section: Contact & Store 門市資訊 */
+    .btn-timer-reset {
+      appearance: none;
+      background: #ffffff;
+      color: var(--c-paper-ink);
+      border: 1px solid var(--c-paper-ink);
+      border-radius: 4px;
+      padding: 12px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .btn-timer-reset:hover {
+      background: var(--c-paper-warm);
+    }
+
+    /* =========================================
+       SECTION 6: CONTACT & ORDERING (DARK #142630)
+       ========================================= */
     .section-contact {
-      background: #15252e;
-      padding: 90px 0 100px;
-      border-top: 1px solid rgba(255,255,255,0.06);
+      background: var(--c-teal-dark);
+      color: var(--c-cream);
+      padding: 96px 0 100px;
     }
 
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      gap: 40px;
+      align-items: start;
     }
 
     .contact-info-card {
-      background: rgba(40, 71, 86, 0.4);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 36px;
-      border-radius: 6px;
+      background: rgba(29, 53, 65, 0.58);
+      border: 1px solid var(--c-rule-dark);
+      padding: 34px;
+      border-radius: 4px;
     }
 
     .store-status {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(46, 125, 50, 0.25);
-      border: 1px solid rgba(76, 175, 80, 0.4);
-      color: #81c784;
-      padding: 4px 12px;
-      border-radius: 12px;
-      font-size: 12px;
+      gap: 9px;
+      background: rgba(20, 38, 48, 0.85);
+      border: 1px solid rgba(139, 212, 143, 0.55);
+      color: #ccefd0;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 13px;
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     .status-dot {
-      width: 8px;
-      height: 8px;
-      background: #4caf50;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
+      background: #67d170;
+      flex-shrink: 0;
     }
 
     .info-list {
       list-style: none;
-      font-size: 14px;
-      line-height: 2;
-      color: #cfd8dc;
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--c-mist);
+    }
+
+    .info-list li {
+      margin-bottom: 10px;
     }
 
     .info-list strong {
-      color: #fff;
+      color: var(--c-cream);
+    }
+
+    .info-link {
+      color: var(--c-copper-on-dark);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      font-weight: 700;
+    }
+
+    .info-link:hover {
+      color: var(--c-cream);
+    }
+
+    .btn-copy-line {
+      appearance: none;
+      background: rgba(20, 38, 48, 0.85);
+      border: 1px solid var(--c-copper-bright);
+      color: var(--c-cream);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-copy-line:hover {
+      background: var(--c-copper-bright);
+      color: var(--c-teal-dark);
+    }
+
+    .line-copy-feedback {
+      font-size: 13px;
+      color: #a8e6af;
+      margin-left: 8px;
+      font-weight: 600;
     }
 
     .store-address-wrap {
       margin-top: 4px;
-      margin-bottom: 8px;
     }
 
     .store-address-text {
       display: block;
-      color: #ffffff;
-      font-weight: 500;
-      line-height: 1.6;
+      color: var(--c-cream);
+      font-weight: 600;
     }
 
     .store-landmark-tip {
       display: block;
-      font-size: 12px;
-      color: #a0b2bc;
-      line-height: 1.6;
+      font-size: 13.5px;
+      color: var(--c-mist-soft);
+      line-height: 1.65;
       margin-top: 4px;
     }
 
     .btn-map-guide {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      background: rgba(200, 131, 75, 0.16);
-      border: 1px solid rgba(200, 131, 75, 0.45);
-      color: #edeacc;
-      font-size: 13px;
-      font-weight: 600;
-      padding: 6px 14px;
+      gap: 7px;
+      background: rgba(217, 149, 89, 0.16);
+      border: 1px solid var(--c-copper-bright);
+      color: var(--c-cream);
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 7px 14px;
       border-radius: 4px;
       text-decoration: none;
-      transition: background 0.2s, border-color 0.2s, color 0.2s;
-      margin-top: 8px;
+      margin-top: 10px;
+      transition: background 0.2s ease, color 0.2s ease;
     }
 
     .btn-map-guide:hover {
-      background: #c8834b;
-      border-color: #c8834b;
-      color: #111111;
+      background: var(--c-copper-bright);
+      color: var(--c-teal-dark);
     }
 
     .map-embed-container {
-      margin-top: 20px;
-      border-radius: 6px;
+      margin-top: 22px;
+      border-radius: 4px;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: #111e25;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      border: 1px solid var(--c-rule-dark);
+      background: var(--c-teal-night);
     }
 
+    .order-policy-note {
+      margin-top: 18px;
+      font-size: 13.5px;
+      color: var(--c-mist);
+      line-height: 1.7;
+    }
+
+    /* Inquiry Form Card */
     .inquiry-form-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 36px;
-      border-radius: 6px;
+      background: var(--c-paper-spec);
+      color: var(--c-paper-ink);
+      border: 1.5px solid var(--c-cream-soft);
+      padding: 34px;
+      border-radius: 4px;
+    }
+
+    .inquiry-form-title {
+      font-family: var(--f-serif);
+      color: var(--c-paper-ink);
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .inquiry-form-sub {
+      font-size: 14px;
+      color: var(--c-paper-muted);
+      margin-bottom: 22px;
+      line-height: 1.6;
     }
 
     .form-group {
@@ -911,42 +1643,52 @@
 
     .form-group label {
       display: block;
-      font-size: 13px;
-      color: #a0b2bc;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--c-paper-ink);
       margin-bottom: 6px;
     }
 
-    .form-group input, .form-group textarea, .form-group select {
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
       width: 100%;
-      background: rgba(10, 20, 26, 0.7);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: #fff;
-      padding: 10px 14px;
-      font-size: 14px;
+      background: #ffffff;
+      border: 1px solid #6b7d85;
+      color: var(--c-paper-ink);
+      padding: 11px 14px;
+      font-size: 15px;
       border-radius: 4px;
-      font-family: inherit;
+      transition: border-color 0.2s ease;
     }
 
-    .form-group input:focus, .form-group textarea:focus {
-      outline: none;
-      border-color: var(--c-copper);
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #5b6e76;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--c-copper-deep);
     }
 
     .btn-submit-form {
       width: 100%;
-      background: #a95622;
-      color: #fff;
-      border: none;
-      padding: 12px;
-      font-size: 15px;
-      font-weight: 700;
+      background: var(--c-copper-deep);
+      color: var(--c-cream);
+      border: 1px solid var(--c-copper-deep);
+      padding: 14px 18px;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
       border-radius: 4px;
       cursor: pointer;
-      transition: background 0.2s;
+      transition: background 0.2s ease;
     }
 
     .btn-submit-form:hover {
-      background: #8e4418;
+      background: var(--c-copper-deep-hover);
     }
 
     .btn-submit-form:disabled {
@@ -959,32 +1701,33 @@
       margin-top: 14px;
       padding: 12px 14px;
       border-radius: 4px;
-      font-size: 13.5px;
-      line-height: 1.6;
+      font-size: 14px;
+      line-height: 1.65;
+      font-weight: 600;
     }
 
     .form-status-msg.is-success {
       display: block;
-      background: rgba(46, 125, 50, 0.25);
-      border: 1px solid rgba(129, 199, 132, 0.45);
-      color: #c8e6c9;
+      background: #e3f2e6;
+      border: 1px solid #2e7d32;
+      color: #1b4d20;
     }
 
     .form-status-msg.is-error {
       display: block;
-      background: rgba(198, 40, 40, 0.25);
-      border: 1px solid rgba(239, 154, 154, 0.45);
-      color: #ffcdd2;
+      background: #fdecea;
+      border: 1px solid #b71c1c;
+      color: #7f1212;
     }
 
     /* Footer */
     footer {
-      background: #0d171d;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      padding: 36px 0;
+      background: var(--c-teal-night);
+      border-top: 1px solid var(--c-rule-dark);
+      padding: 38px 0;
       text-align: center;
-      font-size: 13px;
-      color: #78909c;
+      font-size: 14px;
+      color: var(--c-mist);
     }
 
     .footer-content {
@@ -994,147 +1737,108 @@
       align-items: center;
     }
 
-    .footer-brand {
-      color: #cfd8dc;
-      font-size: 14px;
-    }
-
     .footer-brand strong {
-      color: #edeacc;
+      color: var(--c-cream);
     }
 
     .footer-meta {
-      font-size: 13px;
-      color: #90a4ae;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 16px;
-      line-height: 1.6;
+      gap: 8px 20px;
+      line-height: 1.7;
     }
 
     .footer-meta a {
-      color: #edeacc;
+      color: var(--c-cream-soft);
       text-decoration: underline;
-      text-underline-offset: 3px;
-      transition: color 0.2s;
+      text-underline-offset: 4px;
     }
 
     .footer-meta a:hover {
-      color: var(--c-copper);
+      color: var(--c-copper-on-dark);
     }
 
     .footer-copy {
-      font-size: 12px;
-      color: #78909c;
+      font-size: 13px;
+      color: var(--c-mist-soft);
       margin-top: 4px;
     }
 
     /* =========================================
-       MOTION & REVEAL SYSTEM
+       RESPONSIVE BREAKPOINTS
        ========================================= */
-    .reveal-on-scroll {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: opacity, transform;
-    }
-
-    .reveal-on-scroll.is-revealed {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .process-timeline .process-card:nth-child(1) { transition-delay: 0.05s; }
-    .process-timeline .process-card:nth-child(2) { transition-delay: 0.12s; }
-    .process-timeline .process-card:nth-child(3) { transition-delay: 0.19s; }
-    .process-timeline .process-card:nth-child(4) { transition-delay: 0.26s; }
-    .process-timeline .process-card:nth-child(5) { transition-delay: 0.33s; }
-
-    .products-grid .product-card:nth-child(1) { transition-delay: 0.08s; }
-    .products-grid .product-card:nth-child(2) { transition-delay: 0.18s; }
-    .products-grid .product-card:nth-child(3) { transition-delay: 0.28s; }
-
-    .brewing-grid .brewing-card:nth-child(1) { transition-delay: 0.05s; }
-    .brewing-grid .brewing-card:nth-child(2) { transition-delay: 0.12s; }
-    .brewing-grid .brewing-card:nth-child(3) { transition-delay: 0.19s; }
-    .brewing-grid .brewing-card:nth-child(4) { transition-delay: 0.26s; }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      background: #4caf50;
-      border-radius: 50%;
-      position: relative;
-    }
-
-    .status-dot::after {
-      content: '';
-      position: absolute;
-      top: -3px;
-      left: -3px;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      border: 1.5px solid rgba(76, 175, 80, 0.5);
-      animation: status-pulse 2.4s infinite ease-out;
-    }
-
-    @keyframes status-pulse {
-      0% {
-        transform: scale(0.7);
-        opacity: 0.9;
+    @media (max-width: 1120px) {
+      .hero-grid {
+        grid-template-columns: 0.95fr 1.35fr;
+        gap: 20px;
       }
-      70% {
-        transform: scale(1.6);
-        opacity: 0;
-      }
-      100% {
-        transform: scale(1.6);
-        opacity: 0;
-      }
-    }
 
-    @media (prefers-reduced-motion: reduce) {
-      .reveal-on-scroll {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
+      .hero-vertical-col {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 14px 0 28px;
+        border-top: 1px solid var(--c-rule-dark);
       }
-      .status-dot::after {
-        animation: none !important;
+
+      .vertical-couplet {
+        flex-direction: column;
+        gap: 4px;
       }
-    }
 
-    section[id] {
-      scroll-margin-top: 68px;
-    }
+      .v-line {
+        writing-mode: horizontal-tb;
+        letter-spacing: 0.08em;
+      }
 
-    .mobile-header {
-      display: none;
+      .pack-spec-sheet {
+        transform: translate(-48%, -50%);
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tea-compare-strip {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .compare-label {
+        border-right: none;
+        border-bottom: 1px solid var(--c-rule-light);
+        padding-right: 0;
+        padding-bottom: 10px;
+      }
     }
 
     /* =========================================
-       RESPONSIVE ADAPTATION (Mobile & Tablet)
+       MOBILE STICKY NAV & ADAPTATION (<= 992px)
        ========================================= */
     @media (max-width: 992px) {
+      .hero-viewport {
+        padding-bottom: 12px;
+      }
+      .site-topbar {
+        display: none;
+      }
+
       .mobile-header {
         display: block;
         position: sticky;
         top: 0;
         left: 0;
         width: 100%;
-        background: rgba(21, 37, 46, 0.96);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(20, 38, 48, 0.97);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--c-rule-dark);
         z-index: 999;
       }
 
       .mobile-header-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        height: 56px;
+        height: 58px;
         padding: 0 16px;
         display: flex;
         align-items: center;
@@ -1149,63 +1853,47 @@
       }
 
       .mobile-brand-logo {
-        width: 28px;
-        height: 28px;
+        width: 30px;
+        height: 30px;
         object-fit: contain;
       }
 
       .mobile-brand-title {
         font-family: var(--f-serif);
         font-size: 16px;
-        font-weight: 700;
-        color: #ffffff;
-        letter-spacing: 0.05em;
+        font-weight: 900;
+        color: var(--c-cream);
+        letter-spacing: 0.06em;
       }
 
       .mobile-header-actions {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
       }
 
       .btn-mobile-nav-line {
-        background: rgba(200, 131, 75, 0.18);
-        border: 1px solid rgba(200, 131, 75, 0.5);
-        color: #edeacc;
-        font-size: 12px;
-        font-weight: 600;
-        padding: 6px 12px;
+        background: var(--c-copper-bright);
+        color: var(--c-teal-dark);
+        font-size: 13px;
+        font-weight: 800;
+        padding: 7px 12px;
         border-radius: 4px;
         text-decoration: none;
-        transition: background 0.2s, color 0.2s;
-      }
-
-      .btn-mobile-nav-line:hover, .btn-mobile-nav-line:active {
-        background: var(--c-copper);
-        color: #111111;
       }
 
       .mobile-menu-toggle {
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        color: #edeacc;
-        padding: 6px 12px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid var(--c-rule-dark);
+        color: var(--c-cream);
+        padding: 7px 12px;
         border-radius: 4px;
         cursor: pointer;
-        font-family: inherit;
         font-size: 13px;
-        font-weight: 600;
-        transition: background 0.2s, border-color 0.2s;
-        -webkit-tap-highlight-color: transparent;
-      }
-
-      .mobile-menu-toggle:hover, .mobile-menu-toggle.is-active {
-        background: rgba(200, 131, 75, 0.22);
-        border-color: var(--c-copper);
-        color: #ffffff;
+        font-weight: 700;
       }
 
       .menu-icon-box {
@@ -1221,7 +1909,6 @@
         width: 100%;
         height: 1.5px;
         background-color: currentColor;
-        border-radius: 1px;
         transition: transform 0.25s ease, opacity 0.25s ease;
       }
 
@@ -1241,15 +1928,14 @@
         max-height: 0;
         overflow: hidden;
         opacity: 0;
-        background: #13242c;
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
-        transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+        background: var(--c-teal-dark);
+        border-top: 1px solid var(--c-rule-dark);
+        transition: max-height 0.3s ease, opacity 0.2s ease;
       }
 
       .mobile-nav-drawer.is-open {
-        max-height: 480px;
+        max-height: 520px;
         opacity: 1;
-        box-shadow: 0 16px 28px rgba(0, 0, 0, 0.4);
       }
 
       .mobile-nav-list {
@@ -1261,16 +1947,9 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 12px 10px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 12px 8px;
+        border-bottom: 1px solid var(--c-rule-dark);
         text-decoration: none;
-        border-radius: 4px;
-        transition: background 0.18s;
-        min-height: 48px;
-      }
-
-      .mobile-nav-item:hover, .mobile-nav-item:active {
-        background: rgba(200, 131, 75, 0.1);
       }
 
       .mobile-nav-list li:last-child .mobile-nav-item {
@@ -1287,220 +1966,239 @@
         font-family: var(--f-serif);
         font-size: 16px;
         font-weight: 700;
-        color: #ffffff;
-        letter-spacing: 0.03em;
+        color: var(--c-cream);
       }
 
       .nav-item-desc {
-        font-size: 12px;
-        color: #a0b2bc;
-        line-height: 1.4;
+        font-size: 12.5px;
+        color: var(--c-mist);
       }
 
       .nav-item-arrow {
-        color: var(--c-copper);
+        color: var(--c-copper-on-dark);
         font-size: 16px;
         font-weight: 700;
-        padding-left: 8px;
-        transition: transform 0.2s;
-      }
-
-      .mobile-nav-item:hover .nav-item-arrow,
-      .mobile-nav-item:active .nav-item-arrow {
-        transform: translate(2px, -2px);
       }
 
       .mobile-nav-drawer-footer {
-        padding: 12px 16px 18px;
-        background: #0f1d24;
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 14px 16px 18px;
+        background: var(--c-teal-night);
+        border-top: 1px solid var(--c-rule-dark);
       }
 
       .drawer-contact-info {
         display: flex;
         flex-direction: column;
         gap: 4px;
-        font-size: 12px;
-        color: #8c9fa8;
-        margin-bottom: 10px;
-        line-height: 1.5;
+        font-size: 13px;
+        color: var(--c-mist);
+        margin-bottom: 12px;
+      }
+
+      .drawer-contact-info a {
+        color: var(--c-copper-on-dark);
+        font-weight: 700;
+        text-decoration: none;
       }
 
       .btn-drawer-cta {
         display: block;
         text-align: center;
-        background: var(--c-copper);
-        color: #111111;
-        font-weight: 700;
-        font-size: 14px;
-        padding: 10px;
+        background: var(--c-copper-bright);
+        color: var(--c-teal-dark);
+        font-weight: 800;
+        font-size: 15px;
+        padding: 11px;
         border-radius: 4px;
         text-decoration: none;
-        transition: background 0.2s;
       }
 
-      .btn-drawer-cta:hover, .btn-drawer-cta:active {
-        background: var(--c-copper-light);
+      /* Mobile Hero Layout: Headline & CTA appear BEFORE the pack */
+      .hero-grid {
+        grid-template-columns: 1fr;
+        padding: 28px 18px 0;
+        gap: 20px;
+        min-height: auto;
       }
 
-      .hero-stage {
-        aspect-ratio: auto;
-        padding: 40px 20px 60px;
-        display: flex;
+      .hero-copy-col {
+        padding: 0;
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero-switcher-wrap {
+        max-width: 100%;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-pack-col {
+        min-height: auto;
         flex-direction: column;
         align-items: center;
       }
 
-      .r-logo, .r-nav-links, .r-nav-cta, .r-pack, 
-      .r-label-name, .r-label-origin, .r-ridge, 
-      .r-label-process, .r-headline, .r-lede, 
-      .r-cta, .r-phone, .r-vertical-caption, .r-stamp {
-        position: static;
-        width: 100%;
-        height: auto;
-      }
-
-      .r-logo {
-        margin-bottom: 16px;
+      .pack-stage {
+        flex-direction: column;
         align-items: center;
+        padding-top: 0;
       }
 
-      .r-logo img {
-        max-width: 180px;
+      .pack-visual-box {
+        width: 240px;
+        margin-bottom: -22px;
       }
 
-      .r-nav-links {
-        display: flex;
-        position: static;
-        width: auto;
-        max-width: 92%;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: nowrap;
-        white-space: nowrap;
-        gap: 3px 6px;
-        margin: 8px auto 20px;
-        background: rgba(20, 38, 48, 0.65);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        padding: 5px 12px;
-        border-radius: 20px;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-      }
-
-      .r-nav-links::-webkit-scrollbar {
-        display: none;
-      }
-
-      .r-nav-links a {
-        color: #edeacc;
-        font-size: 13px;
-        font-weight: 500;
-        padding: 3px 5px;
-        text-decoration: none;
-        border-radius: 4px;
-        transition: color 0.2s, background 0.2s;
-      }
-
-      .r-nav-links a:hover, .r-nav-links a:active {
-        color: var(--c-copper);
-      }
-
-      .r-nav-links span {
-        color: rgba(255, 255, 255, 0.22);
-        font-size: 11px;
-      }
-
-      .r-nav-cta {
-        display: none;
-      }
-
-      .r-headline {
-        text-align: center;
-        margin-bottom: 16px;
-      }
-
-      .r-headline h1 {
-        font-size: 28px;
-        white-space: normal;
-      }
-
-      .r-lede {
-        text-align: center;
-        margin-bottom: 28px;
-        max-width: 480px;
-      }
-
-      .r-lede p {
-        font-size: 16px;
-        white-space: normal;
-      }
-
-      .btn-hero-cta {
-        padding: 12px 24px;
-        font-size: 16px;
-      }
-
-      .r-pack {
-        max-width: 320px;
-        margin: 20px auto;
-      }
-
-      .spec-table-row {
-        margin-bottom: 8px;
+      .pack-spec-sheet {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
         width: 100%;
-        max-width: 400px;
+        padding: 10px;
+        margin-bottom: 18px;
       }
 
-      .r-ridge {
+      .spec-sheet-row {
+        grid-template-columns: 54px 1fr;
+      }
+
+      .spec-origin-split {
+        grid-template-columns: 1fr;
+      }
+
+      .spec-origin-info {
+        border-right: none;
+      }
+
+      .spec-ridge-cell {
         display: none;
       }
 
-      .process-steps-grid {
+      .spec-process-grid {
         grid-template-columns: repeat(3, 1fr);
       }
 
-      .r-cta {
-        max-width: 280px;
-        margin: 24px auto 12px;
+      .hero-vertical-col {
+        padding: 12px 0 26px;
       }
 
-      .r-phone {
-        justify-content: center;
-        margin-bottom: 30px;
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 32px;
       }
 
-      .r-vertical-caption {
-        display: none;
+      .section-products,
+      .section-origin,
+      .section-process,
+      .section-brewing,
+      .section-contact {
+        padding: 64px 0;
       }
 
-      .r-stamp {
-        max-width: 64px;
-        margin: 0 auto;
-      }
-
-      .origin-grid, .contact-grid {
+      .terroir-panorama-frame {
         grid-template-columns: 1fr;
       }
 
-      .process-timeline {
+      .altitude-ruler {
+        border-right: none;
+        border-bottom: 1px solid var(--c-rule-dark);
+      }
+
+      .origin-details-grid,
+      .brewing-workbench,
+      .contact-grid,
+      .process-stage-panel {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .process-tabs-bar {
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      .process-step-tab {
+        padding: 12px 8px;
+        align-items: center;
+        text-align: center;
+      }
+
+      .p-tab-name {
+        font-size: 16px;
+      }
+
+      .process-stage-panel {
+        padding: 22px 18px;
+      }
+
+      .process-all-summary {
         grid-template-columns: 1fr;
       }
 
-      .products-grid {
+      .process-mini-item {
+        border-right: none;
+        border-bottom: 1px solid var(--c-rule-light);
+      }
+
+      .process-mini-item:last-child {
+        border-bottom: none;
+      }
+
+      .brewing-params-grid {
         grid-template-columns: 1fr;
       }
 
-      .brewing-grid {
-        grid-template-columns: 1fr 1fr;
+      .contact-info-card,
+      .inquiry-form-card,
+      .brewing-guide-box,
+      .brew-timer-card {
+        padding: 24px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 18px;
+      }
+
+      .spec-name-td {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .hero-tea-switcher {
+        gap: 6px;
+      }
+
+      .hero-tea-tab {
+        font-size: 13px;
+        padding: 9px 4px;
+      }
+
+      .steep-chips {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      * {
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
 </head>
 <body id="top">
 
-  <!-- MOBILE STICKY NAVIGATION (Visible only on mobile <= 992px) -->
+  <!-- MOBILE STICKY NAVIGATION (<= 992px) -->
   <header class="mobile-header" id="mobile-header">
     <div class="mobile-header-inner">
       <a href="#top" class="mobile-header-brand" aria-label="回到德億茶莊頁首">
@@ -1515,19 +2213,18 @@
             <span class="menu-bar"></span>
             <span class="menu-bar"></span>
           </span>
-          <span class="menu-toggle-text">選單</span>
+          <span>選單</span>
         </button>
       </div>
     </div>
 
-    <!-- Mobile Navigation Drawer Menu -->
     <nav id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="手機主選單">
       <ul class="mobile-nav-list">
         <li>
           <a href="#teas" class="mobile-nav-item">
             <div class="nav-item-content">
-              <span class="nav-item-title">茶品</span>
-              <span class="nav-item-desc">杉林溪當季春茶・嚴選冬茶・熟香烏龍</span>
+              <span class="nav-item-title">當季茶品</span>
+              <span class="nav-item-desc">杉林溪春茶・嚴選冬茶・熟香烏龍</span>
             </div>
             <span class="nav-item-arrow" aria-hidden="true">↗</span>
           </a>
@@ -1535,8 +2232,8 @@
         <li>
           <a href="#origin" class="mobile-nav-item">
             <div class="nav-item-content">
-              <span class="nav-item-title">產地</span>
-              <span class="nav-item-desc">台灣南投・海拔 1,600m 雲霧茶園</span>
+              <span class="nav-item-title">杉林溪風土</span>
+              <span class="nav-item-desc">台灣南投・海拔 1,600m 以上雲霧茶區</span>
             </div>
             <span class="nav-item-arrow" aria-hidden="true">↗</span>
           </a>
@@ -1544,8 +2241,8 @@
         <li>
           <a href="#process" class="mobile-nav-item">
             <div class="nav-item-content">
-              <span class="nav-item-title">製茶</span>
-              <span class="nav-item-desc">五道工序 · 採菁、萎凋、殺菁、揉捻、乾燥</span>
+              <span class="nav-item-title">製茶工序</span>
+              <span class="nav-item-desc">五道慢工 · 採菁、萎凋、炒菁、揉捻、乾燥</span>
             </div>
             <span class="nav-item-arrow" aria-hidden="true">↗</span>
           </a>
@@ -1553,8 +2250,8 @@
         <li>
           <a href="#brewing" class="mobile-nav-item">
             <div class="nav-item-content">
-              <span class="nav-item-title">泡茶</span>
-              <span class="nav-item-desc">95°C 沖泡法、茶水比例與耐泡指南</span>
+              <span class="nav-item-title">沖泡指南與計時</span>
+              <span class="nav-item-desc">茶水比例 1:20・實戰 50 秒出湯計時器</span>
             </div>
             <span class="nav-item-arrow" aria-hidden="true">↗</span>
           </a>
@@ -1562,8 +2259,8 @@
         <li>
           <a href="#contact" class="mobile-nav-item">
             <div class="nav-item-content">
-              <span class="nav-item-title">門市</span>
-              <span class="nav-item-desc">南投鹿谷門市・營業時間・地圖導航</span>
+              <span class="nav-item-title">門市與訂購</span>
+              <span class="nav-item-desc">南投鹿谷門市・營業狀態・線上訂購單</span>
             </div>
             <span class="nav-item-arrow" aria-hidden="true">↗</span>
           </a>
@@ -1571,313 +2268,529 @@
       </ul>
       <div class="mobile-nav-drawer-footer">
         <div class="drawer-contact-info">
-          <span>門市專線：<a href="tel:0492752193" style="color:var(--c-copper);text-decoration:none;">049-2752193</a></span>
-          <span>門市地址：南投縣鹿谷鄉鳳園路13號</span>
+          <span>門市專線：<a href="tel:0492752193" class="tabular-nums">049-2752193</a></span>
+          <span>門市地址：南投縣鹿谷鄉鳳凰村鳳園路13號</span>
         </div>
-        <a href="#contact" class="btn-drawer-cta">立即諮詢訂購 / LINE 詢價</a>
+        <a href="#contact" class="btn-drawer-cta">立即填寫訂購 / 詢價單</a>
       </div>
     </nav>
   </header>
 
-  <!-- HERO VIEWPORT (Matches Approved Comp & Measured Boxes) -->
-  <header class="hero-viewport">
-    <div class="hero-stage">
-      
-      <!-- Logo Plate -->
-      <div class="r-logo" data-region="logo">
-        <a href="#top" title="德億茶莊首頁">
-          <img src="assets/plates/logo.png" alt="德億茶莊 DEYI TEA HOUSE">
-        </a>
-      </div>
-
-      <!-- Nav Links -->
-      <nav class="r-nav-links" data-region="nav-links">
-        <a href="#teas">茶品</a>
-        <span>·</span>
-        <a href="#origin">產地</a>
-        <span>·</span>
-        <a href="#process">製茶</a>
-        <span>·</span>
-        <a href="#brewing">泡茶</a>
-        <span>·</span>
-        <a href="#contact">門市</a>
-      </nav>
-
-      <!-- Nav CTA -->
-      <div class="r-nav-cta" data-region="nav-cta">
+  <!-- DESKTOP HEADER (> 992px) -->
+  <header class="site-topbar">
+    <div class="site-topbar-inner">
+      <a href="#top" class="brand-link" title="德億茶莊 DEYI TEA HOUSE 首頁">
+        <img src="assets/plates/logo.png" alt="德億茶莊 DEYI TEA HOUSE" class="brand-logo-img">
+        <div class="brand-meta">
+          <span class="brand-name-zh">德億茶莊</span>
+          <span class="brand-origin-tag">南投鹿谷 · 杉林溪高山烏龍</span>
+        </div>
+      </a>
+      <nav class="desktop-nav" aria-label="主要導覽">
+        <div class="desktop-nav-links">
+          <a href="#teas">茶品</a>
+          <a href="#origin">風土</a>
+          <a href="#process">製程</a>
+          <a href="#brewing">泡茶</a>
+          <a href="#contact">門市</a>
+        </div>
         <a href="#contact" class="btn-nav-line">LINE 詢價</a>
-      </div>
-
-      <!-- Matte Silver Pack Plate -->
-      <figure class="r-pack" data-region="pack">
-        <img src="assets/plates/pack.png" alt="德億茶莊杉林溪烏龍茶真空四兩鋁箔包">
-      </figure>
-
-      <!-- Spec Row 1: 品名 -->
-      <div class="r-label-name spec-table-row" data-region="label-name">
-        <div class="spec-th">品名</div>
-        <div class="spec-td">
-          <div class="tea-title">杉林溪烏龍茶</div>
-        </div>
-      </div>
-
-      <!-- Spec Row 2: 產地與海拔 -->
-      <div class="r-label-origin spec-table-row" data-region="label-origin">
-        <div class="spec-th">產地</div>
-        <div class="spec-td">
-          <div class="origin-text">南投・杉林溪</div>
-          <div class="origin-alt">海拔 1,600m 以上</div>
-        </div>
-      </div>
-
-      <!-- Mountain Ridge Plate -->
-      <figure class="r-ridge" data-region="ridge">
-        <img src="assets/plates/ridge.png" alt="杉林溪山稜等高線">
-      </figure>
-
-      <!-- Spec Row 3: 製程工序 -->
-      <div class="r-label-process spec-table-row" data-region="label-process">
-        <div class="spec-th">製程</div>
-        <div class="process-steps-grid">
-          <div class="step-cell"><span class="step-num">1</span>採菁<span class="step-arrow">→</span></div>
-          <div class="step-cell"><span class="step-num">2</span>萎凋<span class="step-arrow">→</span></div>
-          <div class="step-cell"><span class="step-num">3</span>炒菁<span class="step-arrow">→</span></div>
-          <div class="step-cell"><span class="step-num">4</span>揉捻<span class="step-arrow">→</span></div>
-          <div class="step-cell"><span class="step-num">5</span>乾燥</div>
-        </div>
-      </div>
-
-      <!-- Left Headline -->
-      <div class="r-headline" data-region="headline">
-        <h1>喝之前，<br>先讀懂這包茶。</h1>
-      </div>
-
-      <!-- Left Lede -->
-      <div class="r-lede" data-region="lede">
-        <p>產地、製程、焙度，<br>德億把每一包的來歷寫清楚。</p>
-      </div>
-
-      <!-- Left CTA Button -->
-      <div class="r-cta" data-region="cta">
-        <a href="#contact" class="btn-hero-cta">LINE 詢價訂購</a>
-      </div>
-
-      <!-- Left Phone -->
-      <div class="r-phone" data-region="phone">
-        <a href="tel:0492752193">或來電 049-2752193</a>
-      </div>
-
-      <!-- Right Vertical Caption -->
-      <div class="r-vertical-caption" data-region="vertical-caption">
-        <div class="v-col">杉林溪烏龍茶，德億熟成好茶樹種。</div>
-        <div class="v-col">產地、製程、焙度，包的來歷清楚。</div>
-      </div>
-
-      <!-- Right Stamp Plate -->
-      <div class="r-stamp" data-region="stamp">
-        <img src="assets/plates/stamp.png" alt="德億茶莊防偽篆印">
-      </div>
-
+      </nav>
     </div>
   </header>
 
-  <!-- SECTION: ORIGIN 杉林溪風土 -->
+  <!-- HERO: INTERACTIVE SPEC BENCH -->
+  <section class="hero-viewport" aria-label="德億茶莊杉林溪高山烏龍首屏">
+    <div class="hero-grid">
+
+      <!-- Left: Brand Thesis & Interactive Tea Switcher -->
+      <div class="hero-copy-col">
+        <h1 class="hero-title">喝之前，<br>先讀懂這包茶。</h1>
+        <p class="hero-lede">產地、製程、焙度，德億把每一包真空四兩茶（<span class="tabular-nums">150g</span>）的來歷寫清楚。</p>
+
+        <div class="hero-switcher-wrap">
+          <p class="hero-switcher-caption">點擊切換三款當季規格標，即時對照風味與茶湯色：</p>
+          <div class="hero-tea-switcher" role="tablist" aria-label="當季主力茶款切換">
+            <button type="button" class="hero-tea-tab is-active" role="tab" aria-selected="true" data-hero-tea="spring">
+              <span class="tab-swatch" style="background:#d8c958;" aria-hidden="true"></span>
+              <span>當季春茶</span>
+            </button>
+            <button type="button" class="hero-tea-tab" role="tab" aria-selected="false" data-hero-tea="winter">
+              <span class="tab-swatch" style="background:#e3db84;" aria-hidden="true"></span>
+              <span>嚴選冬茶</span>
+            </button>
+            <button type="button" class="hero-tea-tab" role="tab" aria-selected="false" data-hero-tea="roasted">
+              <span class="tab-swatch" style="background:#c4762a;" aria-hidden="true"></span>
+              <span>熟香烏龍</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#contact" id="hero-cta-link" class="btn-hero-cta" data-selected-tea="杉林溪高山烏龍 · 當季春茶 (四兩 150g)">LINE 詢價此款茶品</a>
+          <a href="tel:0492752193" class="hero-phone-link tabular-nums">或來電 049-2752193</a>
+        </div>
+      </div>
+
+      <!-- Center: Silver Vacuum Pack + Zero-Misalignment Spec Label -->
+      <div class="hero-pack-col">
+        <div class="pack-stage">
+          <figure class="pack-visual-box">
+            <img src="assets/plates/pack.png" alt="德億茶莊杉林溪高山烏龍茶真空四兩鋁箔包" class="pack-plate-img">
+          </figure>
+
+          <div class="pack-spec-sheet" id="hero-spec-sheet" aria-live="polite">
+            <div class="pack-spec-inner">
+              <div class="spec-sheet-row">
+                <div class="spec-sheet-th">品名</div>
+                <div class="spec-sheet-td spec-name-td">
+                  <div class="spec-tea-name" id="spec-tea-name">杉林溪烏龍 · 春茶</div>
+                  <div class="spec-liquor-pill">
+                    <span class="spec-liquor-dot" id="spec-liquor-dot" style="background:#d8c958;" aria-hidden="true"></span>
+                    <span id="spec-liquor-name">湯色：蜜綠金黃</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="spec-sheet-row">
+                <div class="spec-sheet-th">產地</div>
+                <div class="spec-origin-split">
+                  <div class="spec-origin-info">
+                    <div class="spec-origin-place">南投・杉林溪</div>
+                    <div class="spec-origin-alt tabular-nums" id="spec-origin-alt">海拔 1,600m 以上 · 四兩 150g</div>
+                  </div>
+                  <div class="spec-ridge-cell">
+                    <img src="assets/plates/ridge.png" alt="杉林溪山稜等高線">
+                  </div>
+                </div>
+              </div>
+
+              <div class="spec-sheet-row">
+                <div class="spec-sheet-th">焙度</div>
+                <div class="spec-sheet-td">
+                  <div class="spec-roast-line">
+                    <span class="spec-roast-note" id="spec-roast-level">輕焙火</span>
+                    <span id="spec-roast-flavor">蘭花冷香清揚、茶湯滑順回甘生津</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="spec-sheet-row">
+                <div class="spec-sheet-th">製程</div>
+                <div class="spec-process-grid" id="spec-process-grid">
+                  <div class="spec-step-box">1 採菁</div>
+                  <div class="spec-step-box">2 萎凋</div>
+                  <div class="spec-step-box">3 炒菁</div>
+                  <div class="spec-step-box">4 揉捻</div>
+                  <div class="spec-step-box" id="spec-step-last">5 乾燥</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Vertical Poetry + Seal Stamp -->
+      <div class="hero-vertical-col">
+        <div class="vertical-couplet" aria-label="品牌直書提要">
+          <div class="v-line">南投鹿谷・海拔千六雲霧杉林</div>
+          <div class="v-line v-line--sub">手採四兩・一包寫盡山頭本味</div>
+        </div>
+        <img src="assets/plates/stamp.png" alt="德億茶莊防偽篆印" class="hero-stamp-img">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: SEASONAL TEAS (WARM RICE PAPER LIGHT SURFACE) -->
+  <section id="teas" class="section-products">
+    <div class="container">
+      <div class="section-header section-header--on-light">
+        <h2 class="section-title section-title--on-light">德億嚴選 · 杉林溪當季主力品項</h2>
+        <p class="section-lead section-lead--on-light">每款皆為標準四兩真空鋁箔裝（150g），清楚標示海拔與焙火度。點選下方按鈕即自動帶入訂購單，確認現貨與當季時價。</p>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- Tea 1: Spring -->
+        <article class="tea-specimen-card">
+          <figure class="tea-plate-figure">
+            <img src="assets/plates/tea-spring.jpg" alt="杉林溪春茶一心二葉嫩芽與山蘭花版畫插畫">
+            <figcaption class="tea-liquor-tag">
+              <span class="tab-swatch" style="background:#d8c958;" aria-hidden="true"></span>
+              <span>茶湯：蜜綠金黃</span>
+            </figcaption>
+          </figure>
+          <div class="tea-card-body">
+            <div class="tea-card-head">
+              <h3 class="tea-card-title">杉林溪高山烏龍 · 春茶</h3>
+              <span class="tea-card-weight tabular-nums">四兩 150g</span>
+            </div>
+            <ul class="tea-spec-rows">
+              <li><span class="k">產區海拔</span> <strong class="tabular-nums">杉林溪 1,600m+</strong></li>
+              <li><span class="k">焙火程度</span> <strong>輕焙火 · 留存清香</strong></li>
+              <li><span class="k">標準包裝</span> <strong>真空四兩鋁箔 (150g)</strong></li>
+            </ul>
+            <div class="sensory-meters" aria-label="風味指標">
+              <div class="meter-row">
+                <span>花果清香</span>
+                <div class="meter-blocks" aria-label="5 分之 5"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div>
+              </div>
+              <div class="meter-row">
+                <span>焙火熟度</span>
+                <div class="meter-blocks" aria-label="5 分之 1"><span class="is-filled"></span><span></span><span></span><span></span><span></span></div>
+              </div>
+              <div class="meter-row">
+                <span>甘甜生津</span>
+                <div class="meter-blocks" aria-label="5 分之 4"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span></span></div>
+              </div>
+            </div>
+            <p class="tea-flavor-desc">春季嫩採，茶湯金黃透亮，帶有細緻優雅的蘭花冷香，入口滑順甘甜，生津快速。</p>
+            <p class="tea-fit-note"><strong>適合品飲：</strong>初識高山烏龍、喜愛清雅花香與清爽甘甜的茶友。</p>
+            <a href="#contact" class="btn-product-inquire" data-tea="杉林溪高山烏龍 · 當季春茶 (四兩 150g)">LINE 詢價春茶現貨</a>
+          </div>
+        </article>
+
+        <!-- Tea 2: Winter -->
+        <article class="tea-specimen-card">
+          <figure class="tea-plate-figure">
+            <img src="assets/plates/tea-winter.jpg" alt="杉林溪冬茶厚葉與杉木等高線版畫插畫">
+            <figcaption class="tea-liquor-tag">
+              <span class="tab-swatch" style="background:#e3db84;" aria-hidden="true"></span>
+              <span>茶湯：澄亮鵝黃</span>
+            </figcaption>
+          </figure>
+          <div class="tea-card-body">
+            <div class="tea-card-head">
+              <h3 class="tea-card-title">杉林溪高山烏龍 · 冬茶</h3>
+              <span class="tea-card-weight tabular-nums">四兩 150g</span>
+            </div>
+            <ul class="tea-spec-rows">
+              <li><span class="k">產區海拔</span> <strong class="tabular-nums">杉林溪 1,650m+</strong></li>
+              <li><span class="k">焙火程度</span> <strong>極輕焙 · 原香重喉韻</strong></li>
+              <li><span class="k">標準包裝</span> <strong>真空四兩鋁箔 (150g)</strong></li>
+            </ul>
+            <div class="sensory-meters" aria-label="風味指標">
+              <div class="meter-row">
+                <span>冷山氣韻</span>
+                <div class="meter-blocks" aria-label="5 分之 5"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div>
+              </div>
+              <div class="meter-row">
+                <span>焙火熟度</span>
+                <div class="meter-blocks" aria-label="5 分之 1"><span class="is-filled"></span><span></span><span></span><span></span><span></span></div>
+              </div>
+              <div class="meter-row">
+                <span>喉韻耐泡</span>
+                <div class="meter-blocks" aria-label="5 分之 5"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div>
+              </div>
+            </div>
+            <p class="tea-flavor-desc">冬季茶樹休眠前採摘，葉肉厚實，冷山韻味鮮明，茶氣凝鍊持久，耐泡度極高。</p>
+            <p class="tea-fit-note"><strong>適合品飲：</strong>講究厚實喉韻、杉林冷香與多次回沖飽滿感的老茶友。</p>
+            <a href="#contact" class="btn-product-inquire" data-tea="杉林溪高山烏龍 · 嚴選冬茶 (四兩 150g)">LINE 詢價冬茶現貨</a>
+          </div>
+        </article>
+
+        <!-- Tea 3: Roasted -->
+        <article class="tea-specimen-card">
+          <figure class="tea-plate-figure">
+            <img src="assets/plates/tea-roasted.jpg" alt="傳統竹製焙籠與熟香烏龍半球茶粒版畫插畫">
+            <figcaption class="tea-liquor-tag">
+              <span class="tab-swatch" style="background:#c4762a;" aria-hidden="true"></span>
+              <span>茶湯：琥珀橙金</span>
+            </figcaption>
+          </figure>
+          <div class="tea-card-body">
+            <div class="tea-card-head">
+              <h3 class="tea-card-title">杉林溪 · 熟香熟火烏龍</h3>
+              <span class="tea-card-weight tabular-nums">四兩 150g</span>
+            </div>
+            <ul class="tea-spec-rows">
+              <li><span class="k">產區海拔</span> <strong class="tabular-nums">杉林溪 1,600m</strong></li>
+              <li><span class="k">焙火程度</span> <strong>中度慢焙 · 堅果蜜香</strong></li>
+              <li><span class="k">標準包裝</span> <strong>真空四兩鋁箔 (150g)</strong></li>
+            </ul>
+            <div class="sensory-meters" aria-label="風味指標">
+              <div class="meter-row">
+                <span>堅果蜜香</span>
+                <div class="meter-blocks" aria-label="5 分之 4"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span></span></div>
+              </div>
+              <div class="meter-row">
+                <span>焙火熟度</span>
+                <div class="meter-blocks" aria-label="5 分之 4"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span></span></div>
+              </div>
+              <div class="meter-row">
+                <span>溫潤醇厚</span>
+                <div class="meter-blocks" aria-label="5 分之 5"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div>
+              </div>
+            </div>
+            <p class="tea-flavor-desc">製茶師慢火精焙，轉化出熟果香與溫潤甘甜，不苦不澀，溫和不刺激腸胃。</p>
+            <p class="tea-fit-note"><strong>適合品飲：</strong>偏愛烘焙熟香、飯後解膩或想送禮給長輩的暖胃首選。</p>
+            <a href="#contact" class="btn-product-inquire" data-tea="杉林溪熟香熟火烏龍 (四兩 150g)">LINE 詢價熟香烏龍</a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- 新手三秒選茶對照列 -->
+      <div class="tea-compare-strip">
+        <div class="compare-label">不知怎麼挑？一分鐘對照</div>
+        <div class="compare-item"><strong>第一次喝高山茶</strong> 選「春茶」，花香顯、入口最甜順。</div>
+        <div class="compare-item"><strong>喜歡茶氣厚實耐泡</strong> 選「冬茶」，冷山韻濃、回甘更長。</div>
+        <div class="compare-item"><strong>怕生茶刮胃或送長輩</strong> 選「熟香烏龍」，火候溫潤最順口。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: ORIGIN 杉林溪風土 (DEEP TEAL #1d3541) -->
   <section id="origin" class="section-origin">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">高山冷涼、常年雲霧，<br>孕育杉林溪獨特的清澈甘甜</h2>
+      <div class="section-header section-header--on-dark">
+        <h2 class="section-title section-title--on-dark">高山冷涼、常年雲霧，<br>孕育杉林溪獨特的清澈甘甜</h2>
+        <p class="section-lead section-lead--on-dark">海拔與微氣候決定了一口茶湯的底氣。把產區的日照、土質與採摘條件攤開來看，好喝其實有跡可循。</p>
       </div>
-      <div class="origin-grid reveal-on-scroll">
+
+      <!-- Woodblock Topographic Exhibition + Vertical Altitude Ruler -->
+      <div class="terroir-panorama-frame">
+        <div class="altitude-ruler">
+          <div class="ruler-top-stat">
+            <span class="ruler-num tabular-nums">1,600</span>
+            <span class="ruler-unit">公尺以上 · 高海拔產區</span>
+          </div>
+          <ul class="ruler-scale-ticks tabular-nums">
+            <li><strong>1,800m</strong> 雲霧高冠線</li>
+            <li><strong>1,650m</strong> 冬茶凝香帶</li>
+            <li><strong>1,600m</strong> 春茶與熟香核心帶</li>
+          </ul>
+        </div>
+        <div class="terroir-art-wrap">
+          <img src="assets/plates/terroir-shanlinxi.jpg" alt="南投杉林溪高海拔重巒山稜與杉林雲霧線刻版畫">
+        </div>
+      </div>
+
+      <div class="origin-details-grid">
         <div class="origin-text-block">
           <p>杉林溪茶區位於南投竹山鎮鹿谷鄉交界，海拔座落於 1,600 至 1,800 公尺以上。這裡終年雲霧籠罩，午後山嵐湧現，日照時間短，使茶葉苦澀成分減少，天然茶胺酸與果膠質大量蓄積。</p>
           <p>茶園環抱在天然杉木林與原始竹林之間，土壤肥沃富含有機質。日夜溫差高達十餘度，茶樹生長緩慢，葉肉肥厚翠綠，沖泡出的茶湯帶有獨特的高山冷礦香與杉木清韻，入口喉韻綿長回甘。</p>
         </div>
-        <div class="altitude-badge-card">
-          <div class="alt-meter">
-            <span class="num">1,600</span>
-            <span class="unit">公尺以上 高海拔產區</span>
+        <div class="origin-ledger" aria-label="產區風土參數一覽">
+          <div class="origin-ledger-inner">
+            <div class="origin-ledger-row">
+              <div class="ledger-key">產區座落</div>
+              <div class="ledger-val">台灣南投竹山 · 杉林溪支脈</div>
+            </div>
+            <div class="origin-ledger-row">
+              <div class="ledger-key">平均氣溫</div>
+              <div class="ledger-val tabular-nums">年均溫 15°C~18°C 冷涼氣候</div>
+            </div>
+            <div class="origin-ledger-row">
+              <div class="ledger-key">土壤特質</div>
+              <div class="ledger-val">高有機腐質黑土 · 天然杉林環抱</div>
+            </div>
+            <div class="origin-ledger-row">
+              <div class="ledger-key">採摘標準</div>
+              <div class="ledger-val">一心二葉至一心三葉 手工嫩採</div>
+            </div>
           </div>
-          <ul class="alt-specs">
-            <li><span class="label">產區座落</span> <strong>台灣南投竹山 · 杉林溪支脈</strong></li>
-            <li><span class="label">平均氣溫</span> <strong>年均溫 15°C~18°C 冷涼氣候</strong></li>
-            <li><span class="label">土壤特質</span> <strong>高有機腐質黑土 · 天然杉林環抱</strong></li>
-            <li><span class="label">採摘標準</span> <strong>一心二葉至一心三葉 手工嫩採</strong></li>
-          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION: PROCESS 製茶工序 -->
+  <!-- SECTION 4: 5-STEP PROCESS (WARM PAPER #f7f6f2) -->
   <section id="process" class="section-process">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">五道慢工細製，封存一片茶葉的天然清芬</h2>
+      <div class="section-header section-header--on-light">
+        <h2 class="section-title section-title--on-light">五道慢工細製，封存一片茶葉的天然清芬</h2>
+        <p class="section-lead section-lead--on-light">點選下方任一道製茶工序，讀懂每一道火候與走水工夫如何改變茶杯裡的香氣與甘醇。</p>
       </div>
-      <div class="process-timeline">
-        <div class="process-card reveal-on-scroll">
-          <div class="card-step">STEP 01</div>
-          <div class="card-name">採菁</div>
-          <div class="card-desc">清晨露水退去後，茶工嚴選採摘一心二葉鮮嫩茶菁，維持葉片完整無損。</div>
+
+      <div class="process-interactive-board">
+        <div class="process-tabs-bar" role="tablist" aria-label="五道製茶工序檢視">
+          <button type="button" class="process-step-tab is-active" role="tab" aria-selected="true" data-step="0">
+            <span class="p-tab-num">工序 壹</span>
+            <span class="p-tab-name">採菁</span>
+          </button>
+          <button type="button" class="process-step-tab" role="tab" aria-selected="false" data-step="1">
+            <span class="p-tab-num">工序 貳</span>
+            <span class="p-tab-name">萎凋</span>
+          </button>
+          <button type="button" class="process-step-tab" role="tab" aria-selected="false" data-step="2">
+            <span class="p-tab-num">工序 參</span>
+            <span class="p-tab-name">炒菁</span>
+          </button>
+          <button type="button" class="process-step-tab" role="tab" aria-selected="false" data-step="3">
+            <span class="p-tab-num">工序 肆</span>
+            <span class="p-tab-name">揉捻</span>
+          </button>
+          <button type="button" class="process-step-tab" role="tab" aria-selected="false" data-step="4">
+            <span class="p-tab-num">工序 伍</span>
+            <span class="p-tab-name">乾燥</span>
+          </button>
         </div>
-        <div class="process-card reveal-on-scroll">
-          <div class="card-step">STEP 02</div>
-          <div class="card-name">萎凋</div>
-          <div class="card-desc">先經溫和日光萎凋，再入室內靜置與翻動走水，喚醒高山茶清花香。</div>
+
+        <div class="process-stage-panel" id="process-stage-panel" aria-live="polite">
+          <div>
+            <h3 class="process-stage-title" id="proc-stage-title">01 · 採菁 — 離枝留嫩，守住葉片完整</h3>
+            <p class="process-stage-desc" id="proc-stage-desc">清晨露水退去後，茶工嚴選採摘一心二葉鮮嫩茶菁，維持葉片完整無損，不帶老梗與過多雨水，為後續清香走水打下乾淨底子。</p>
+            <div class="process-impact-box">
+              <div class="process-impact-label">喝得到的差別</div>
+              <p class="process-impact-text" id="proc-stage-impact">葉片完整未壓傷，茶湯就能保持清澈透亮、喝起來不雜不澀。</p>
+            </div>
+          </div>
+
+          <div class="process-metrics-card">
+            <div class="p-metric-row">
+              <span>採摘部位</span>
+              <strong id="proc-m1-val">一心二葉至一心三葉</strong>
+            </div>
+            <div class="p-metric-row">
+              <span>關鍵要求</span>
+              <strong id="proc-m2-val">露水退去後手工嫩採</strong>
+            </div>
+            <div class="p-metric-row">
+              <span>風味貢獻</span>
+              <strong id="proc-m3-val">茶湯乾淨清亮、甘甜不雜</strong>
+            </div>
+          </div>
         </div>
-        <div class="process-card reveal-on-scroll">
-          <div class="card-step">STEP 03</div>
-          <div class="card-name">炒菁</div>
-          <div class="card-desc">以適度高溫停止發酵，鎖住鮮活翠綠與果膠，去除草青味，保留甘醇。</div>
-        </div>
-        <div class="process-card reveal-on-scroll">
-          <div class="card-step">STEP 04</div>
-          <div class="card-name">揉捻</div>
-          <div class="card-desc">反覆布揉成緊結飽滿的半球型顆粒，破壞葉表細胞，讓沖泡時茶味層次釋放。</div>
-        </div>
-        <div class="process-card reveal-on-scroll">
-          <div class="card-step">STEP 05</div>
-          <div class="card-name">乾燥</div>
-          <div class="card-desc">緩慢烘乾多餘水分至含水量 4% 以下，純淨封香，利於長久存放與醇化。</div>
+
+        <div class="process-all-summary" aria-label="五道工序一覽總表">
+          <div class="process-mini-item">
+            <strong>1 採菁</strong>
+            嚴選一心二葉鮮嫩茶菁，維持葉片完整無損。
+          </div>
+          <div class="process-mini-item">
+            <strong>2 萎凋</strong>
+            日光與室內靜置翻動走水，喚醒高山花香。
+          </div>
+          <div class="process-mini-item">
+            <strong>3 炒菁</strong>
+            適度高溫停止發酵，去除菁味並鎖住鮮甜果膠。
+          </div>
+          <div class="process-mini-item">
+            <strong>4 揉捻</strong>
+            反覆布揉成緊結半球顆粒，使沖泡層次飽滿釋放。
+          </div>
+          <div class="process-mini-item">
+            <strong>5 乾燥</strong>
+            緩慢烘乾至含水量 4% 以下，純淨封香利於久存。
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION: TEAS 當季主力茶品 -->
-  <section id="teas" class="section-products">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">德億嚴選 · 杉林溪當季主力品項</h2>
-      </div>
-      <div class="products-grid">
-        
-        <!-- Tea 1 -->
-        <article class="product-card reveal-on-scroll">
-          <div class="product-card-top">
-            <div class="product-tag">SIGNATURE · 輕焙原味</div>
-            <h3 class="product-title">杉林溪高山烏龍 · 春茶</h3>
-          </div>
-          <div class="product-body">
-            <ul class="spec-list">
-              <li><span class="k">產區海拔</span> <strong>杉林溪 1,600m+</strong></li>
-              <li><span class="k">焙火程度</span> <strong>輕焙火 · 留存清香</strong></li>
-              <li><span class="k">標準包裝</span> <strong>真空四兩鋁箔 (150g)</strong></li>
-            </ul>
-            <p class="product-flavor">春季嫩採，茶湯金黃透亮，帶有細緻優雅的蘭花冷香，入口滑順甘甜，生津快速。</p>
-            <div class="product-action">
-              <a href="#contact" class="btn-product-inquire" data-tea="杉林溪高山烏龍 · 當季春茶 (四兩 150g)">LINE 詢價春茶現貨</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Tea 2 -->
-        <article class="product-card reveal-on-scroll">
-          <div class="product-card-top">
-            <div class="product-tag">LIMITED · 凝香厚韻</div>
-            <h3 class="product-title">杉林溪高山烏龍 · 冬茶</h3>
-          </div>
-          <div class="product-body">
-            <ul class="spec-list">
-              <li><span class="k">產區海拔</span> <strong>杉林溪 1,650m+</strong></li>
-              <li><span class="k">焙火程度</span> <strong>極輕焙 · 原香重喉韻</strong></li>
-              <li><span class="k">標準包裝</span> <strong>真空四兩鋁箔 (150g)</strong></li>
-            </ul>
-            <p class="product-flavor">冬季茶樹休眠前採摘，葉肉厚實，冷山韻味鮮明，茶氣凝鍊持久，耐泡度極高。</p>
-            <div class="product-action">
-              <a href="#contact" class="btn-product-inquire" data-tea="杉林溪高山烏龍 · 嚴選冬茶 (四兩 150g)">LINE 詢價冬茶現貨</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Tea 3 -->
-        <article class="product-card reveal-on-scroll">
-          <div class="product-card-top">
-            <div class="product-tag">CLASSIC · 慢火溫潤</div>
-            <h3 class="product-title">杉林溪 · 熟香熟火烏龍</h3>
-          </div>
-          <div class="product-body">
-            <ul class="spec-list">
-              <li><span class="k">產區海拔</span> <strong>杉林溪 1,600m</strong></li>
-              <li><span class="k">焙火程度</span> <strong>中度慢焙 · 堅果蜜香</strong></li>
-              <li><span class="k">標準包裝</span> <strong>真空四兩鋁箔 (150g)</strong></li>
-            </ul>
-            <p class="product-flavor">自家製茶師慢火精焙，轉化出熟果香與溫潤甘甜，不苦不澀，溫和不刺激腸胃。</p>
-            <div class="product-action">
-              <a href="#contact" class="btn-product-inquire" data-tea="杉林溪熟香熟火烏龍 (四兩 150g)">LINE 詢價熟香烏龍</a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION: BREWING 沖泡指南 -->
+  <!-- SECTION 5: BREWING & TIMER (TEAL #284756) -->
   <section id="brewing" class="section-brewing">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">品味一杯好茶：高山烏龍沖泡指南</h2>
+      <div class="section-header section-header--on-dark">
+        <h2 class="section-title section-title--on-dark">品味一杯好茶：高山烏龍<br>沖泡指南與出湯計時器</h2>
+        <p class="section-lead section-lead--on-dark">不論是用紫砂壺細細品飲，或用辦公馬克杯日常泡一盞茶，抓準水溫與秒數，第一泡就能把山頭香泡出來。</p>
       </div>
-      <div class="brewing-grid">
-        <div class="brewing-card reveal-on-scroll">
-          <div class="brewing-icon">95°C~100°C</div>
-          <div class="brewing-title">沖泡水溫</div>
-          <div class="brewing-desc">高山茶顆粒緊實，建議以滾燙沸水充分激發高山茶的冷香與花香。</div>
+
+      <div class="brewing-workbench">
+        <!-- Left: Vessel Mode & Brewing Ratios -->
+        <div class="brewing-guide-box">
+          <div>
+            <div class="vessel-switcher" role="tablist" aria-label="沖泡茶具切換">
+              <button type="button" class="vessel-btn is-active" role="tab" aria-selected="true" data-vessel="teapot">紫砂壺 / 瓷蓋杯（推薦）</button>
+              <button type="button" class="vessel-btn" role="tab" aria-selected="false" data-vessel="mug">馬克杯 / 保溫瓶簡便泡</button>
+            </div>
+          </div>
+
+          <div class="brewing-params-grid" id="brewing-params-grid" aria-live="polite">
+            <div class="brew-param-cell">
+              <div class="brew-param-num tabular-nums" id="bp-temp-num">95°C ~ 100°C</div>
+              <div class="brew-param-title">沖泡水溫</div>
+              <div class="brew-param-desc" id="bp-temp-desc">高山茶顆粒緊實，建議以滾燙沸水充分激發高山茶的冷香與花香。</div>
+            </div>
+            <div class="brew-param-cell">
+              <div class="brew-param-num tabular-nums" id="bp-ratio-num">1 : 20</div>
+              <div class="brew-param-title">茶水比例</div>
+              <div class="brew-param-desc" id="bp-ratio-desc">一般紫砂壺或瓷壺，茶葉鋪滿壺底約 1/4 至 1/5 空間即可。</div>
+            </div>
+            <div class="brew-param-cell">
+              <div class="brew-param-num tabular-nums" id="bp-time-num">50 秒</div>
+              <div class="brew-param-title">首泡時間</div>
+              <div class="brew-param-desc" id="bp-time-desc">溫潤泡後，第一泡浸泡約 50 秒即可出湯，往後每泡順延 10~15 秒。</div>
+            </div>
+            <div class="brew-param-cell">
+              <div class="brew-param-num tabular-nums" id="bp-refill-num">6 ~ 8 泡</div>
+              <div class="brew-param-title">耐泡程度</div>
+              <div class="brew-param-desc" id="bp-refill-desc">正宗高山手採烏龍葉肉肥厚，可連續回沖 6 至 8 次依然香氣清雅。</div>
+            </div>
+          </div>
         </div>
-        <div class="brewing-card reveal-on-scroll">
-          <div class="brewing-icon">1 : 20</div>
-          <div class="brewing-title">茶水比例</div>
-          <div class="brewing-desc">一般紫砂壺或瓷壺，茶葉鋪滿壺底約 1/4 至 1/5 空間即可。</div>
-        </div>
-        <div class="brewing-card reveal-on-scroll">
-          <div class="brewing-icon">50 秒</div>
-          <div class="brewing-title">首泡時間</div>
-          <div class="brewing-desc">溫潤泡後，第一泡浸泡約 50 秒即可出湯，往後每泡順延 10~15 秒。</div>
-        </div>
-        <div class="brewing-card reveal-on-scroll">
-          <div class="brewing-icon">6~8 泡</div>
-          <div class="brewing-title">耐泡程度</div>
-          <div class="brewing-desc">正宗高山手採烏龍葉肉肥厚，可連續回沖 6 至 8 次依然香氣清雅。</div>
+
+        <!-- Right: Live Out-Pour Steep Timer -->
+        <div class="brew-timer-card" aria-label="烏龍茶實戰出湯計時器">
+          <div class="timer-header">
+            <h3 class="timer-heading">出湯節奏計時器</h3>
+            <span class="timer-rule-hint tabular-nums">首泡 50s · 每泡 +15s</span>
+          </div>
+
+          <div class="steep-chips" role="group" aria-label="選擇泡數設定時間">
+            <button type="button" class="steep-chip is-active tabular-nums" data-seconds="50" data-label="第 1 泡">第 1 泡 (50s)</button>
+            <button type="button" class="steep-chip tabular-nums" data-seconds="65" data-label="第 2 泡">第 2 泡 (65s)</button>
+            <button type="button" class="steep-chip tabular-nums" data-seconds="80" data-label="第 3 泡">第 3 泡 (80s)</button>
+            <button type="button" class="steep-chip tabular-nums" data-seconds="95" data-label="第 4 泡">第 4 泡 (95s)</button>
+            <button type="button" class="steep-chip tabular-nums" data-seconds="110" data-label="第 5 泡">第 5 泡 (110s)</button>
+            <button type="button" class="steep-chip tabular-nums" data-seconds="125" data-label="第 6 泡">第 6 泡 (125s)</button>
+          </div>
+
+          <div class="timer-clock-face">
+            <div class="timer-clock-digits tabular-nums" id="timer-display">00:50</div>
+            <div class="timer-status-line" id="timer-status" role="status" aria-live="polite">已選第 1 泡（50 秒），注入沸水後按下開始</div>
+          </div>
+
+          <div class="timer-controls">
+            <button type="button" class="btn-timer-start" id="btn-timer-start">開始計時</button>
+            <button type="button" class="btn-timer-reset" id="btn-timer-reset">重置</button>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION: CONTACT & STORE 門市與訂購 -->
+  <!-- SECTION 6: CONTACT & ORDERING (DARKEST #142630) -->
   <section id="contact" class="section-contact">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">聯絡德億 · 門市奉茶與即時訂購</h2>
+      <div class="section-header section-header--on-dark">
+        <h2 class="section-title section-title--on-dark">聯絡德億 · 門市奉茶與即時訂購</h2>
+        <p class="section-lead section-lead--on-dark">歡迎來南投鹿谷門市坐下喝杯熱茶，或直接填寫右側訂購單，資料將即時建檔並由專人透過電話或 LINE 聯繫確認。</p>
       </div>
-      <div class="contact-grid reveal-on-scroll">
+
+      <div class="contact-grid">
         <div class="contact-info-card">
           <div class="store-status">
-            <span id="store-status-dot" class="status-dot"></span>
+            <span id="store-status-dot" class="status-dot" aria-hidden="true"></span>
             <span id="store-status-text">門市營業中 · 歡迎來店試茶品茗</span>
           </div>
+
           <ul class="info-list">
             <li><strong>品牌名稱：</strong> 德億茶莊 DEYI TEA HOUSE</li>
-            <li><strong>主力茶品：</strong> 台灣杉林溪高山烏龍茶（產地原裝直送）</li>
+            <li><strong>主力茶品：</strong> 台灣杉林溪高山烏龍茶（四兩 150g 真空裝）</li>
             <li>
               <strong>實體門市：</strong>
               <div class="store-address-wrap">
                 <span class="store-address-text">558 南投縣鹿谷鄉鳳凰村鳳園路13號（德億茶莊民宿）</span>
-                <span class="store-landmark-tip">※ 鄰近鳳凰谷鳥園與麒麟潭，前往杉林溪茶區景觀要道，備有專屬停車空間。</span>
-                <div>
-                  <a href="https://www.google.com.tw/maps/place/%E5%BE%B7%E5%84%84%E8%8C%B6%E8%8E%8A%E6%B0%91%E5%AE%BF/@23.7348271,120.7853577,17z/data=!3m1!4b1!4m9!3m8!1s0x346ed3bdeab6b143:0x20ea22945a922c42!5m2!4m1!1i2!8m2!3d23.7348271!4d120.7853577!16s%2Fg%2F11g__mk9v"
-                     target="_blank"
-                     rel="noopener noreferrer"
-                     class="btn-map-guide">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    開啟 Google 地圖導航 ↗
-                  </a>
-                </div>
+                <span class="store-landmark-tip">鄰近鳳凰谷鳥園與麒麟潭，前往杉林溪茶區景觀要道，備有專屬停車空間。</span>
+                <a href="https://www.google.com.tw/maps/place/%E5%BE%B7%E5%84%84%E8%8C%B6%E8%8E%8A%E6%B0%91%E5%AE%BF/@23.7348271,120.7853577,17z/data=!3m1!4b1!4m9!3m8!1s0x346ed3bdeab6b143:0x20ea22945a922c42!5m2!4m1!1i2!8m2!3d23.7348271!4d120.7853577!16s%2Fg%2F11g__mk9v"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn-map-guide">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  開啟 Google 地圖導航 ↗
+                </a>
               </div>
             </li>
-            <li><strong>營業時間：</strong> 週一至週六 09:00 – 18:00（週日公休）</li>
-            <li><strong>聯絡電話：</strong> <a href="tel:0492752193" style="color:var(--c-copper);text-decoration:none;">049-2752193</a></li>
-            <li><strong>LINE 官方：</strong> <a href="javascript:void(0)" style="color:var(--c-copper);text-decoration:none;">@deyitea (點擊直接加入)</a></li>
+            <li><strong>營業時間：</strong> <span class="tabular-nums">週一至週六 09:00 – 18:00（週日公休）</span></li>
+            <li><strong>聯絡電話：</strong> <a href="tel:0492752193" class="info-link tabular-nums">049-2752193</a></li>
+            <li>
+              <strong>LINE 官方：</strong>
+              <button type="button" class="btn-copy-line" id="btn-copy-line" data-line-id="@deyitea">複製 LINE ID：@deyitea</button>
+              <span id="line-copy-feedback" class="line-copy-feedback" role="status" aria-live="polite"></span>
+            </li>
           </ul>
 
           <div class="map-embed-container">
@@ -1885,7 +2798,7 @@
               title="德億茶莊民宿 門市地圖"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d913.0878957486708!2d120.78506456582546!3d23.734838803127154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346ed3bdeab6b143%3A0x20ea22945a922c42!2z5b635YSE6Iy26I6K5rCR5a6_!5e0!3m2!1szh-TW!2stw!4v1792686061233!5m2!1szh-TW!2stw"
               width="100%"
-              height="200"
+              height="210"
               style="border:0;display:block;"
               allowfullscreen=""
               loading="lazy"
@@ -1893,15 +2806,15 @@
             </iframe>
           </div>
 
-          <div style="margin-top:20px;">
-            <p style="font-size:13px;color:#90a4ae;line-height:1.6;">
-              ※ 德億茶莊採「直接諮詢訂購」模式：確認品項與數量後，由專人親自確認焙度並為您黑貓或郵局宅配到府，買得透明安心。
-            </p>
-          </div>
+          <p class="order-policy-note">
+            德億茶莊採「直接諮詢訂購」模式：確認品項與數量後，由專人親自確認焙度並為您黑貓或郵局宅配到府，買得透明安心。
+          </p>
         </div>
 
         <div class="inquiry-form-card">
-          <h3 style="font-family:var(--f-serif);color:#fff;font-size:18px;margin-bottom:16px;">快速預約試茶／茶品訂購詢價</h3>
+          <h3 class="inquiry-form-title">快速預約試茶／茶品訂購詢價</h3>
+          <p class="inquiry-form-sub">送出後資料將立即自動寫入德億茶莊後台試算表，不需跳離本頁。</p>
+
           <form id="deyi-inquiry-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdz_uBY2gX00KyCRygSRAhi27kaD3kgXnGyckxNyDYfAlHjfw/formResponse" method="POST">
             <div class="form-group">
               <label for="uname">您的稱呼 *</label>
@@ -1941,7 +2854,7 @@
       </div>
       <div class="footer-meta">
         <span>實體門市：<a href="https://www.google.com.tw/maps/place/%E5%BE%B7%E5%84%84%E8%8C%B6%E8%8E%8A%E6%B0%91%E5%AE%BF/@23.7348271,120.7853577,17z/data=!3m1!4b1!4m9!3m8!1s0x346ed3bdeab6b143:0x20ea22945a922c42!5m2!4m1!1i2!8m2!3d23.7348271!4d120.7853577!16s%2Fg%2F11g__mk9v" target="_blank" rel="noopener noreferrer">558 南投縣鹿谷鄉鳳凰村鳳園路13號（德億茶莊民宿）↗</a></span>
-        <span>服務電話：<a href="tel:0492752193">049-2752193</a></span>
+        <span>服務電話：<a href="tel:0492752193" class="tabular-nums">049-2752193</a></span>
       </div>
       <p class="footer-copy">© 2026 德億茶莊 DEYI TEA HOUSE. All Rights Reserved.</p>
     </div>
@@ -1949,27 +2862,7 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Scroll-triggered reveal with IntersectionObserver
-      const reveals = document.querySelectorAll('.reveal-on-scroll');
-      if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-revealed');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.12,
-          rootMargin: '0px 0px -40px 0px'
-        });
-
-        reveals.forEach(el => observer.observe(el));
-      } else {
-        reveals.forEach(el => el.classList.add('is-revealed'));
-      }
-
-      // 2. Real-time Store Hours Detection (Taipei UTC+8: 09:00 - 18:00, Mon-Sat)
+      // 1. Real-time Store Hours Detection (Taipei UTC+8: Mon-Sat 09:00-18:00)
       const updateStoreStatus = () => {
         const statusText = document.getElementById('store-status-text');
         const statusDot = document.getElementById('store-status-dot');
@@ -1978,73 +2871,105 @@
         const now = new Date();
         const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
         const taipeiTime = new Date(utc + (3600000 * 8));
-        const day = taipeiTime.getDay(); // 0 is Sunday
+        const day = taipeiTime.getDay();
         const hour = taipeiTime.getHours();
 
         const isOpen = (day >= 1 && day <= 6) && (hour >= 9 && hour < 18);
         if (isOpen) {
           statusText.textContent = '門市營業中 · 歡迎來店試茶品茗';
-          statusDot.style.background = '#4caf50';
+          statusDot.style.background = '#67d170';
         } else {
           statusText.textContent = '今日門市打烊 · 歡迎線上留單／明日盡快回覆';
-          statusDot.style.background = '#c8834b';
+          statusDot.style.background = '#e5a36a';
         }
       };
       updateStoreStatus();
 
-      // 3. Mobile Navigation Drawer Toggle & Smooth Action
-      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-      const mobileNavDrawer = document.getElementById('mobile-nav-drawer');
-      const mobileNavLinks = document.querySelectorAll('.mobile-nav-item, .btn-drawer-cta');
+      // 2. Hero Interactive Spec Sheet Switcher
+      const HERO_TEA_DATA = {
+        spring: {
+          name: '杉林溪烏龍 · 春茶',
+          liquorColor: '#d8c958',
+          liquorLabel: '湯色：蜜綠金黃',
+          altitude: '海拔 1,600m 以上 · 四兩 150g',
+          roastLevel: '輕焙火',
+          roastFlavor: '蘭花冷香清揚、茶湯滑順回甘生津',
+          lastStep: '5 乾燥',
+          highlightLast: false,
+          formValue: '杉林溪高山烏龍 · 當季春茶 (四兩 150g)'
+        },
+        winter: {
+          name: '杉林溪烏龍 · 冬茶',
+          liquorColor: '#e3db84',
+          liquorLabel: '湯色：澄亮鵝黃',
+          altitude: '海拔 1,650m 以上 · 四兩 150g',
+          roastLevel: '極輕焙',
+          roastFlavor: '冷山韻味鮮明、茶氣凝鍊持久耐泡',
+          lastStep: '5 乾燥',
+          highlightLast: false,
+          formValue: '杉林溪高山烏龍 · 嚴選冬茶 (四兩 150g)'
+        },
+        roasted: {
+          name: '杉林溪 · 熟香烏龍',
+          liquorColor: '#c4762a',
+          liquorLabel: '湯色：琥珀橙金',
+          altitude: '海拔 1,600m · 四兩 150g',
+          roastLevel: '中度慢焙',
+          roastFlavor: '堅果蜜香與熟果韻、溫潤不刺激腸胃',
+          lastStep: '5 慢火精焙',
+          highlightLast: true,
+          formValue: '杉林溪熟香熟火烏龍 (四兩 150g)'
+        }
+      };
 
-      if (mobileMenuToggle && mobileNavDrawer) {
-        const toggleMobileMenu = (forceState) => {
-          const isOpen = typeof forceState === 'boolean'
-            ? forceState
-            : !mobileNavDrawer.classList.contains('is-open');
+      const heroTabs = document.querySelectorAll('.hero-tea-tab[data-hero-tea]');
+      const specNameEl = document.getElementById('spec-tea-name');
+      const specDotEl = document.getElementById('spec-liquor-dot');
+      const specLiquorEl = document.getElementById('spec-liquor-name');
+      const specAltEl = document.getElementById('spec-origin-alt');
+      const specRoastEl = document.getElementById('spec-roast-level');
+      const specFlavorEl = document.getElementById('spec-roast-flavor');
+      const specLastStepEl = document.getElementById('spec-step-last');
+      const heroCtaLink = document.getElementById('hero-cta-link');
+      const teaSelect = document.getElementById('utea');
 
-          if (isOpen) {
-            mobileNavDrawer.classList.add('is-open');
-            mobileMenuToggle.classList.add('is-active');
-            mobileMenuToggle.setAttribute('aria-expanded', 'true');
-            mobileMenuToggle.setAttribute('aria-label', '關閉選單');
-          } else {
-            mobileNavDrawer.classList.remove('is-open');
-            mobileMenuToggle.classList.remove('is-active');
-            mobileMenuToggle.setAttribute('aria-expanded', 'false');
-            mobileMenuToggle.setAttribute('aria-label', '開啟選單');
-          }
-        };
+      heroTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const key = tab.getAttribute('data-hero-tea');
+          const data = HERO_TEA_DATA[key];
+          if (!data) return;
 
-        mobileMenuToggle.addEventListener('click', (e) => {
-          e.stopPropagation();
-          toggleMobileMenu();
-        });
-
-        // Close drawer when any nav link is tapped
-        mobileNavLinks.forEach((link) => {
-          link.addEventListener('click', () => {
-            toggleMobileMenu(false);
+          heroTabs.forEach((btn) => {
+            btn.classList.remove('is-active');
+            btn.setAttribute('aria-selected', 'false');
           });
-        });
+          tab.classList.add('is-active');
+          tab.setAttribute('aria-selected', 'true');
 
-        // Close when tapping outside the header/drawer
-        document.addEventListener('click', (e) => {
-          if (!mobileNavDrawer.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-            toggleMobileMenu(false);
+          if (specNameEl) specNameEl.textContent = data.name;
+          if (specDotEl) specDotEl.style.background = data.liquorColor;
+          if (specLiquorEl) specLiquorEl.textContent = data.liquorLabel;
+          if (specAltEl) specAltEl.textContent = data.altitude;
+          if (specRoastEl) specRoastEl.textContent = data.roastLevel;
+          if (specFlavorEl) specFlavorEl.textContent = data.roastFlavor;
+          if (specLastStepEl) {
+            specLastStepEl.textContent = data.lastStep;
+            specLastStepEl.classList.toggle('is-highlighted', data.highlightLast);
+          }
+          if (heroCtaLink) {
+            heroCtaLink.setAttribute('data-selected-tea', data.formValue);
           }
         });
+      });
 
-        // Close on Escape key
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && mobileNavDrawer.classList.contains('is-open')) {
-            toggleMobileMenu(false);
-          }
+      if (heroCtaLink && teaSelect) {
+        heroCtaLink.addEventListener('click', () => {
+          const val = heroCtaLink.getAttribute('data-selected-tea');
+          if (val) teaSelect.value = val;
         });
       }
 
-      // 4. Product Card Quick Select -> Auto-select dropdown in Inquiry Form
-      const teaSelect = document.getElementById('utea');
+      // 3. Product Card Quick Select -> Auto-select dropdown in Inquiry Form
       const productButtons = document.querySelectorAll('.btn-product-inquire[data-tea]');
       productButtons.forEach((btn) => {
         btn.addEventListener('click', () => {
@@ -2055,7 +2980,302 @@
         });
       });
 
-      // 5. Google Form Submission -> Auto-write to Google Spreadsheet
+      // 4. Interactive 5-Step Process Board
+      const PROCESS_STEPS = [
+        {
+          title: '01 · 採菁 — 離枝留嫩，守住葉片完整',
+          desc: '清晨露水退去後，茶工嚴選採摘一心二葉鮮嫩茶菁，維持葉片完整無損，不帶老梗與過多雨水，為後續清香走水打下乾淨底子。',
+          impact: '葉片完整未壓傷，茶湯就能保持清澈透亮、喝起來不雜不澀。',
+          m1: '一心二葉至一心三葉',
+          m2: '露水退去後手工嫩採',
+          m3: '茶湯乾淨清亮、甘甜不雜'
+        },
+        {
+          title: '02 · 萎凋 — 陽光與室內靜置走水喚香',
+          desc: '先經溫和日光萎凋散去表層多餘水分，再移入室內靜置並定時輕翻走水，使葉片緣微發酵轉化，喚醒高山茶特有的清揚花香。',
+          impact: '走水夠均勻，熱水一沖下去才有天然蘭花香，而不是生青味。',
+          m1: '日光萎凋 ＋ 室內靜置',
+          m2: '逐次翻動、均勻消水',
+          m3: '激發高山茶細緻蘭花香氣'
+        },
+        {
+          title: '03 · 炒菁 — 高溫鎖鮮，封存山嵐果膠',
+          desc: '在最佳發酵時刻以適度高溫炒菁停止酵素作用，妥善鎖住茶葉翠綠鮮活與天然果膠質，徹底去除生青草味，留存清爽甘醇。',
+          impact: '決定一杯茶「青不青、甜不甜」的分水嶺，也是耐泡甜度的來源。',
+          m1: '適度高溫鍋炒止酵',
+          m2: '去除青氣、留住果膠',
+          m3: '保留鮮活翠綠與清甜口感'
+        },
+        {
+          title: '04 · 揉捻 — 布球團揉成緊實半球顆粒',
+          desc: '將茶葉包入棉布反覆整形與壓揉，逐步揉緊成飽滿勻稱的半球型顆粒，適度破壞葉表細胞組織，讓滋味封存於顆粒之中。',
+          impact: '緊實度越均勻，第一泡慢慢展開、連泡六至八次都還有喉韻。',
+          m1: '多次反覆布球團揉',
+          m2: '外型緊結飽滿半球狀',
+          m3: '香氣與茶湯層次穩定釋放'
+        },
+        {
+          title: '05 · 乾燥 — 慢火收乾含水量 4% 以下',
+          desc: '最後透過低溫緩慢烘乾去除多餘水氣至含水量 4% 以下，鎖住高山純淨清香；若製作熟香烏龍則進一步以慢火精焙，轉出堅果熟果甘甜。',
+          impact: '乾燥徹底加上真空四兩封存，即使放半年一年依然能泡出山頭甜韻。',
+          m1: '含水量 4% 以下低溫封乾',
+          m2: '春／冬茶輕焙 · 熟香中焙',
+          m3: '利於長久存放與穩定醇化'
+        }
+      ];
+
+      const procTabs = document.querySelectorAll('.process-step-tab[data-step]');
+      const procTitle = document.getElementById('proc-stage-title');
+      const procDesc = document.getElementById('proc-stage-desc');
+      const procImpact = document.getElementById('proc-stage-impact');
+      const procM1 = document.getElementById('proc-m1-val');
+      const procM2 = document.getElementById('proc-m2-val');
+      const procM3 = document.getElementById('proc-m3-val');
+
+      procTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const idx = Number(tab.getAttribute('data-step'));
+          const step = PROCESS_STEPS[idx];
+          if (!step) return;
+
+          procTabs.forEach((btn) => {
+            btn.classList.remove('is-active');
+            btn.setAttribute('aria-selected', 'false');
+          });
+          tab.classList.add('is-active');
+          tab.setAttribute('aria-selected', 'true');
+
+          if (procTitle) procTitle.textContent = step.title;
+          if (procDesc) procDesc.textContent = step.desc;
+          if (procImpact) procImpact.textContent = step.impact;
+          if (procM1) procM1.textContent = step.m1;
+          if (procM2) procM2.textContent = step.m2;
+          if (procM3) procM3.textContent = step.m3;
+        });
+      });
+
+      // 5. Vessel Switcher in Brewing Section
+      const VESSEL_CONFIG = {
+        teapot: {
+          tempNum: '95°C ~ 100°C',
+          tempDesc: '高山茶顆粒緊實，建議以滾燙沸水充分激發高山茶的冷香與花香。',
+          ratioNum: '1 : 20',
+          ratioDesc: '一般紫砂壺或瓷壺，茶葉鋪滿壺底約 1/4 至 1/5 空間即可。',
+          timeNum: '50 秒',
+          timeDesc: '溫潤泡後，第一泡浸泡約 50 秒即可出湯，往後每泡順延 10~15 秒。',
+          refillNum: '6 ~ 8 泡',
+          refillDesc: '正宗高山手採烏龍葉肉肥厚，可連續回沖 6 至 8 次依然香氣清雅。'
+        },
+        mug: {
+          tempNum: '95°C ~ 100°C',
+          tempDesc: '馬克杯可直接沖入熱開水；若想帶甜柔一點可開蓋散熱 10 秒再泡。',
+          ratioNum: '約 3g : 300ml',
+          ratioDesc: '抓取約十元硬幣大小的一小撮茶粒放入 300ml 馬克杯（茶葉約佔杯底一層）。',
+          timeNum: '2 分半 ~ 3 分',
+          timeDesc: '浸泡約 2 分半即可喝一半留一半再回沖，避免久浸讓茶湯過濃。',
+          refillNum: '3 ~ 4 次回沖',
+          refillDesc: '辦公室或旅途也能輕鬆喝到杉林溪花香與不澀回甘。'
+        }
+      };
+
+      const vesselBtns = document.querySelectorAll('.vessel-btn[data-vessel]');
+      const bpTempNum = document.getElementById('bp-temp-num');
+      const bpTempDesc = document.getElementById('bp-temp-desc');
+      const bpRatioNum = document.getElementById('bp-ratio-num');
+      const bpRatioDesc = document.getElementById('bp-ratio-desc');
+      const bpTimeNum = document.getElementById('bp-time-num');
+      const bpTimeDesc = document.getElementById('bp-time-desc');
+      const bpRefillNum = document.getElementById('bp-refill-num');
+      const bpRefillDesc = document.getElementById('bp-refill-desc');
+
+      vesselBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const key = btn.getAttribute('data-vessel');
+          const cfg = VESSEL_CONFIG[key];
+          if (!cfg) return;
+
+          vesselBtns.forEach((b) => {
+            b.classList.remove('is-active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          btn.classList.add('is-active');
+          btn.setAttribute('aria-selected', 'true');
+
+          if (bpTempNum) bpTempNum.textContent = cfg.tempNum;
+          if (bpTempDesc) bpTempDesc.textContent = cfg.tempDesc;
+          if (bpRatioNum) bpRatioNum.textContent = cfg.ratioNum;
+          if (bpRatioDesc) bpRatioDesc.textContent = cfg.ratioDesc;
+          if (bpTimeNum) bpTimeNum.textContent = cfg.timeNum;
+          if (bpTimeDesc) bpTimeDesc.textContent = cfg.timeDesc;
+          if (bpRefillNum) bpRefillNum.textContent = cfg.refillNum;
+          if (bpRefillDesc) bpRefillDesc.textContent = cfg.refillDesc;
+        });
+      });
+
+      // 6. Out-Pour Steep Countdown Timer
+      const steepChips = document.querySelectorAll('.steep-chip[data-seconds]');
+      const timerDisplay = document.getElementById('timer-display');
+      const timerStatus = document.getElementById('timer-status');
+      const timerStartBtn = document.getElementById('btn-timer-start');
+      const timerResetBtn = document.getElementById('btn-timer-reset');
+
+      let selectedSeconds = 50;
+      let selectedLabel = '第 1 泡';
+      let remainingSeconds = 50;
+      let timerInterval = null;
+
+      const formatTime = (sec) => {
+        const m = String(Math.floor(sec / 60)).padStart(2, '0');
+        const s = String(sec % 60).padStart(2, '0');
+        return `${m}:${s}`;
+      };
+
+      const stopTimer = () => {
+        if (timerInterval) {
+          clearInterval(timerInterval);
+          timerInterval = null;
+        }
+      };
+
+      const renderTimerClock = () => {
+        if (timerDisplay) timerDisplay.textContent = formatTime(remainingSeconds);
+      };
+
+      steepChips.forEach((chip) => {
+        chip.addEventListener('click', () => {
+          stopTimer();
+          steepChips.forEach((c) => c.classList.remove('is-active'));
+          chip.classList.add('is-active');
+
+          selectedSeconds = Number(chip.getAttribute('data-seconds')) || 50;
+          selectedLabel = chip.getAttribute('data-label') || '第 1 泡';
+          remainingSeconds = selectedSeconds;
+          renderTimerClock();
+
+          if (timerStartBtn) timerStartBtn.textContent = '開始計時';
+          if (timerStatus) {
+            timerStatus.className = 'timer-status-line';
+            timerStatus.textContent = `已選${selectedLabel}（${selectedSeconds} 秒），注入沸水後按下開始`;
+          }
+        });
+      });
+
+      if (timerStartBtn) {
+        timerStartBtn.addEventListener('click', () => {
+          if (timerInterval) {
+            stopTimer();
+            timerStartBtn.textContent = '繼續計時';
+            if (timerStatus) {
+              timerStatus.className = 'timer-status-line';
+              timerStatus.textContent = `已暫停（${selectedLabel} 剩餘 ${remainingSeconds} 秒）`;
+            }
+            return;
+          }
+
+          if (remainingSeconds <= 0) {
+            remainingSeconds = selectedSeconds;
+            renderTimerClock();
+          }
+
+          timerStartBtn.textContent = '暫停計時';
+          if (timerStatus) {
+            timerStatus.className = 'timer-status-line';
+            timerStatus.textContent = `${selectedLabel} 浸泡中，準備出湯⋯`;
+          }
+
+          timerInterval = setInterval(() => {
+            remainingSeconds -= 1;
+            renderTimerClock();
+
+            if (remainingSeconds <= 0) {
+              stopTimer();
+              timerStartBtn.textContent = '重新計時';
+              if (timerStatus) {
+                timerStatus.className = 'timer-status-line is-done';
+                timerStatus.textContent = `✓ ${selectedLabel}出湯時間到，請倒盡茶湯享用！`;
+              }
+            }
+          }, 1000);
+        });
+      }
+
+      if (timerResetBtn) {
+        timerResetBtn.addEventListener('click', () => {
+          stopTimer();
+          remainingSeconds = selectedSeconds;
+          renderTimerClock();
+          if (timerStartBtn) timerStartBtn.textContent = '開始計時';
+          if (timerStatus) {
+            timerStatus.className = 'timer-status-line';
+            timerStatus.textContent = `已重置為${selectedLabel}（${selectedSeconds} 秒）`;
+          }
+        });
+      }
+
+      // 7. LINE ID One-Click Copy Button
+      const copyLineBtn = document.getElementById('btn-copy-line');
+      const copyFeedback = document.getElementById('line-copy-feedback');
+      if (copyLineBtn && copyFeedback) {
+        copyLineBtn.addEventListener('click', async () => {
+          const lineId = copyLineBtn.getAttribute('data-line-id') || '@deyitea';
+          try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              await navigator.clipboard.writeText(lineId);
+            } else {
+              const tempInput = document.createElement('input');
+              tempInput.value = lineId;
+              document.body.appendChild(tempInput);
+              tempInput.select();
+              document.execCommand('copy');
+              document.body.removeChild(tempInput);
+            }
+            copyFeedback.textContent = `✓ 已複製 ${lineId}`;
+          } catch {
+            copyFeedback.textContent = `請在 LINE 搜尋 ${lineId}`;
+          }
+        });
+      }
+
+      // 8. Mobile Navigation Drawer Toggle
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileNavDrawer = document.getElementById('mobile-nav-drawer');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-item, .btn-drawer-cta');
+
+      if (mobileMenuToggle && mobileNavDrawer) {
+        const toggleMobileMenu = (forceState) => {
+          const isOpen = typeof forceState === 'boolean'
+            ? forceState
+            : !mobileNavDrawer.classList.contains('is-open');
+
+          mobileNavDrawer.classList.toggle('is-open', isOpen);
+          mobileMenuToggle.classList.toggle('is-active', isOpen);
+          mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+          mobileMenuToggle.setAttribute('aria-label', isOpen ? '關閉選單' : '開啟選單');
+        };
+
+        mobileMenuToggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleMobileMenu();
+        });
+
+        mobileNavLinks.forEach((link) => {
+          link.addEventListener('click', () => toggleMobileMenu(false));
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!mobileNavDrawer.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+            toggleMobileMenu(false);
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && mobileNavDrawer.classList.contains('is-open')) {
+            toggleMobileMenu(false);
+          }
+        });
+      }
+
+      // 9. Google Form Submission -> Auto-write to Google Spreadsheet
       const inquiryForm = document.getElementById('deyi-inquiry-form');
       const submitBtn = document.getElementById('btn-submit-inquiry');
       const statusMsg = document.getElementById('form-status-msg');
