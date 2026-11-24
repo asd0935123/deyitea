@@ -1,3 +1,8 @@
 .DS_Store
 Thumbs.db
 *.log
+.impeccable/
+PRODUCT.md
+DESIGN.md
+regions.json
+德億茶莊_LOGO.pdf
