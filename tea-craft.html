@@ -28,6 +28,14 @@
         <span class="mobile-brand-title">德億茶莊</span>
       </a>
       <div class="mobile-header-actions">
+        <a href="tea-craft.html" class="btn-mobile-nav-3d is-current" aria-current="page">
+          <svg class="nav-3d-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+          </svg>
+          <span>3D 製茶</span>
+        </a>
         <a href="index.html#contact" class="btn-mobile-nav-line">LINE 詢價</a>
         <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="開啟選單" aria-expanded="false" aria-controls="mobile-nav-drawer">
           <span class="menu-icon-box" aria-hidden="true">
@@ -61,15 +69,6 @@
           </a>
         </li>
         <li>
-          <a href="tea-craft.html" class="mobile-nav-item">
-            <div class="nav-item-content">
-              <span class="nav-item-title">3D 互動製茶體驗</span>
-              <span class="nav-item-desc">目前頁面 · 親手採菁、浪菁、炒菁、揉捻、焙火</span>
-            </div>
-            <span class="nav-item-arrow" aria-hidden="true">★</span>
-          </a>
-        </li>
-        <li>
           <a href="brewing.html" class="mobile-nav-item">
             <div class="nav-item-content">
               <span class="nav-item-title">沖泡指南與計時</span>
@@ -93,6 +92,7 @@
           <span>門市專線：<a href="tel:0492752193" class="tabular-nums">049-2752193</a></span>
           <span>門市地址：南投縣鹿谷鄉鳳凰村鳳園路13號</span>
         </div>
+        <a href="tea-craft.html" class="btn-drawer-3d">目前頁面 · 3D 互動製茶體驗 ★</a>
         <a href="index.html#contact" class="btn-drawer-cta">立即填寫訂購 / 詢價單</a>
       </div>
     </nav>
@@ -112,11 +112,20 @@
         <div class="desktop-nav-links">
           <a href="index.html#teas">茶品</a>
           <a href="story.html">風土製茶</a>
-          <a href="tea-craft.html" class="is-current" aria-current="page">3D 製茶</a>
           <a href="brewing.html">泡茶計時</a>
           <a href="index.html#contact">門市訂購</a>
         </div>
-        <a href="index.html#contact" class="btn-nav-line">LINE 詢價</a>
+        <div class="desktop-nav-ctas">
+          <a href="tea-craft.html" class="btn-nav-3d is-current" aria-current="page">
+            <svg class="nav-3d-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+            <span>3D 製茶體驗</span>
+          </a>
+          <a href="index.html#contact" class="btn-nav-line">LINE 詢價</a>
+        </div>
       </nav>
     </div>
   </header>
@@ -127,33 +136,33 @@
       <div class="tea3d-wrap">
         <div class="tea3d-intro">
           <h1 class="tea3d-title">五道製茶手藝：3D 插畫互動體驗</h1>
-          <p class="tea3d-subtitle">從海拔 1,600 公尺杉林溪茶園的一心二葉出發，親手體驗採菁、萎凋浪菁、高溫炒菁、布球團揉到文火焙乾，泡出屬於您的高山茶湯。</p>
+          <p class="tea3d-subtitle">從海拔 1,600 公尺杉林溪茶樹壟出發，自由點選任一工序體驗手工採摘一心二葉、拉動遮雨棚布擺盪走水、滾筒旋轉炒菁、平揉機包布團揉到焙籠文火慢烘。</p>
         </div>
 
-        <!-- 步驟導覽列 -->
+        <!-- 步驟導覽列（全部開放自由點擊切換） -->
         <div class="tea3d-steps-nav" role="tablist" aria-label="五道製茶體驗步驟導覽">
           <button type="button" class="tea3d-step-btn is-active" role="tab" aria-selected="true" data-tea3d-step="0">
-            <span class="tea3d-step-index"><span>01</span><span class="tea3d-step-state">進行中</span></span>
+            <span class="tea3d-step-index"><span>01</span><span class="tea3d-step-state">體驗中</span></span>
             <span class="tea3d-step-name">採菁</span>
           </button>
           <button type="button" class="tea3d-step-btn" role="tab" aria-selected="false" data-tea3d-step="1">
-            <span class="tea3d-step-index"><span>02</span><span class="tea3d-step-state">待解鎖</span></span>
-            <span class="tea3d-step-name">萎凋浪菁</span>
+            <span class="tea3d-step-index"><span>02</span><span class="tea3d-step-state">可體驗</span></span>
+            <span class="tea3d-step-name">遮雨棚萎凋</span>
           </button>
           <button type="button" class="tea3d-step-btn" role="tab" aria-selected="false" data-tea3d-step="2">
-            <span class="tea3d-step-index"><span>03</span><span class="tea3d-step-state">待解鎖</span></span>
-            <span class="tea3d-step-name">炒菁</span>
+            <span class="tea3d-step-index"><span>03</span><span class="tea3d-step-state">可體驗</span></span>
+            <span class="tea3d-step-name">滾筒炒菁</span>
           </button>
           <button type="button" class="tea3d-step-btn" role="tab" aria-selected="false" data-tea3d-step="3">
-            <span class="tea3d-step-index"><span>04</span><span class="tea3d-step-state">待解鎖</span></span>
-            <span class="tea3d-step-name">揉捻</span>
+            <span class="tea3d-step-index"><span>04</span><span class="tea3d-step-state">可體驗</span></span>
+            <span class="tea3d-step-name">布球團揉</span>
           </button>
           <button type="button" class="tea3d-step-btn" role="tab" aria-selected="false" data-tea3d-step="4">
-            <span class="tea3d-step-index"><span>05</span><span class="tea3d-step-state">待解鎖</span></span>
-            <span class="tea3d-step-name">乾燥焙火</span>
+            <span class="tea3d-step-index"><span>05</span><span class="tea3d-step-state">可體驗</span></span>
+            <span class="tea3d-step-name">焙籠乾燥</span>
           </button>
           <button type="button" class="tea3d-step-btn" role="tab" aria-selected="false" data-tea3d-step="5">
-            <span class="tea3d-step-index"><span>06</span><span class="tea3d-step-state">待解鎖</span></span>
+            <span class="tea3d-step-index"><span>06</span><span class="tea3d-step-state">可體驗</span></span>
             <span class="tea3d-step-name">品茗完成</span>
           </button>
         </div>
@@ -167,9 +176,17 @@
                 <span class="tea3d-prompt-badge" id="tea3d-prompt-badge">工序 壹 · 手工採菁</span>
                 <span class="tea3d-prompt-count" id="tea3d-prompt-count">已採收 0 / 5</span>
               </div>
-              <p class="tea3d-prompt-text" id="tea3d-prompt-text">點擊或滑過畫面上輕輕浮動的「一心二葉」嫩芽（共 5 株）採進竹簍，注意別點到深色老葉喔！</p>
+              <p class="tea3d-prompt-text" id="tea3d-prompt-text">點擊茶樹壟頂端鮮綠亮眼的「一心二葉」嫩芽（共 5 株）採進竹簍，老葉留在枝頭繼續養護喔！</p>
             </div>
             <div class="tea3d-hud-actions">
+              <button type="button" class="tea3d-sound-btn" id="tea3d-sound-btn" aria-pressed="true" aria-label="切換製茶音效">
+                <svg class="tea3d-sound-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <path class="sound-wave-path" d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                  <path class="sound-wave-path" d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                </svg>
+                <span id="tea3d-sound-label">音效：開</span>
+              </button>
               <button type="button" class="tea3d-assist-btn" id="tea3d-assist-btn">輔助採摘一株</button>
               <button type="button" class="tea3d-reset-step-btn" id="tea3d-reset-step-btn">重置本關</button>
             </div>
@@ -183,7 +200,7 @@
 
             <!-- 步驟 4 畫圈視覺提示 -->
             <div class="tea3d-circle-guide" id="tea3d-circle-guide" aria-hidden="true">
-              <span class="tea3d-circle-guide-label">沿此方向畫圈揉捻</span>
+              <span class="tea3d-circle-guide-label">沿此方向畫圈帶動平揉機</span>
             </div>
           </div>
 
@@ -209,11 +226,11 @@
             <h3>您的瀏覽器目前未啟用 3D WebGL 圖形加速</h3>
             <p>以下為德億茶莊杉林溪高山烏龍茶五道完整製茶工藝流程：</p>
             <ol>
-              <li>採菁：手工採摘一心二葉鮮嫩茶菁，保留完整葉片。</li>
-              <li>萎凋浪菁：搖晃竹篩輕微走水後，維持 20%~30% 輕發酵釋放蘭花香。</li>
-              <li>炒菁：高溫翻炒停止發酵，去除青氣並鎖住甘甜果膠。</li>
-              <li>揉捻：反覆布球團揉塑形為緊實飽滿的半球形烏龍顆粒。</li>
-              <li>乾燥焙火：文火慢烘至含水量 4% 以下，造就輕焙清香或熟香熟果風味。</li>
+              <li>採菁：在杉林溪茶樹壟手工採摘一心二葉鮮嫩茶梢，保留葉脈完整。</li>
+              <li>遮雨棚萎凋：在遮雨黑網棚場拉動萎凋棚布左右擺盪，讓茶菁均勻走水並帶出清雅花香。</li>
+              <li>滾筒炒菁：放入橫置高溫滾筒式炒菁機旋轉翻落殺菁，停止發酵並鎖住鮮甜果膠。</li>
+              <li>布球團揉：將茶葉包裹棉布放入平揉機壓揉成緊結半球顆粒，再移至竹箕散熱解塊。</li>
+              <li>焙籠乾燥：覆於竹篾焙籠上文火慢烘至含水量 4% 以下，造就輕焙清香或熟香熟果風味。</li>
             </ol>
           </div>
 
@@ -229,20 +246,14 @@
               <span class="tea3d-meter-value" id="tea3d-meter-value">0 / 5 株</span>
             </div>
 
-            <!-- Step 2 Phase B：室內靜置發酵度滑桿 -->
-            <div class="tea3d-slider-wrap" id="tea3d-slider-wrap">
-              <div class="tea3d-slider-control">
-                <div class="tea3d-slider-meta">
-                  <label for="tea3d-ferment-slider">室內靜置發酵程度滑桿（目標：20% ～ 30% 黃金區間）</label>
-                </div>
-                <input type="range" id="tea3d-ferment-slider" class="tea3d-range" min="0" max="50" value="8">
-              </div>
-              <span class="tea3d-subhint tabular-nums" id="tea3d-ferment-readout">目前發酵程度：8%</span>
+            <!-- Step 2：遮雨棚拉網擺盪即時水率提示 -->
+            <div class="tea3d-wither-wrap" id="tea3d-wither-wrap">
+              <span class="tea3d-subhint tabular-nums" id="tea3d-wither-status">遮雨黑網防護中 ｜ 茶菁含水率：78%（左右拉動棚布擺盪讓葉片均勻消水）</span>
             </div>
 
-            <!-- Step 3：炒菁鍋溫即時提示 -->
+            <!-- Step 3：滾筒炒菁鍋溫即時提示 -->
             <div class="tea3d-panfire-wrap" id="tea3d-panfire-wrap">
-              <span class="tea3d-subhint tabular-nums" id="tea3d-panfire-temp">目前鍋溫指標：32%（黃金殺菁區 55%～85%）</span>
+              <span class="tea3d-subhint tabular-nums" id="tea3d-panfire-temp">滾筒轉速與鍋溫指標：32%（黃金殺菁區 55%～85% · 約 280°C）</span>
             </div>
 
             <!-- Step 5：長按加熱與含水量指示 -->
@@ -270,7 +281,10 @@
             <p class="tea3d-k-effect"><strong>喝得到的差別：</strong><span id="tea3d-k-effect">葉片完整未壓傷，茶湯就能保持清澈透亮、喝起來不雜不澀。</span></p>
           </div>
           <div class="tea3d-k-actions">
-            <button type="button" class="tea3d-next-btn" id="tea3d-next-btn" disabled>完成本關操作即可下一步</button>
+            <div class="tea3d-step-jump-group">
+              <button type="button" class="tea3d-prev-btn" id="tea3d-prev-btn" hidden>← 上一關</button>
+              <button type="button" class="tea3d-next-btn" id="tea3d-next-btn">直接前往下一關：遮雨棚萎凋 →</button>
+            </div>
           </div>
         </aside>
       </div>
