@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'sha256-LsNam4837xV4JVe6/2cteXOl7gHJjhik9nnr/3TodGI='; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://cdn.jsdelivr.net; base-uri 'self'; object-src 'none';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>3D 插畫互動製茶體驗 | 德億茶莊 DEYI TEA HOUSE</title>
+  <meta name="description" content="親手走過南投杉林溪海拔 1,600 公尺高山烏龍茶五道製茶工序：採菁、萎凋浪菁、炒菁、揉捻與乾燥焙火，體驗一杯好茶的誕生。">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="css/tea-3d.css">
+  <script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+  }
+}
+  </script>
+</head>
+<body id="top">
+
+  <!-- MOBILE STICKY NAVIGATION (<= 992px) -->
+  <header class="mobile-header" id="mobile-header">
+    <div class="mobile-header-inner">
+      <a href="index.html#top" class="mobile-header-brand" aria-label="回到德億茶莊首頁">
+        <img src="assets/plates/logo.png" alt="德億茶莊標章" class="mobile-brand-logo">
+        <span class="mobile-brand-title">德億茶莊</span>
+      </a>
+      <div class="mobile-header-actions">
+        <a href="index.html#contact" class="btn-mobile-nav-line">LINE 詢價</a>
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="開啟選單" aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <span class="menu-icon-box" aria-hidden="true">
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+          </span>
+          <span>選單</span>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="手機主選單">
+      <ul class="mobile-nav-list">
+        <li>
+          <a href="index.html#teas" class="mobile-nav-item">
+            <div class="nav-item-content">
+              <span class="nav-item-title">當季茶品</span>
+              <span class="nav-item-desc">杉林溪春茶・嚴選冬茶・熟香烏龍</span>
+            </div>
+            <span class="nav-item-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html#origin" class="mobile-nav-item">
+            <div class="nav-item-content">
+              <span class="nav-item-title">杉林溪風土</span>
+              <span class="nav-item-desc">台灣南投・海拔 1,600m 以上雲霧茶區</span>
+            </div>
+            <span class="nav-item-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="tea-craft.html" class="mobile-nav-item">
+            <div class="nav-item-content">
+              <span class="nav-item-title">3D 互動製茶體驗</span>
+              <span class="nav-item-desc">目前頁面 · 親手採菁、浪菁、炒菁、揉捻、焙火</span>
+            </div>
+            <span class="nav-item-arrow" aria-hidden="true">★</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html#brewing" class="mobile-nav-item">
+            <div class="nav-item-content">
+              <span class="nav-item-title">沖泡指南與計時</span>
+              <span class="nav-item-desc">茶水比例 1:20・實戰 50 秒出湯計時器</span>
+            </div>
+            <span class="nav-item-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html#contact" class="mobile-nav-item">
+            <div class="nav-item-content">
+              <span class="nav-item-title">門市與訂購</span>
+              <span class="nav-item-desc">南投鹿谷門市・營業狀態・線上訂購單</span>
+            </div>
+            <span class="nav-item-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+      </ul>
+      <div class="mobile-nav-drawer-footer">
+        <div class="drawer-contact-info">
+          <span>門市專線：<a href="tel:0492752193" class="tabular-nums">049-2752193</a></span>
+          <span>門市地址：南投縣鹿谷鄉鳳凰村鳳園路13號</span>
+        </div>
+        <a href="index.html#contact" class="btn-drawer-cta">立即填寫訂購 / 詢價單</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- DESKTOP HEADER (> 992px) -->
+  <header class="site-topbar">
+    <div class="site-topbar-inner">
+      <a href="index.html#top" class="brand-link" title="德億茶莊 DEYI TEA HOUSE 首頁">
+        <img src="assets/plates/logo.png" alt="德億茶莊 DEYI TEA HOUSE" class="brand-logo-img">
+        <div class="brand-meta">
+          <span class="brand-name-zh">德億茶莊</span>
+          <span class="brand-origin-tag">南投鹿谷 · 杉林溪高山烏龍</span>
+        </div>
+      </a>
+      <nav class="desktop-nav" aria-label="主要導覽">
+        <div class="desktop-nav-links">
+          <a href="index.html#teas">茶品</a>
+          <a href="index.html#origin">風土</a>
+          <a href="tea-craft.html" class="is-current" aria-current="page">3D 製茶</a>
+          <a href="index.html#brewing">泡茶</a>
+          <a href="index.html#contact">門市</a>
+        </div>
+        <a href="index.html#contact" class="btn-nav-line">LINE 詢價</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- === 可獨立複製嵌入區塊 START（需同時引入 css/tea-3d.css、importmap 與 js/tea-3d.js）=== -->
+    <section id="tea-craft-3d" aria-label="杉林溪高山烏龍 3D 插畫風互動製茶體驗">
+      <div class="tea3d-wrap">
+        <div class="tea3d-intro">
+          <h1 class="tea3d-title">五道製茶手藝：3D 插畫互動體驗</h1>
+          <p class="tea3d-subtitle">從海拔 1,600 公尺杉林溪茶園的一心二葉出發，親手體驗採菁、萎凋浪菁、高溫炒菁、布球團揉到文火焙乾，泡出屬於您的高山茶湯。</p>
+        </div>
+
+        <!-- 步驟導覽列 -->
+        <div class="tea3d-steps-nav" role="tablist" aria-label="五道製茶體驗步驟導覽">
+          <button type="button" class="tea3d-step-btn is-active" role="tab" aria-selected="true" data-tea3d-step="0">
+            <span class="tea3d-step-index"><span>01</span><span class="tea3d-step-state">進行中</span></span>
+            <span class="tea3d-step-name">採菁</span>
+          </button>
+          <button type="button" class="tea3d-step-btn" role="tab" aria-selected="false" data-tea3d-step="1">
+            <span class="tea3d-step-index"><span>02</span><span class="tea3d-step-state">待解鎖</span></span>
+            <span class="tea3d-step-name">萎凋浪菁</span>
+          </button>
+          <button type="button" class="tea3d-step-btn" role="tab" aria-selected="false" data-tea3d-step="2">
+            <span class="tea3d-step-index"><span>03</span><span class="tea3d-step-state">待解鎖</span></span>
+            <span class="tea3d-step-name">炒菁</span>
+          </button>
+          <button type="button" class="tea3d-step-btn" role="tab" aria-selected="false" data-tea3d-step="3">
+            <span class="tea3d-step-index"><span>04</span><span class="tea3d-step-state">待解鎖</span></span>
+            <span class="tea3d-step-name">揉捻</span>
+          </button>
+          <button type="button" class="tea3d-step-btn" role="tab" aria-selected="false" data-tea3d-step="4">
+            <span class="tea3d-step-index"><span>05</span><span class="tea3d-step-state">待解鎖</span></span>
+            <span class="tea3d-step-name">乾燥焙火</span>
+          </button>
+          <button type="button" class="tea3d-step-btn" role="tab" aria-selected="false" data-tea3d-step="5">
+            <span class="tea3d-step-index"><span>06</span><span class="tea3d-step-state">待解鎖</span></span>
+            <span class="tea3d-step-name">品茗完成</span>
+          </button>
+        </div>
+
+        <!-- 3D 互動舞台區 -->
+        <div class="tea3d-stage-wrap">
+          <!-- HUD 操作指引與無障礙輔助控制（手機端自動置頂於畫布上方） -->
+          <div class="tea3d-hud-top">
+            <div class="tea3d-prompt-bubble">
+              <div class="tea3d-prompt-head">
+                <span class="tea3d-prompt-badge" id="tea3d-prompt-badge">工序 壹 · 手工採菁</span>
+                <span class="tea3d-prompt-count" id="tea3d-prompt-count">已採收 0 / 5</span>
+              </div>
+              <p class="tea3d-prompt-text" id="tea3d-prompt-text">點擊或滑過畫面上輕輕浮動的「一心二葉」嫩芽（共 5 株）採進竹簍，注意別點到深色老葉喔！</p>
+            </div>
+            <div class="tea3d-hud-actions">
+              <button type="button" class="tea3d-assist-btn" id="tea3d-assist-btn">輔助採摘一株</button>
+              <button type="button" class="tea3d-reset-step-btn" id="tea3d-reset-step-btn">重置本關</button>
+            </div>
+          </div>
+
+          <div class="tea3d-canvas-shell">
+            <canvas id="tea3d-canvas" aria-label="互動式 3D 製茶場景畫布"></canvas>
+
+            <!-- 即時回饋提示 -->
+            <div class="tea3d-toast" id="tea3d-toast" role="status" aria-live="polite"></div>
+
+            <!-- 步驟 4 畫圈視覺提示 -->
+            <div class="tea3d-circle-guide" id="tea3d-circle-guide" aria-hidden="true">
+              <span class="tea3d-circle-guide-label">沿此方向畫圈揉捻</span>
+            </div>
+          </div>
+
+          <!-- 步驟 6 完成專屬茶箋浮層 -->
+          <div class="tea3d-finale-panel" id="tea3d-finale-panel" aria-live="polite">
+            <div class="tea3d-finale-header">
+              <h2 class="tea3d-finale-title" id="tea3d-finale-title">杉林溪清香高山烏龍 · 輕焙完成</h2>
+              <span class="tea3d-finale-pill">
+                <span class="tea3d-finale-dot is-light" id="tea3d-finale-dot" aria-hidden="true"></span>
+                <span id="tea3d-finale-pill-text">湯色：蜜綠金黃</span>
+              </span>
+            </div>
+            <p class="tea3d-finale-desc" id="tea3d-finale-desc"></p>
+            <p class="tea3d-finale-recommend" id="tea3d-finale-recommend"></p>
+            <div class="tea3d-finale-actions">
+              <a href="index.html?tea=spring#contact" class="tea3d-cta-inquiry" id="tea3d-finale-cta">預約試茶／詢價清香春茶 ↗</a>
+              <button type="button" class="tea3d-btn-replay" id="tea3d-finale-replay">重新體驗</button>
+            </div>
+          </div>
+
+          <!-- WebGL 不支援時之優雅降級說明 -->
+          <div class="tea3d-fallback" id="tea3d-fallback">
+            <h3>您的瀏覽器目前未啟用 3D WebGL 圖形加速</h3>
+            <p>以下為德億茶莊杉林溪高山烏龍茶五道完整製茶工藝流程：</p>
+            <ol>
+              <li>採菁：手工採摘一心二葉鮮嫩茶菁，保留完整葉片。</li>
+              <li>萎凋浪菁：搖晃竹篩輕微走水後，維持 20%~30% 輕發酵釋放蘭花香。</li>
+              <li>炒菁：高溫翻炒停止發酵，去除青氣並鎖住甘甜果膠。</li>
+              <li>揉捻：反覆布球團揉塑形為緊實飽滿的半球形烏龍顆粒。</li>
+              <li>乾燥焙火：文火慢烘至含水量 4% 以下，造就輕焙清香或熟香熟果風味。</li>
+            </ol>
+          </div>
+
+          <!-- 底部即時進度條與各關卡專用控制列 -->
+          <div class="tea3d-controls-dock">
+            <div class="tea3d-meter-row">
+              <span class="tea3d-meter-label" id="tea3d-meter-label">採菁進度</span>
+              <div class="tea3d-progress-track">
+                <div class="tea3d-sweetspot-band" id="tea3d-band-primary"></div>
+                <div class="tea3d-sweetspot-band" id="tea3d-band-secondary"></div>
+                <div class="tea3d-progress-fill" id="tea3d-progress-fill"></div>
+              </div>
+              <span class="tea3d-meter-value" id="tea3d-meter-value">0 / 5 株</span>
+            </div>
+
+            <!-- Step 2 Phase B：室內靜置發酵度滑桿 -->
+            <div class="tea3d-slider-wrap" id="tea3d-slider-wrap">
+              <div class="tea3d-slider-control">
+                <div class="tea3d-slider-meta">
+                  <label for="tea3d-ferment-slider">室內靜置發酵程度滑桿（目標：20% ～ 30% 黃金區間）</label>
+                </div>
+                <input type="range" id="tea3d-ferment-slider" class="tea3d-range" min="0" max="50" value="8">
+              </div>
+              <span class="tea3d-subhint tabular-nums" id="tea3d-ferment-readout">目前發酵程度：8%</span>
+            </div>
+
+            <!-- Step 3：炒菁鍋溫即時提示 -->
+            <div class="tea3d-panfire-wrap" id="tea3d-panfire-wrap">
+              <span class="tea3d-subhint tabular-nums" id="tea3d-panfire-temp">目前鍋溫指標：32%（黃金殺菁區 55%～85%）</span>
+            </div>
+
+            <!-- Step 5：長按加熱與含水量指示 -->
+            <div class="tea3d-hold-wrap" id="tea3d-hold-wrap">
+              <button type="button" class="tea3d-hold-btn" id="tea3d-hold-btn">長按文火焙茶</button>
+              <span class="tea3d-subhint tabular-nums" id="tea3d-roast-moisture">茶葉含水量：58% ｜ 輕焙區 60–78% · 熟香區 79–92%</span>
+            </div>
+
+            <!-- Step 5：達標後雙焙度出焙確認列 -->
+            <div class="tea3d-roast-choice" id="tea3d-roast-choice">
+              <span class="tea3d-subhint" id="tea3d-roast-choice-hint">已達安全乾燥標準！</span>
+              <div class="tea3d-choice-btns">
+                <button type="button" class="tea3d-btn-confirm-roast" id="tea3d-confirm-roast-btn">以輕焙清香出焙品茗 →</button>
+                <button type="button" class="tea3d-btn-secondary" id="tea3d-continue-roast-btn">繼續慢焙至熟香（79%+）</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 下方製茶知識小卡 -->
+        <aside class="tea3d-knowledge-card" aria-label="製茶工藝知識小卡">
+          <div>
+            <h2 class="tea3d-k-title" id="tea3d-k-title">01 · 採菁 — 離枝留嫩，只取一心二葉</h2>
+            <p class="tea3d-k-body" id="tea3d-k-body">海拔 1,600 公尺杉林溪茶區，堅持清晨露水退去後手工採摘「一心二葉」嫩芽，維持葉片完整無損，保留最純淨的山頭氣。</p>
+            <p class="tea3d-k-effect"><strong>喝得到的差別：</strong><span id="tea3d-k-effect">葉片完整未壓傷，茶湯就能保持清澈透亮、喝起來不雜不澀。</span></p>
+          </div>
+          <div class="tea3d-k-actions">
+            <button type="button" class="tea3d-next-btn" id="tea3d-next-btn" disabled>完成本關操作即可下一步</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <!-- === 可獨立複製嵌入區塊 END === -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <strong>德億茶莊 DEYI TEA HOUSE</strong> · 台灣杉林溪高山烏龍茶專賣
+      </div>
+      <div class="footer-meta">
+        <span>實體門市：<a href="https://www.google.com.tw/maps/place/%E5%BE%B7%E5%84%84%E8%8C%B6%E8%8E%8A%E6%B0%91%E5%AE%BF/@23.7348271,120.7853577,17z/data=!3m1!4b1!4m9!3m8!1s0x346ed3bdeab6b143:0x20ea22945a922c42!5m2!4m1!1i2!8m2!3d23.7348271!4d120.7853577!16s%2Fg%2F11g__mk9v" target="_blank" rel="noopener noreferrer">558 南投縣鹿谷鄉鳳凰村鳳園路13號（德億茶莊民宿）↗</a></span>
+        <span>服務電話：<a href="tel:0492752193" class="tabular-nums">049-2752193</a></span>
+      </div>
+      <p class="footer-copy">© 2026 德億茶莊 DEYI TEA HOUSE. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/main.js" defer></script>
+  <script type="module" src="js/tea-3d.js"></script>
+</body>
+</html>

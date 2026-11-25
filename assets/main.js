@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Product Card Quick Select -> Auto-select dropdown in Inquiry Form
+  // 3. Product Card Quick Select + Query-String Tea Preselection from 3D Experience (?tea=...)
   const productButtons = document.querySelectorAll('.btn-product-inquire[data-tea]');
   productButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -116,6 +116,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  const URL_TEA_ALLOWLIST = new Set(['spring', 'winter', 'roasted']);
+  const queryTea = new URLSearchParams(window.location.search).get('tea');
+  if (queryTea && URL_TEA_ALLOWLIST.has(queryTea)) {
+    const matchedTab = document.querySelector(`.hero-tea-tab[data-hero-tea="${queryTea}"]`);
+    if (matchedTab) matchedTab.click();
+    if (teaSelect && HERO_TEA_DATA[queryTea]) {
+      teaSelect.value = HERO_TEA_DATA[queryTea].formValue;
+    }
+  }
 
   // 4. Interactive 5-Step Process Board
   const PROCESS_STEPS = [

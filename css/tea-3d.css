@@ -1,0 +1,866 @@
+/* =========================================
+   德億茶莊 · 3D 插畫風互動製茶體驗模組樣式
+   嚴格作用域限定於 #tea-craft-3d，可安全複製嵌入任一頁面
+   ========================================= */
+
+#tea-craft-3d {
+  background-color: var(--c-paper, #f7f6f2);
+  color: var(--c-paper-ink, #142630);
+  padding: 56px 0 84px;
+  border-bottom: 1px solid rgba(20, 38, 48, 0.22);
+}
+
+#tea-craft-3d .tea3d-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* Header & Thesis */
+#tea-craft-3d .tea3d-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 28px;
+  padding-bottom: 22px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid rgba(20, 38, 48, 0.22);
+}
+
+#tea-craft-3d .tea3d-title {
+  font-family: var(--f-serif, 'Noto Serif TC', Georgia, serif);
+  font-size: clamp(26px, 2.7vw, 36px);
+  font-weight: 900;
+  color: #142630;
+  line-height: 1.28;
+  letter-spacing: 0.04em;
+  text-wrap: balance;
+}
+
+#tea-craft-3d .tea3d-subtitle {
+  max-width: 46ch;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #455963;
+}
+
+/* 6-Step Progress Navigation (5 Craft Steps + Finale) */
+#tea-craft-3d .tea3d-steps-nav {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border: 1.5px solid #142630;
+  background: #efece3;
+  margin-bottom: 20px;
+}
+
+#tea-craft-3d .tea3d-step-btn {
+  appearance: none;
+  border: none;
+  border-right: 1px solid rgba(20, 38, 48, 0.22);
+  background: transparent;
+  padding: 13px 12px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+#tea-craft-3d .tea3d-step-btn:last-child {
+  border-right: none;
+}
+
+#tea-craft-3d .tea3d-step-btn:hover {
+  background: #ffffff;
+}
+
+#tea-craft-3d .tea3d-step-btn.is-active {
+  background: #142630;
+  color: #fbf6ed;
+}
+
+#tea-craft-3d .tea3d-step-btn.is-done {
+  background: #e4ede6;
+}
+
+#tea-craft-3d .tea3d-step-btn.is-done.is-active {
+  background: #142630;
+}
+
+#tea-craft-3d .tea3d-step-index {
+  font-size: 12px;
+  font-weight: 700;
+  color: #8f4318;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+#tea-craft-3d .tea3d-step-btn.is-active .tea3d-step-index {
+  color: #e5a36a;
+}
+
+#tea-craft-3d .tea3d-step-btn.is-done .tea3d-step-index {
+  color: #1f5c2e;
+}
+
+#tea-craft-3d .tea3d-step-btn.is-done.is-active .tea3d-step-index {
+  color: #e5a36a;
+}
+
+#tea-craft-3d .tea3d-step-name {
+  font-family: var(--f-serif, 'Noto Serif TC', Georgia, serif);
+  font-size: 17px;
+  font-weight: 900;
+  color: #142630;
+  line-height: 1.25;
+}
+
+#tea-craft-3d .tea3d-step-btn.is-active .tea3d-step-name {
+  color: #fbf6ed;
+}
+
+/* Main 3D Stage Frame */
+#tea-craft-3d .tea3d-stage-wrap {
+  position: relative;
+  border: 1.5px solid #142630;
+  background: #e8efee;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#tea-craft-3d .tea3d-canvas-shell {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  min-height: 400px;
+  background: linear-gradient(180deg, #dce8e7 0%, #edf2ee 56%, #dde6df 100%);
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  cursor: grab;
+}
+
+#tea-craft-3d .tea3d-canvas-shell.is-dragging {
+  cursor: grabbing;
+}
+
+#tea-craft-3d .tea3d-canvas-shell.is-pointer-target {
+  cursor: pointer;
+}
+
+#tea-craft-3d #tea3d-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Top HUD Overlay inside Canvas */
+#tea-craft-3d .tea3d-hud-top {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  pointer-events: none;
+  z-index: 8;
+}
+
+#tea-craft-3d .tea3d-prompt-bubble {
+  pointer-events: auto;
+  max-width: 470px;
+  background: rgba(251, 246, 237, 0.96);
+  border: 1.5px solid #142630;
+  padding: 12px 16px;
+  color: #142630;
+  border-radius: 4px;
+}
+
+#tea-craft-3d .tea3d-prompt-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+#tea-craft-3d .tea3d-prompt-badge {
+  font-family: var(--f-serif, 'Noto Serif TC', Georgia, serif);
+  font-size: 16px;
+  font-weight: 900;
+  color: #8f4318;
+}
+
+#tea-craft-3d .tea3d-prompt-count {
+  font-size: 13px;
+  font-weight: 700;
+  color: #284756;
+  font-variant-numeric: tabular-nums;
+}
+
+#tea-craft-3d .tea3d-prompt-text {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #142630;
+  font-weight: 600;
+}
+
+#tea-craft-3d .tea3d-hud-actions {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+#tea-craft-3d .tea3d-assist-btn,
+#tea-craft-3d .tea3d-reset-step-btn {
+  appearance: none;
+  border: 1.5px solid #142630;
+  background: rgba(251, 246, 237, 0.95);
+  color: #142630;
+  padding: 8px 13px;
+  border-radius: 4px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+#tea-craft-3d .tea3d-assist-btn:hover,
+#tea-craft-3d .tea3d-reset-step-btn:hover {
+  background: #142630;
+  color: #fbf6ed;
+}
+
+/* Center Action Toast */
+#tea-craft-3d .tea3d-toast {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translate(-50%, 8px);
+  background: #142630;
+  color: #fbf6ed;
+  border: 1.5px solid #d99559;
+  padding: 9px 18px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 6;
+  white-space: nowrap;
+  max-width: calc(100% - 32px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+#tea-craft-3d .tea3d-toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+#tea-craft-3d .tea3d-toast.is-warn {
+  background: #743410;
+  border-color: #fbf6ed;
+  color: #fbf6ed;
+}
+
+#tea-craft-3d .tea3d-toast.is-success {
+  background: #1c4c2a;
+  border-color: #cde8d5;
+  color: #fbf6ed;
+}
+
+/* Visual Circle Guide for Step 4 Rolling */
+#tea-craft-3d .tea3d-circle-guide {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  width: 176px;
+  height: 176px;
+  margin-left: -88px;
+  margin-top: -88px;
+  border: 2px dashed rgba(20, 38, 48, 0.45);
+  border-radius: 50%;
+  pointer-events: none;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+}
+
+#tea-craft-3d .tea3d-circle-guide.is-visible {
+  display: flex;
+}
+
+#tea-craft-3d .tea3d-circle-guide-label {
+  background: rgba(251, 246, 237, 0.92);
+  border: 1px solid #142630;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #142630;
+}
+
+/* Finale Overlay Card inside Stage */
+#tea-craft-3d .tea3d-finale-panel {
+  position: absolute;
+  right: 22px;
+  bottom: 92px;
+  width: min(390px, calc(100% - 44px));
+  background: rgba(251, 246, 237, 0.97);
+  border: 1.5px solid #142630;
+  padding: 20px 22px;
+  color: #142630;
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 7;
+}
+
+#tea-craft-3d .tea3d-finale-panel.is-visible {
+  display: flex;
+}
+
+#tea-craft-3d .tea3d-finale-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(20, 38, 48, 0.2);
+}
+
+#tea-craft-3d .tea3d-finale-title {
+  font-family: var(--f-serif, 'Noto Serif TC', Georgia, serif);
+  font-size: 20px;
+  font-weight: 900;
+  color: #142630;
+}
+
+#tea-craft-3d .tea3d-finale-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 1px solid rgba(20, 38, 48, 0.35);
+  background: #ffffff;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #142630;
+  white-space: nowrap;
+}
+
+#tea-craft-3d .tea3d-finale-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(20, 38, 48, 0.4);
+}
+
+#tea-craft-3d .tea3d-finale-dot.is-light {
+  background: #d8c958;
+}
+
+#tea-craft-3d .tea3d-finale-dot.is-roasted {
+  background: #c4762a;
+}
+
+#tea-craft-3d .tea3d-finale-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #142630;
+}
+
+#tea-craft-3d .tea3d-finale-recommend {
+  font-size: 13.5px;
+  line-height: 1.6;
+  background: #efece3;
+  padding: 10px 12px;
+  color: #142630;
+}
+
+#tea-craft-3d .tea3d-finale-recommend strong {
+  color: #8f4318;
+}
+
+#tea-craft-3d .tea3d-finale-actions {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+#tea-craft-3d .tea3d-cta-inquiry {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 14px;
+  background: #8f4318;
+  color: #fbf6ed;
+  border: 1px solid #8f4318;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.18s ease;
+}
+
+#tea-craft-3d .tea3d-cta-inquiry:hover {
+  background: #743410;
+}
+
+#tea-craft-3d .tea3d-btn-replay {
+  appearance: none;
+  padding: 11px 14px;
+  background: #ffffff;
+  color: #142630;
+  border: 1px solid #142630;
+  border-radius: 4px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#tea-craft-3d .tea3d-btn-replay:hover {
+  background: #efece3;
+}
+
+/* Interactive Controls Dock below 3D Viewport */
+#tea-craft-3d .tea3d-controls-dock {
+  background: #1d3541;
+  color: #fbf6ed;
+  border-top: 1.5px solid #142630;
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+#tea-craft-3d .tea3d-meter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+#tea-craft-3d .tea3d-meter-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #edeacc;
+  white-space: nowrap;
+}
+
+#tea-craft-3d .tea3d-meter-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #e5a36a;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+#tea-craft-3d .tea3d-progress-track {
+  position: relative;
+  height: 16px;
+  background: #0e1c24;
+  border: 1px solid rgba(237, 234, 204, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+  flex: 1;
+}
+
+#tea-craft-3d .tea3d-sweetspot-band {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#tea-craft-3d .tea3d-sweetspot-band.is-ferment {
+  display: block;
+  left: 40%;
+  width: 20%;
+  background: rgba(217, 149, 89, 0.36);
+  border-left: 1px dashed #e5a36a;
+  border-right: 1px dashed #e5a36a;
+}
+
+#tea-craft-3d .tea3d-sweetspot-band.is-panfire {
+  display: block;
+  left: 55%;
+  width: 30%;
+  background: rgba(103, 209, 112, 0.25);
+  border-left: 1px dashed #93e29a;
+  border-right: 1px dashed #93e29a;
+}
+
+#tea-craft-3d .tea3d-sweetspot-band.is-roast-light {
+  display: block;
+  left: 60%;
+  width: 18%;
+  background: rgba(216, 201, 88, 0.28);
+  border-left: 1px dashed #e3db84;
+}
+
+#tea-craft-3d .tea3d-sweetspot-band.is-roast-deep {
+  display: block;
+  left: 79%;
+  width: 13%;
+  background: rgba(217, 149, 89, 0.36);
+  border-right: 1px dashed #e5a36a;
+}
+
+#tea-craft-3d .tea3d-progress-fill {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: #d99559;
+  z-index: 2;
+  transition: transform 0.14s ease-out, background 0.2s ease;
+}
+
+#tea-craft-3d .tea3d-progress-fill.is-complete {
+  background: #67d170;
+}
+
+#tea-craft-3d .tea3d-progress-fill.is-hot {
+  background: #e27844;
+}
+
+/* Step-specific Controls Row */
+#tea-craft-3d .tea3d-slider-wrap,
+#tea-craft-3d .tea3d-hold-wrap,
+#tea-craft-3d .tea3d-roast-choice,
+#tea-craft-3d .tea3d-panfire-wrap {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+#tea-craft-3d .tea3d-slider-wrap.is-visible,
+#tea-craft-3d .tea3d-hold-wrap.is-visible,
+#tea-craft-3d .tea3d-roast-choice.is-visible,
+#tea-craft-3d .tea3d-panfire-wrap.is-visible {
+  display: flex;
+}
+
+#tea-craft-3d .tea3d-slider-control {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#tea-craft-3d .tea3d-slider-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13.5px;
+  color: #d2e1e6;
+}
+
+#tea-craft-3d .tea3d-range {
+  width: 100%;
+  accent-color: #d99559;
+  height: 8px;
+  cursor: pointer;
+}
+
+#tea-craft-3d .tea3d-hold-btn {
+  appearance: none;
+  background: #d99559;
+  color: #142630;
+  border: 1.5px solid #d99559;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+#tea-craft-3d .tea3d-hold-btn:hover {
+  background: #e5a870;
+}
+
+#tea-craft-3d .tea3d-hold-btn.is-holding {
+  background: #f2be86;
+  transform: scale(0.98);
+}
+
+#tea-craft-3d .tea3d-subhint {
+  font-size: 13.5px;
+  color: #d2e1e6;
+  line-height: 1.5;
+}
+
+#tea-craft-3d .tea3d-choice-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#tea-craft-3d .tea3d-btn-confirm-roast {
+  appearance: none;
+  background: #d99559;
+  color: #142630;
+  border: 1px solid #d99559;
+  padding: 10px 18px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+#tea-craft-3d .tea3d-btn-confirm-roast:hover {
+  background: #e5a870;
+}
+
+#tea-craft-3d .tea3d-btn-secondary {
+  appearance: none;
+  background: #142630;
+  color: #fbf6ed;
+  border: 1px solid rgba(237, 234, 204, 0.45);
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#tea-craft-3d .tea3d-btn-secondary:hover {
+  background: #284756;
+}
+
+/* Knowledge Card below Stage */
+#tea-craft-3d .tea3d-knowledge-card {
+  margin-top: 20px;
+  background: #ffffff;
+  border: 1.5px solid #142630;
+  padding: 24px 28px;
+  display: grid;
+  grid-template-columns: 1.4fr auto;
+  gap: 28px;
+  align-items: center;
+}
+
+#tea-craft-3d .tea3d-k-title {
+  font-family: var(--f-serif, 'Noto Serif TC', Georgia, serif);
+  font-size: 20px;
+  font-weight: 900;
+  color: #142630;
+  margin-bottom: 8px;
+}
+
+#tea-craft-3d .tea3d-k-body {
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: #142630;
+  max-width: 66ch;
+}
+
+#tea-craft-3d .tea3d-k-effect {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #455963;
+}
+
+#tea-craft-3d .tea3d-k-effect strong {
+  color: #8f4318;
+}
+
+#tea-craft-3d .tea3d-k-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+#tea-craft-3d .tea3d-next-btn {
+  appearance: none;
+  background: #8f4318;
+  color: #fbf6ed;
+  border: 1px solid #8f4318;
+  padding: 13px 22px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.18s ease, opacity 0.18s ease;
+}
+
+#tea-craft-3d .tea3d-next-btn:hover:not(:disabled) {
+  background: #743410;
+}
+
+#tea-craft-3d .tea3d-next-btn:disabled {
+  background: #efece3;
+  color: #455963;
+  border-color: rgba(20, 38, 48, 0.28);
+  cursor: not-allowed;
+}
+
+/* WebGL Fallback Notice */
+#tea-craft-3d .tea3d-fallback {
+  display: none;
+  padding: 36px 28px;
+  background: #f4f1ea;
+  color: #142630;
+  border-top: 1px solid rgba(20, 38, 48, 0.2);
+}
+
+#tea-craft-3d .tea3d-fallback.is-visible {
+  display: block;
+}
+
+#tea-craft-3d .tea3d-fallback h3 {
+  font-family: var(--f-serif, 'Noto Serif TC', Georgia, serif);
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#tea-craft-3d .tea3d-fallback ol {
+  padding-left: 20px;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+/* Keyboard / Screen-reader focus visibility */
+#tea-craft-3d button:focus-visible,
+#tea-craft-3d a:focus-visible,
+#tea-craft-3d input:focus-visible {
+  outline: 2px solid #d99559;
+  outline-offset: 2px;
+}
+
+/* =========================================
+   RESPONSIVE ADAPTATION
+   ========================================= */
+@media (max-width: 992px) {
+  #tea-craft-3d {
+    padding: 36px 0 60px;
+  }
+
+  #tea-craft-3d .tea3d-wrap {
+    padding: 0 18px;
+  }
+
+  #tea-craft-3d .tea3d-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  #tea-craft-3d .tea3d-steps-nav {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #tea-craft-3d .tea3d-step-btn:nth-child(3n) {
+    border-right: none;
+  }
+
+  #tea-craft-3d .tea3d-step-btn:nth-child(-n+3) {
+    border-bottom: 1px solid rgba(20, 38, 48, 0.22);
+  }
+
+  #tea-craft-3d .tea3d-canvas-shell {
+    height: 410px;
+  }
+
+  #tea-craft-3d .tea3d-hud-top {
+    position: static;
+    pointer-events: auto;
+    flex-direction: column;
+    align-items: stretch;
+    background: #f4f1ea;
+    border-bottom: 1.5px solid #142630;
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  #tea-craft-3d .tea3d-prompt-bubble {
+    max-width: 100%;
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+
+  #tea-craft-3d .tea3d-hud-actions {
+    justify-content: flex-start;
+  }
+
+  #tea-craft-3d .tea3d-toast {
+    top: auto;
+    bottom: 14px;
+  }
+
+  #tea-craft-3d .tea3d-finale-panel {
+    position: static;
+    width: 100%;
+    border: none;
+    border-top: 1px solid rgba(20, 38, 48, 0.22);
+  }
+
+  #tea-craft-3d .tea3d-knowledge-card {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 18px;
+  }
+
+  #tea-craft-3d .tea3d-k-actions {
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 520px) {
+  #tea-craft-3d .tea3d-step-name {
+    font-size: 15px;
+  }
+
+  #tea-craft-3d .tea3d-canvas-shell {
+    height: 310px;
+    min-height: 290px;
+  }
+
+  #tea-craft-3d .tea3d-meter-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  #tea-craft-3d .tea3d-progress-track {
+    flex: none;
+    height: 16px;
+  }
+
+  #tea-craft-3d .tea3d-finale-actions {
+    grid-template-columns: 1fr;
+  }
+}
