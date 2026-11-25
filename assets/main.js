@@ -60,6 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const heroTabs = document.querySelectorAll('.hero-tea-tab[data-hero-tea]');
+  const mobileTeaTabs = document.querySelectorAll('.mobile-tea-tab[data-tea-panel]');
+  const teaSpecimenCards = document.querySelectorAll('.tea-specimen-card[data-tea-panel]');
   const specNameEl = document.getElementById('spec-tea-name');
   const specDotEl = document.getElementById('spec-liquor-dot');
   const specLiquorEl = document.getElementById('spec-liquor-name');
@@ -69,6 +71,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const specLastStepEl = document.getElementById('spec-step-last');
   const heroCtaLink = document.getElementById('hero-cta-link');
   const teaSelect = document.getElementById('utea');
+
+  const syncMobileTeaPanel = (teaKey) => {
+    if (!teaKey) return;
+    mobileTeaTabs.forEach((tab) => {
+      const isMatch = tab.getAttribute('data-tea-panel') === teaKey;
+      tab.classList.toggle('is-active', isMatch);
+      tab.setAttribute('aria-selected', String(isMatch));
+    });
+    teaSpecimenCards.forEach((card) => {
+      const isMatch = card.getAttribute('data-tea-panel') === teaKey;
+      card.classList.toggle('is-mobile-active', isMatch);
+    });
+  };
+
+  mobileTeaTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const key = tab.getAttribute('data-tea-panel');
+      syncMobileTeaPanel(key);
+    });
+  });
 
   heroTabs.forEach((tab) => {
     tab.addEventListener('click', () => {
@@ -96,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (heroCtaLink) {
         heroCtaLink.setAttribute('data-selected-tea', data.formValue);
       }
+      syncMobileTeaPanel(key);
     });
   });
 
@@ -122,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (queryTea && URL_TEA_ALLOWLIST.has(queryTea)) {
     const matchedTab = document.querySelector(`.hero-tea-tab[data-hero-tea="${queryTea}"]`);
     if (matchedTab) matchedTab.click();
+    syncMobileTeaPanel(queryTea);
     if (teaSelect && HERO_TEA_DATA[queryTea]) {
       teaSelect.value = HERO_TEA_DATA[queryTea].formValue;
     }

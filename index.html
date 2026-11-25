@@ -43,19 +43,10 @@
           </a>
         </li>
         <li>
-          <a href="#origin" class="mobile-nav-item">
+          <a href="story.html" class="mobile-nav-item">
             <div class="nav-item-content">
-              <span class="nav-item-title">杉林溪風土</span>
-              <span class="nav-item-desc">台灣南投・海拔 1,600m 以上雲霧茶區</span>
-            </div>
-            <span class="nav-item-arrow" aria-hidden="true">↗</span>
-          </a>
-        </li>
-        <li>
-          <a href="#process" class="mobile-nav-item">
-            <div class="nav-item-content">
-              <span class="nav-item-title">製茶工序</span>
-              <span class="nav-item-desc">五道慢工 · 採菁、萎凋、炒菁、揉捻、乾燥</span>
+              <span class="nav-item-title">杉林溪風土與製茶</span>
+              <span class="nav-item-desc">海拔 1,600m 產區與五道慢工製程</span>
             </div>
             <span class="nav-item-arrow" aria-hidden="true">↗</span>
           </a>
@@ -64,13 +55,13 @@
           <a href="tea-craft.html" class="mobile-nav-item">
             <div class="nav-item-content">
               <span class="nav-item-title">3D 互動製茶體驗</span>
-              <span class="nav-item-desc">走進杉林溪茶園 · 親手採菁、浪菁、炒菁、揉捻、焙火</span>
+              <span class="nav-item-desc">親手採菁、浪菁、炒菁、揉捻、焙火</span>
             </div>
             <span class="nav-item-arrow" aria-hidden="true">↗</span>
           </a>
         </li>
         <li>
-          <a href="#brewing" class="mobile-nav-item">
+          <a href="brewing.html" class="mobile-nav-item">
             <div class="nav-item-content">
               <span class="nav-item-title">沖泡指南與計時</span>
               <span class="nav-item-desc">茶水比例 1:20・實戰 50 秒出湯計時器</span>
@@ -111,11 +102,10 @@
       <nav class="desktop-nav" aria-label="主要導覽">
         <div class="desktop-nav-links">
           <a href="#teas">茶品</a>
-          <a href="#origin">風土</a>
-          <a href="#process">製程</a>
+          <a href="story.html">風土製茶</a>
           <a href="tea-craft.html">3D 製茶</a>
-          <a href="#brewing">泡茶</a>
-          <a href="#contact">門市</a>
+          <a href="brewing.html">泡茶計時</a>
+          <a href="#contact">門市訂購</a>
         </div>
         <a href="#contact" class="btn-nav-line">LINE 詢價</a>
       </nav>
@@ -233,10 +223,26 @@
         <p class="section-lead section-lead--on-light">每款皆為標準四兩真空鋁箔裝（150g），清楚標示海拔與焙火度。點選下方按鈕即自動帶入訂購單，確認現貨與當季時價。</p>
       </div>
 
+      <!-- 手機版茶品頁籤切換列 (<= 992px 顯示) -->
+      <div class="mobile-tea-tabs" role="tablist" aria-label="切換瀏覽當季茶品">
+        <button type="button" class="mobile-tea-tab is-active" role="tab" aria-selected="true" data-tea-panel="spring">
+          <span class="tab-swatch swatch--spring" aria-hidden="true"></span>
+          <span>當季春茶</span>
+        </button>
+        <button type="button" class="mobile-tea-tab" role="tab" aria-selected="false" data-tea-panel="winter">
+          <span class="tab-swatch swatch--winter" aria-hidden="true"></span>
+          <span>嚴選冬茶</span>
+        </button>
+        <button type="button" class="mobile-tea-tab" role="tab" aria-selected="false" data-tea-panel="roasted">
+          <span class="tab-swatch swatch--roasted" aria-hidden="true"></span>
+          <span>熟香烏龍</span>
+        </button>
+      </div>
+
       <div class="products-grid">
 
         <!-- Tea 1: Spring -->
-        <article class="tea-specimen-card">
+        <article class="tea-specimen-card is-mobile-active" data-tea-panel="spring">
           <figure class="tea-plate-figure">
             <img src="assets/plates/tea-spring.jpg" alt="杉林溪春茶一心二葉嫩芽與山蘭花版畫插畫">
             <figcaption class="tea-liquor-tag">
@@ -275,7 +281,7 @@
         </article>
 
         <!-- Tea 2: Winter -->
-        <article class="tea-specimen-card">
+        <article class="tea-specimen-card" data-tea-panel="winter">
           <figure class="tea-plate-figure">
             <img src="assets/plates/tea-winter.jpg" alt="杉林溪冬茶厚葉與杉木等高線版畫插畫">
             <figcaption class="tea-liquor-tag">
@@ -314,7 +320,7 @@
         </article>
 
         <!-- Tea 3: Roasted -->
-        <article class="tea-specimen-card">
+        <article class="tea-specimen-card" data-tea-panel="roasted">
           <figure class="tea-plate-figure">
             <img src="assets/plates/tea-roasted.jpg" alt="傳統竹製焙籠與熟香烏龍半球茶粒版畫插畫">
             <figcaption class="tea-liquor-tag">
@@ -364,226 +370,37 @@
     </div>
   </section>
 
-  <!-- SECTION 3: ORIGIN 杉林溪風土 (DEEP TEAL #1d3541) -->
-  <section id="origin" class="section-origin">
+  <!-- SECTION 3: EXPLORE HUB 分流認識德億 (DEEP TEAL #1d3541) -->
+  <section id="explore" class="section-explore" aria-label="深入了解德億茶莊專區導覽">
     <div class="container">
       <div class="section-header section-header--on-dark">
-        <h2 class="section-title section-title--on-dark">高山冷涼、常年雲霧，<br>孕育杉林溪獨特的清澈甘甜</h2>
-        <p class="section-lead section-lead--on-dark">海拔與微氣候決定了一口茶湯的底氣。把產區的日照、土質與採摘條件攤開來看，好喝其實有跡可循。</p>
+        <h2 class="section-title section-title--on-dark">想進一步了解？按主題分頁細看</h2>
+        <p class="section-lead section-lead--on-dark">把產地製程故事、泡茶工具與互動體驗分別收進專屬頁面，挑茶時不被長篇文字打斷。</p>
       </div>
 
-      <!-- Woodblock Topographic Exhibition + Vertical Altitude Ruler -->
-      <div class="terroir-panorama-frame">
-        <div class="altitude-ruler">
-          <div class="ruler-top-stat">
-            <span class="ruler-num tabular-nums">1,600</span>
-            <span class="ruler-unit">公尺以上 · 高海拔產區</span>
-          </div>
-          <ul class="ruler-scale-ticks tabular-nums">
-            <li><strong>1,800m</strong> 雲霧高冠線</li>
-            <li><strong>1,650m</strong> 冬茶凝香帶</li>
-            <li><strong>1,600m</strong> 春茶與熟香核心帶</li>
-          </ul>
-        </div>
-        <div class="terroir-art-wrap">
-          <img src="assets/plates/terroir-shanlinxi.jpg" alt="南投杉林溪高海拔重巒山稜與杉林雲霧線刻版畫">
-        </div>
-      </div>
+      <div class="explore-hub-grid">
+        <article class="explore-card">
+          <h3 class="explore-card-title">杉林溪風土與五道製茶</h3>
+          <p class="explore-card-desc">深入認識海拔 1,600 公尺以上的山嵐黑土風土，並點擊查看採菁、萎凋、炒菁、揉捻到乾燥如何決定茶湯風味。</p>
+          <a href="story.html" class="explore-card-link">閱讀產地與製程專頁 ↗</a>
+        </article>
 
-      <div class="origin-details-grid">
-        <div class="origin-text-block">
-          <p>杉林溪茶區位於南投竹山鎮鹿谷鄉交界，海拔座落於 1,600 至 1,800 公尺以上。這裡終年雲霧籠罩，午後山嵐湧現，日照時間短，使茶葉苦澀成分減少，天然茶胺酸與果膠質大量蓄積。</p>
-          <p>茶園環抱在天然杉木林與原始竹林之間，土壤肥沃富含有機質。日夜溫差高達十餘度，茶樹生長緩慢，葉肉肥厚翠綠，沖泡出的茶湯帶有獨特的高山冷礦香與杉木清韻，入口喉韻綿長回甘。</p>
-        </div>
-        <div class="origin-ledger" aria-label="產區風土參數一覽">
-          <div class="origin-ledger-inner">
-            <div class="origin-ledger-row">
-              <div class="ledger-key">產區座落</div>
-              <div class="ledger-val">台灣南投竹山 · 杉林溪支脈</div>
-            </div>
-            <div class="origin-ledger-row">
-              <div class="ledger-key">平均氣溫</div>
-              <div class="ledger-val tabular-nums">年均溫 15°C~18°C 冷涼氣候</div>
-            </div>
-            <div class="origin-ledger-row">
-              <div class="ledger-key">土壤特質</div>
-              <div class="ledger-val">高有機腐質黑土 · 天然杉林環抱</div>
-            </div>
-            <div class="origin-ledger-row">
-              <div class="ledger-key">採摘標準</div>
-              <div class="ledger-val">一心二葉至一心三葉 手工嫩採</div>
-            </div>
-          </div>
-        </div>
+        <article class="explore-card">
+          <h3 class="explore-card-title">沖泡指南與 50 秒計時器</h3>
+          <p class="explore-card-desc">提供紫砂壺與馬克杯兩種茶水比例，附帶第 1 到第 6 泡實戰倒數計時器與三款茶微調小抄，買回家馬上能照著泡。</p>
+          <a href="brewing.html" class="explore-card-link">前往泡茶與出湯計時器 ↗</a>
+        </article>
+
+        <article class="explore-card">
+          <h3 class="explore-card-title">3D 插畫互動製茶體驗</h3>
+          <p class="explore-card-desc">走進杉林溪茶園親手採摘一心二葉、搖晃竹篩、炒菁、畫圈團揉到控火烘焙，選出專屬於您的茶湯色澤。</p>
+          <a href="tea-craft.html" class="explore-card-link">進入 3D 製茶工坊 ↗</a>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 4: 5-STEP PROCESS (WARM PAPER #f7f6f2) -->
-  <section id="process" class="section-process">
-    <div class="container">
-      <div class="section-header section-header--on-light">
-        <h2 class="section-title section-title--on-light">五道慢工細製，封存一片茶葉的天然清芬</h2>
-        <p class="section-lead section-lead--on-light">點選下方任一道製茶工序，讀懂每一道火候與走水工夫如何改變茶杯裡的香氣與甘醇。</p>
-      </div>
-
-      <div class="process-interactive-board">
-        <div class="process-tabs-bar" role="tablist" aria-label="五道製茶工序檢視">
-          <button type="button" class="process-step-tab is-active" role="tab" aria-selected="true" data-step="0">
-            <span class="p-tab-num">工序 壹</span>
-            <span class="p-tab-name">採菁</span>
-          </button>
-          <button type="button" class="process-step-tab" role="tab" aria-selected="false" data-step="1">
-            <span class="p-tab-num">工序 貳</span>
-            <span class="p-tab-name">萎凋</span>
-          </button>
-          <button type="button" class="process-step-tab" role="tab" aria-selected="false" data-step="2">
-            <span class="p-tab-num">工序 參</span>
-            <span class="p-tab-name">炒菁</span>
-          </button>
-          <button type="button" class="process-step-tab" role="tab" aria-selected="false" data-step="3">
-            <span class="p-tab-num">工序 肆</span>
-            <span class="p-tab-name">揉捻</span>
-          </button>
-          <button type="button" class="process-step-tab" role="tab" aria-selected="false" data-step="4">
-            <span class="p-tab-num">工序 伍</span>
-            <span class="p-tab-name">乾燥</span>
-          </button>
-        </div>
-
-        <div class="process-stage-panel" id="process-stage-panel" aria-live="polite">
-          <div>
-            <h3 class="process-stage-title" id="proc-stage-title">01 · 採菁 — 離枝留嫩，守住葉片完整</h3>
-            <p class="process-stage-desc" id="proc-stage-desc">清晨露水退去後，茶工嚴選採摘一心二葉鮮嫩茶菁，維持葉片完整無損，不帶老梗與過多雨水，為後續清香走水打下乾淨底子。</p>
-            <div class="process-impact-box">
-              <div class="process-impact-label">喝得到的差別</div>
-              <p class="process-impact-text" id="proc-stage-impact">葉片完整未壓傷，茶湯就能保持清澈透亮、喝起來不雜不澀。</p>
-            </div>
-          </div>
-
-          <div class="process-metrics-card">
-            <div class="p-metric-row">
-              <span>採摘部位</span>
-              <strong id="proc-m1-val">一心二葉至一心三葉</strong>
-            </div>
-            <div class="p-metric-row">
-              <span>關鍵要求</span>
-              <strong id="proc-m2-val">露水退去後手工嫩採</strong>
-            </div>
-            <div class="p-metric-row">
-              <span>風味貢獻</span>
-              <strong id="proc-m3-val">茶湯乾淨清亮、甘甜不雜</strong>
-            </div>
-          </div>
-        </div>
-
-        <div class="process-all-summary" aria-label="五道工序一覽總表">
-          <div class="process-mini-item">
-            <strong>1 採菁</strong>
-            嚴選一心二葉鮮嫩茶菁，維持葉片完整無損。
-          </div>
-          <div class="process-mini-item">
-            <strong>2 萎凋</strong>
-            日光與室內靜置翻動走水，喚醒高山花香。
-          </div>
-          <div class="process-mini-item">
-            <strong>3 炒菁</strong>
-            適度高溫停止發酵，去除菁味並鎖住鮮甜果膠。
-          </div>
-          <div class="process-mini-item">
-            <strong>4 揉捻</strong>
-            反覆布揉成緊結半球顆粒，使沖泡層次飽滿釋放。
-          </div>
-          <div class="process-mini-item">
-            <strong>5 乾燥</strong>
-            緩慢烘乾至含水量 4% 以下，純淨封香利於久存。
-          </div>
-        </div>
-      </div>
-
-      <div class="process-3d-banner">
-        <div class="process-3d-copy">
-          <strong>想親手做一泡杉林溪烏龍嗎？</strong>
-          <span>走進海拔 1,600m 雲霧茶園的 3D 插畫製茶工坊，依序體驗採菁、萎凋浪菁、炒菁、團揉到文火焙乾，烘出屬於您的茶湯色澤。</span>
-        </div>
-        <a href="tea-craft.html" class="btn-process-3d">進入 3D 插畫製茶體驗 ↗</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 5: BREWING & TIMER (TEAL #284756) -->
-  <section id="brewing" class="section-brewing">
-    <div class="container">
-      <div class="section-header section-header--on-dark">
-        <h2 class="section-title section-title--on-dark">品味一杯好茶：高山烏龍<br>沖泡指南與出湯計時器</h2>
-        <p class="section-lead section-lead--on-dark">不論是用紫砂壺細細品飲，或用辦公馬克杯日常泡一盞茶，抓準水溫與秒數，第一泡就能把山頭香泡出來。</p>
-      </div>
-
-      <div class="brewing-workbench">
-        <!-- Left: Vessel Mode & Brewing Ratios -->
-        <div class="brewing-guide-box">
-          <div>
-            <div class="vessel-switcher" role="tablist" aria-label="沖泡茶具切換">
-              <button type="button" class="vessel-btn is-active" role="tab" aria-selected="true" data-vessel="teapot">紫砂壺 / 瓷蓋杯（推薦）</button>
-              <button type="button" class="vessel-btn" role="tab" aria-selected="false" data-vessel="mug">馬克杯 / 保溫瓶簡便泡</button>
-            </div>
-          </div>
-
-          <div class="brewing-params-grid" id="brewing-params-grid" aria-live="polite">
-            <div class="brew-param-cell">
-              <div class="brew-param-num tabular-nums" id="bp-temp-num">95°C ~ 100°C</div>
-              <div class="brew-param-title">沖泡水溫</div>
-              <div class="brew-param-desc" id="bp-temp-desc">高山茶顆粒緊實，建議以滾燙沸水充分激發高山茶的冷香與花香。</div>
-            </div>
-            <div class="brew-param-cell">
-              <div class="brew-param-num tabular-nums" id="bp-ratio-num">1 : 20</div>
-              <div class="brew-param-title">茶水比例</div>
-              <div class="brew-param-desc" id="bp-ratio-desc">一般紫砂壺或瓷壺，茶葉鋪滿壺底約 1/4 至 1/5 空間即可。</div>
-            </div>
-            <div class="brew-param-cell">
-              <div class="brew-param-num tabular-nums" id="bp-time-num">50 秒</div>
-              <div class="brew-param-title">首泡時間</div>
-              <div class="brew-param-desc" id="bp-time-desc">溫潤泡後，第一泡浸泡約 50 秒即可出湯，往後每泡順延 10~15 秒。</div>
-            </div>
-            <div class="brew-param-cell">
-              <div class="brew-param-num tabular-nums" id="bp-refill-num">6 ~ 8 泡</div>
-              <div class="brew-param-title">耐泡程度</div>
-              <div class="brew-param-desc" id="bp-refill-desc">正宗高山手採烏龍葉肉肥厚，可連續回沖 6 至 8 次依然香氣清雅。</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Live Out-Pour Steep Timer -->
-        <div class="brew-timer-card" aria-label="烏龍茶實戰出湯計時器">
-          <div class="timer-header">
-            <h3 class="timer-heading">出湯節奏計時器</h3>
-            <span class="timer-rule-hint tabular-nums">首泡 50s · 每泡 +15s</span>
-          </div>
-
-          <div class="steep-chips" role="group" aria-label="選擇泡數設定時間">
-            <button type="button" class="steep-chip is-active tabular-nums" data-seconds="50" data-label="第 1 泡">第 1 泡 (50s)</button>
-            <button type="button" class="steep-chip tabular-nums" data-seconds="65" data-label="第 2 泡">第 2 泡 (65s)</button>
-            <button type="button" class="steep-chip tabular-nums" data-seconds="80" data-label="第 3 泡">第 3 泡 (80s)</button>
-            <button type="button" class="steep-chip tabular-nums" data-seconds="95" data-label="第 4 泡">第 4 泡 (95s)</button>
-            <button type="button" class="steep-chip tabular-nums" data-seconds="110" data-label="第 5 泡">第 5 泡 (110s)</button>
-            <button type="button" class="steep-chip tabular-nums" data-seconds="125" data-label="第 6 泡">第 6 泡 (125s)</button>
-          </div>
-
-          <div class="timer-clock-face">
-            <div class="timer-clock-digits tabular-nums" id="timer-display">00:50</div>
-            <div class="timer-status-line" id="timer-status" role="status" aria-live="polite">已選第 1 泡（50 秒），注入沸水後按下開始</div>
-          </div>
-
-          <div class="timer-controls">
-            <button type="button" class="btn-timer-start" id="btn-timer-start">開始計時</button>
-            <button type="button" class="btn-timer-reset" id="btn-timer-reset">重置</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 6: CONTACT & ORDERING (DARKEST #142630) -->
+  <!-- SECTION 4: CONTACT & ORDERING (DARKEST #142630) -->
   <section id="contact" class="section-contact">
     <div class="container">
       <div class="section-header section-header--on-dark">
