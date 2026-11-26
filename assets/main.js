@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       roastFlavor: '蘭花冷香清揚、茶湯滑順回甘生津',
       lastStep: '5 乾燥',
       highlightLast: false,
+      ctaLabel: 'LINE 詢價「當季春茶」',
       formValue: '杉林溪高山烏龍 · 當季春茶 (四兩 150g)'
     },
     winter: {
@@ -44,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
       roastFlavor: '冷山韻味鮮明、茶氣凝鍊持久耐泡',
       lastStep: '5 乾燥',
       highlightLast: false,
+      ctaLabel: 'LINE 詢價「嚴選冬茶」',
       formValue: '杉林溪高山烏龍 · 嚴選冬茶 (四兩 150g)'
     },
     roasted: {
@@ -55,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       roastFlavor: '堅果蜜香與熟果韻、溫潤不刺激腸胃',
       lastStep: '5 慢火精焙',
       highlightLast: true,
+      ctaLabel: 'LINE 詢價「熟香烏龍」',
       formValue: '杉林溪熟香熟火烏龍 (四兩 150g)'
     }
   };
@@ -70,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const specFlavorEl = document.getElementById('spec-roast-flavor');
   const specLastStepEl = document.getElementById('spec-step-last');
   const heroCtaLink = document.getElementById('hero-cta-link');
+  const heroSpecSheet = document.getElementById('hero-spec-sheet');
   const teaSelect = document.getElementById('utea');
 
   const syncMobileTeaPanel = (teaKey) => {
@@ -117,6 +121,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if (heroCtaLink) {
         heroCtaLink.setAttribute('data-selected-tea', data.formValue);
+        heroCtaLink.textContent = data.ctaLabel;
+      }
+      if (heroSpecSheet) {
+        heroSpecSheet.classList.remove('is-refreshed');
+        void heroSpecSheet.offsetWidth;
+        heroSpecSheet.classList.add('is-refreshed');
       }
       syncMobileTeaPanel(key);
     });

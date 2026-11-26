@@ -351,6 +351,12 @@ section[id] {
   gap: 20px;
 }
 
+.hero-headline-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .hero-title {
   font-family: var(--f-serif);
   font-size: clamp(32px, 3.3vw, 48px);
@@ -683,6 +689,25 @@ section[id] {
   background: #fbeee2;
   border-color: var(--c-copper-deep);
   color: var(--c-copper-deep);
+}
+
+/* 切換茶款時，規格標短暫提示「內容已更新」（只動邊框色與內層透明度，不碰定位 transform） */
+@keyframes specSheetBorderRefresh {
+  0% { border-color: var(--c-copper-bright); }
+  100% { border-color: var(--c-paper-ink); }
+}
+
+@keyframes specSheetInnerRefresh {
+  0% { opacity: 0.55; }
+  100% { opacity: 1; }
+}
+
+.pack-spec-sheet.is-refreshed {
+  animation: specSheetBorderRefresh 0.5s ease-out;
+}
+
+.pack-spec-sheet.is-refreshed .pack-spec-inner {
+  animation: specSheetInnerRefresh 0.32s ease-out;
 }
 
 /* Hero Right Column: Vertical Poetry + Seal Stamp */
@@ -2137,43 +2162,91 @@ footer {
     text-decoration: none;
   }
 
-  /* Mobile Hero Layout: Headline & CTA appear BEFORE the pack */
+  /* Mobile Hero Layout: 茶款切換鈕緊貼其所控制的規格標，CTA 接在規格標下方 */
   .hero-grid {
-    grid-template-columns: 1fr;
-    padding: 28px 18px 0;
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px 16px 0;
+    gap: 0;
     min-height: auto;
   }
 
   .hero-copy-col {
-    padding: 0;
+    display: contents;
+  }
+
+  .hero-headline-group {
+    order: 1;
     align-items: center;
     text-align: center;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .hero-title {
+    font-size: clamp(26px, 7.2vw, 34px);
+    line-height: 1.2;
+  }
+
+  .hero-lede {
+    font-size: 13.5px;
+    line-height: 1.55;
+    max-width: 34ch;
   }
 
   .hero-switcher-wrap {
+    order: 2;
     max-width: 100%;
+    border-top: none;
+    padding-top: 0;
+    text-align: center;
+    margin-bottom: 10px;
   }
 
-  .hero-actions {
-    justify-content: center;
+  .hero-switcher-caption {
+    font-size: 12px;
+    margin-bottom: 7px;
+  }
+
+  .hero-tea-tab {
+    min-height: 44px;
+    padding: 10px 6px;
+    font-size: 13.5px;
   }
 
   .hero-pack-col {
+    order: 3;
+    width: 100%;
     min-height: auto;
     flex-direction: column;
     align-items: center;
   }
 
+  /* 銀箔茶包退到規格標「後方」：封口露在標籤上緣、真空袋身露在下緣，不再佔一整段高度 */
   .pack-stage {
+    position: relative;
+    width: 100%;
     flex-direction: column;
     align-items: center;
-    padding-top: 0;
+    padding: 38px 0 26px;
   }
 
   .pack-visual-box {
-    width: 240px;
-    margin-bottom: -22px;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    margin-bottom: 0;
+    align-items: center;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .pack-plate-img {
+    width: auto;
+    height: 100%;
+    max-width: 230px;
+    object-fit: contain;
   }
 
   .pack-spec-sheet {
@@ -2182,12 +2255,46 @@ footer {
     top: auto;
     transform: none;
     width: 100%;
-    padding: 10px;
-    margin-bottom: 18px;
+    padding: 8px;
+    margin-bottom: 0;
+    z-index: 6;
+  }
+
+  .pack-spec-inner {
+    padding: 4px 6px;
   }
 
   .spec-sheet-row {
-    grid-template-columns: 54px 1fr;
+    grid-template-columns: 48px 1fr;
+  }
+
+  .spec-sheet-th {
+    font-size: 13.5px;
+    padding: 8px 4px;
+    letter-spacing: 0.08em;
+  }
+
+  .spec-sheet-td {
+    padding: 8px 10px;
+  }
+
+  .spec-name-td {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 9px 10px;
+  }
+
+  .spec-tea-name {
+    font-size: 16.5px;
+    letter-spacing: 0.01em;
+  }
+
+  .spec-liquor-pill {
+    font-size: 11px;
+    padding: 4px 7px;
+    gap: 5px;
   }
 
   .spec-origin-split {
@@ -2195,19 +2302,55 @@ footer {
   }
 
   .spec-origin-info {
+    padding: 8px 10px;
+    gap: 2px;
     border-right: none;
+  }
+
+  .spec-origin-place {
+    font-size: 14.5px;
+  }
+
+  .spec-origin-alt {
+    font-size: 12px;
   }
 
   .spec-ridge-cell {
     display: none;
   }
 
+  .spec-roast-line {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
   .spec-process-grid {
-    grid-template-columns: repeat(3, 1fr);
+    padding: 7px 8px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1.35fr;
+    gap: 4px;
+  }
+
+  .spec-step-box {
+    font-size: 11px;
+    padding: 5px 2px;
+  }
+
+  .hero-actions {
+    order: 4;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px 16px;
+  }
+
+  .btn-hero-cta {
+    padding: 11px 22px;
+    font-size: 15px;
   }
 
   .hero-vertical-col {
-    padding: 12px 0 26px;
+    order: 5;
+    padding: 14px 0 24px;
   }
 
   .section-header {
@@ -2284,12 +2427,7 @@ footer {
     padding: 24px 20px;
   }
 
-  /* Mobile compact Hero pack + tabbed tea cards */
-  .pack-visual-box {
-    width: 196px;
-    margin-bottom: -18px;
-  }
-
+  /* Mobile tabbed tea cards */
   .mobile-tea-tabs {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2596,12 +2734,6 @@ footer {
     padding: 0 18px;
   }
 
-  .spec-name-td {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-  }
-
   .hero-tea-switcher {
     gap: 6px;
   }
@@ -2613,6 +2745,20 @@ footer {
 
   .steep-chips {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 370px) {
+  .spec-process-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 350px) {
+  .spec-name-td {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
   }
 }
 
@@ -2656,6 +2802,10 @@ footer {
   }
   * {
     transition-duration: 0.01ms !important;
+  }
+  .pack-spec-sheet.is-refreshed,
+  .pack-spec-sheet.is-refreshed .pack-spec-inner {
+    animation: none;
   }
 }
   
