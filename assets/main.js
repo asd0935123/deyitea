@@ -129,6 +129,18 @@ document.addEventListener('DOMContentLoaded', () => {
         heroSpecSheet.classList.add('is-refreshed');
       }
       syncMobileTeaPanel(key);
+
+      if (window.innerWidth <= 992 && heroSpecSheet) {
+        const specRect = heroSpecSheet.getBoundingClientRect();
+        const headerEl = document.getElementById('mobile-header');
+        const headerH = headerEl ? headerEl.offsetHeight : 58;
+        if (specRect.bottom > window.innerHeight - 12 || specRect.top < headerH) {
+          const switcherWrap = tab.closest('.hero-switcher-wrap') || heroSpecSheet;
+          const targetTop = window.scrollY + switcherWrap.getBoundingClientRect().top - headerH - 12;
+          const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          window.scrollTo({ top: Math.max(0, targetTop), behavior: reduceMotion ? 'auto' : 'smooth' });
+        }
+      }
     });
   });
 

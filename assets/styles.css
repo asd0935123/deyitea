@@ -2162,26 +2162,29 @@ footer {
     text-decoration: none;
   }
 
-  /* Mobile Hero Layout: 茶款切換鈕緊貼其所控制的規格標，CTA 接在規格標下方 */
+  /* Mobile Hero Layout: 先完整呈現大銀箔真空茶包特色，再於茶包下方讓三款切換鈕緊貼規格標正上方 */
   .hero-grid {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    padding: 16px 16px 0;
+    align-items: center;
+    padding: 18px 16px 0;
     gap: 0;
     min-height: auto;
   }
 
-  .hero-copy-col {
+  .hero-copy-col,
+  .hero-pack-col,
+  .pack-stage {
     display: contents;
   }
 
   .hero-headline-group {
     order: 1;
+    width: 100%;
     align-items: center;
     text-align: center;
     gap: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
   }
 
   .hero-title {
@@ -2195,18 +2198,39 @@ footer {
     max-width: 34ch;
   }
 
-  .hero-switcher-wrap {
+  .pack-visual-box {
     order: 2;
+    position: relative;
+    inset: auto;
+    width: min(244px, 66vw);
+    margin: 0 auto 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+    z-index: 2;
+  }
+
+  .pack-plate-img {
+    width: 100%;
+    height: auto;
+    max-width: none;
+    object-fit: initial;
+  }
+
+  .hero-switcher-wrap {
+    order: 3;
+    width: 100%;
     max-width: 100%;
-    border-top: none;
-    padding-top: 0;
+    border-top: 1px solid var(--c-rule-dark);
+    padding-top: 16px;
     text-align: center;
     margin-bottom: 10px;
   }
 
   .hero-switcher-caption {
-    font-size: 12px;
-    margin-bottom: 7px;
+    font-size: 12.5px;
+    margin-bottom: 8px;
   }
 
   .hero-tea-tab {
@@ -2215,41 +2239,8 @@ footer {
     font-size: 13.5px;
   }
 
-  .hero-pack-col {
-    order: 3;
-    width: 100%;
-    min-height: auto;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* 銀箔茶包退到規格標「後方」：封口露在標籤上緣、真空袋身露在下緣，不再佔一整段高度 */
-  .pack-stage {
-    position: relative;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    padding: 38px 0 26px;
-  }
-
-  .pack-visual-box {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    margin-bottom: 0;
-    align-items: center;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .pack-plate-img {
-    width: auto;
-    height: 100%;
-    max-width: 230px;
-    object-fit: contain;
-  }
-
   .pack-spec-sheet {
+    order: 4;
     position: relative;
     left: auto;
     top: auto;
@@ -2336,10 +2327,10 @@ footer {
   }
 
   .hero-actions {
-    order: 4;
+    order: 5;
     width: 100%;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 14px;
     gap: 10px 16px;
   }
 
@@ -2349,8 +2340,9 @@ footer {
   }
 
   .hero-vertical-col {
-    order: 5;
-    padding: 14px 0 24px;
+    order: 6;
+    width: 100%;
+    padding: 16px 0 26px;
   }
 
   .section-header {
